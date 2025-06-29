@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco-Explorer | Investor Pitch</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body class="bg-gray-900 text-white">
+
+    <!-- Header -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-gray-900/80 backdrop-blur-sm shadow-lg">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="#home" class="flex items-center space-x-2">
+                    <!-- TreeDeciduous Icon -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-emerald-400"><path d="M12 22v-8"/><path d="M12 14l-4-4-2 2"/><path d="M12 14l4-4 2 2"/><path d="M12 14l-4 4"/><path d="M12 14l4 4"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="M5.4 5.4l1.4 1.4"/><path d="M17.2 5.4l-1.4 1.4"/><path d="M12 2v2"/><path d="M8.5 2.5l-1 1.7"/><path d="M15.5 2.5l1 1.7"/></svg>
+                    <h1 class="text-2xl font-bold tracking-tighter text-white">Eco-Explorer</h1>
+                </a>
+                <nav class="hidden md:flex items-center space-x-6">
+                    <a href="#home" data-nav-link="home" class="nav-link text-sm font-medium transition-colors duration-200 text-gray-300 hover:text-emerald-300">Home</a>
+                    <a href="#about" data-nav-link="about" class="nav-link text-sm font-medium transition-colors duration-200 text-gray-300 hover:text-emerald-300">The Game</a>
+                    <a href="#world" data-nav-link="world" class="nav-link text-sm font-medium transition-colors duration-200 text-gray-300 hover:text-emerald-300">The World</a>
+                    <a href="#gameplay" data-nav-link="gameplay" class="nav-link text-sm font-medium transition-colors duration-200 text-gray-300 hover:text-emerald-300">Gameplay</a>
+                    <a href="#vision" data-nav-link="vision" class="nav-link text-sm font-medium transition-colors duration-200 text-gray-300 hover:text-emerald-300">Our Vision</a>
+                    <a href="#endgame" data-nav-link="endgame" class="nav-link text-sm font-medium transition-colors duration-200 text-gray-300 hover:text-emerald-300">Endgame</a>
+                    <a href="#contact" data-nav-link="contact" class="nav-link text-sm font-medium transition-colors duration-200 text-gray-300 hover:text-emerald-300">Investors</a>
+                </nav>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-300 hover:text-white">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-800/95">
+            <nav class="flex flex-col items-center px-4 pt-2 pb-4 space-y-2">
+                <a href="#home" class="nav-link block w-full text-center py-2 text-lg font-medium transition-colors duration-200 text-gray-300 hover:text-emerald-300">Home</a>
+                <a href="#about" class="nav-link block w-full text-center py-2 text-lg font-medium transition-colors duration-200 text-gray-300 hover:text-emerald-300">The Game</a>
+                <a href="#world" class="nav-link block w-full text-center py-2 text-lg font-medium transition-colors duration-200 text-gray-300 hover:text-emerald-300">The World</a>
+                <a href="#gameplay" class="nav-link block w-full text-center py-2 text-lg font-medium transition-colors duration-200 text-gray-300 hover:text-emerald-300">Gameplay</a>
+                <a href="#vision" class="nav-link block w-full text-center py-2 text-lg font-medium transition-colors duration-200 text-gray-300 hover:text-emerald-300">Our Vision</a>
+                <a href="#endgame" class="nav-link block w-full text-center py-2 text-lg font-medium transition-colors duration-200 text-gray-300 hover:text-emerald-300">Endgame</a>
+                <a href="#contact" class="nav-link block w-full text-center py-2 text-lg font-medium transition-colors duration-200 text-gray-300 hover:text-emerald-300">Investors</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="scroll-mt-20 relative h-screen flex items-center justify-center text-center overflow-hidden">
+            <div class="absolute inset-0 bg-black opacity-60 z-10"></div>
+            <img src="https://images.unsplash.com/photo-1576016781848-64587034b17f?q=80&w=2070&auto=format&fit=crop" alt="View of Itatiaia National Park mountains" class="absolute inset-0 w-full h-full object-cover">
+            <div class="relative z-20 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+                <h2 class="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tighter text-white leading-tight mb-4 text-shadow">
+                    A New Frontier in Educational Gaming
+                </h2>
+                <p class="text-lg md:text-xl lg:text-2xl text-gray-200 max-w-3xl mx-auto mb-8 text-shadow-sm">
+                    Explore, discover, and conserve. Eco-Explorer is more than a game—it's a living simulation of Brazil's Itatiaia National Park, built to inspire the next generation of ecologists.
+                </p>
+                <a href="#about" class="inline-block bg-emerald-500 text-white font-bold py-4 px-10 rounded-full text-lg hover:bg-emerald-600 transform hover:scale-105 transition-all duration-300 shadow-xl">
+                    Discover the Vision
+                </a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="scroll-mt-20 py-20 md:py-28">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12 md:mb-16">
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-emerald-400 tracking-tight">The Game: Eco-Explorer</h2>
+                    <p class="mt-4 text-lg md:text-xl text-gray-400 max-w-3xl mx-auto">An educational simulation game where players become the Lead Ecologist of a vibrant, living ecosystem.</p>
+                </div>
+                <div class="flex flex-col md:flex-row items-center gap-10 lg:gap-16">
+                    <div class="md:w-1/2">
+                        <img src="https://images.unsplash.com/photo-1547471080-7cc2d5d88e93?q=80&w=1974&auto=format&fit=crop" alt="Black Capuchin monkey in a tree" class="rounded-2xl shadow-2xl w-full h-auto object-cover">
+                    </div>
+                    <div class="md:w-1/2 space-y-6">
+                        <p class="text-gray-300 text-lg leading-relaxed">
+                            <strong>Eco-Explorer: Itatiaia Nature Sanctuary</strong> is a single-page React application that drops players into the heart of one of Brazil's most vital nature reserves. The core mission is to explore, research, and understand the intricate web of life within the park.
+                        </p>
+                        <div class="space-y-4">
+                            <div class="flex items-start space-x-4">
+                                <div class="flex-shrink-0 bg-gray-800 rounded-full p-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-emerald-400"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
+                                <p class="text-gray-300 text-lg">Role-play as a Lead Ecologist, driving research and conservation efforts.</p>
+                            </div>
+                            <div class="flex items-start space-x-4">
+                                <div class="flex-shrink-0 bg-gray-800 rounded-full p-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-emerald-400"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
+                                <p class="text-gray-300 text-lg">Experience a dynamic world with day/night cycles and weather that impact gameplay.</p>
+                            </div>
+                            <div class="flex items-start space-x-4">
+                                <div class="flex-shrink-0 bg-gray-800 rounded-full p-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-emerald-400"><path d="M3 21h18"/><path d="m12 16-1-4-1 4H8"/><path d="m17 16-1-4-1 4h-2"/><path d="M12 8a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"/><path d="M15 21h-5"/><path d="M12 8v8"/></svg></div>
+                                <p class="text-gray-300 text-lg">Engage in a deep research progression system, unlocking skills and knowledge.</p>
+                            </div>
+                            <div class="flex items-start space-x-4">
+                                <div class="flex-shrink-0 bg-gray-800 rounded-full p-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-emerald-400"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+                                <p class="text-gray-300 text-lg">Uncover the secrets of the ecosystem through exploration and puzzle-like investigation.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- World Section -->
+        <section id="world" class="scroll-mt-20 bg-gray-800 py-20 md:py-28">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12 md:mb-16">
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-emerald-400 tracking-tight">The World: Itatiaia National Park</h2>
+                    <p class="mt-4 text-lg md:text-xl text-gray-400 max-w-3xl mx-auto">Explore a meticulously modeled digital twin of Brazil's first and oldest national park, a sanctuary of biodiversity.</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-gray-900 rounded-xl overflow-hidden shadow-lg transform hover:-translate-y-2 transition-transform duration-300 group">
+                        <img src="https://images.unsplash.com/photo-1620067912543-74a951a3a416?q=80&w=1932&auto=format&fit=crop" alt="Legacy of Conservation" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                          <h3 class="text-xl font-bold text-emerald-400 mb-2">A Legacy of Conservation</h3>
+                          <p class="text-gray-400 text-base">Established in 1937, the park is a critical remnant of the Atlantic Forest biome, showcasing incredible ecological diversity.</p>
+                        </div>
+                    </div>
+                    <div class="bg-gray-900 rounded-xl overflow-hidden shadow-lg transform hover:-translate-y-2 transition-transform duration-300 group">
+                        <img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?q=80&w=2175&auto=format&fit=crop" alt="Two Worlds in One" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                          <h3 class="text-xl font-bold text-emerald-400 mb-2">Two Worlds in One</h3>
+                          <p class="text-gray-400 text-base">From the lush, waterfall-filled forests of the Lower Itatiaia to the rugged, high-altitude plains of the Upper Itatiaia, the park offers distinct biomes to explore.</p>
+                        </div>
+                    </div>
+                    <div class="bg-gray-900 rounded-xl overflow-hidden shadow-lg transform hover:-translate-y-2 transition-transform duration-300 group">
+                        <img src="https://images.unsplash.com/photo-1608442220914-f513d8ac4448?q=80&w=1974&auto=format&fit=crop" alt="Haven for Wildlife" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                          <h3 class="text-xl font-bold text-emerald-400 mb-2">A Haven for Wildlife</h3>
+                          <p class="text-gray-400 text-base">Home to over 350 bird species, 102 primate species, and numerous threatened mammals. Every exploration is a chance for a rare encounter.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gameplay Section -->
+        <section id="gameplay" class="scroll-mt-20 py-20 md:py-28">
+             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12 md:mb-16">
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-emerald-400 tracking-tight">Core Gameplay Mechanics</h2>
+                    <p class="mt-4 text-lg md:text-xl text-gray-400 max-w-3xl mx-auto">A rewarding loop of exploration, research, and mastery that keeps players engaged and learning.</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-8 lg:gap-12">
+                    <div class="bg-gray-800 p-8 rounded-lg shadow-md border-l-4 border-emerald-500">
+                        <h3 class="text-2xl font-bold text-white mb-3">Explore & Encounter</h3>
+                        <p class="text-gray-400 leading-relaxed">Venture into the park to find species. A dynamic encounter system, influenced by weather and time, includes a 5% chance to find ultra-rare 'Radiant Variants' for massive XP bonuses.</p>
+                    </div>
+                     <div class="bg-gray-800 p-8 rounded-lg shadow-md border-l-4 border-emerald-500">
+                        <h3 class="text-2xl font-bold text-white mb-3">Research & Master</h3>
+                        <p class="text-gray-400 leading-relaxed">Observe animals to trigger educational quizzes. Correct answers grant Research XP, leveling up your knowledge of a species. Reaching Level 5 unlocks permanent 'Symbiotic Perks'.</p>
+                    </div>
+                     <div class="bg-gray-800 p-8 rounded-lg shadow-md border-l-4 border-emerald-500">
+                        <h3 class="text-2xl font-bold text-white mb-3">Symbiotic Perks</h3>
+                        <p class="text-gray-400 leading-relaxed">Mastering a species grants powerful abilities. Jaguar Mastery unlocks 'Night Vision' for exploring dark caves, while Capybara Mastery provides a 'Calming Presence,' increasing rare species encounters.</p>
+                    </div>
+                     <div class="bg-gray-800 p-8 rounded-lg shadow-md border-l-4 border-emerald-500">
+                        <h3 class="text-2xl font-bold text-white mb-3">AI-Powered Eco-Log</h3>
+                        <p class="text-gray-400 leading-relaxed">Your digital field journal evolves with your research. Unlock AI-generated fun facts, anime-style avatars, and finally, stunning photorealistic portraits for each species you master.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vision Section -->
+        <section id="vision" class="scroll-mt-20 bg-gray-800 py-20 md:py-28">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12 md:mb-16">
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-emerald-400 tracking-tight">Our Vision: A Living Sanctuary</h2>
+                    <p class="mt-4 text-lg md:text-xl text-gray-400 max-w-3xl mx-auto">We are moving beyond static games to create a playable, living ecosystem—a new paradigm in interactive education.</p>
+                </div>
+                <div class="space-y-12">
+                    <div class="flex flex-col md:flex-row items-center gap-6 text-center md:text-left">
+                        <div class="flex-shrink-0 w-24 h-24 flex items-center justify-center bg-gray-700 rounded-full"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-emerald-300"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg></div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-emerald-400 mb-2">Living World Architecture</h3>
+                            <p class="text-gray-300 text-lg leading-relaxed">Using Procedural Content Generation (PCG) and Agent-Based AI, we simulate a world that feels truly alive. Animal populations follow ecological models (Lotka-Volterra), and individual agents make their own decisions, leading to emergent, unscripted behaviors.</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col md:flex-row items-center gap-6 text-center md:text-left">
+                        <div class="flex-shrink-0 w-24 h-24 flex items-center justify-center bg-gray-700 rounded-full"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-emerald-300"><path d="M12 15l-3-3-3 3"/><path d="M12 8V2"/><path d="M12 21v-3"/><path d="m20 12-3-3-3 3"/><path d="m4 12 3-3 3 3"/><path d="m18 20-3-3-3 3"/><path d="m6 20 3-3 3 3"/><path d="M12 12a1 1 0 1 0 1 1 1 1 0 0 0-1-1Z"/><circle cx="12" cy="12" r="10"/></svg></div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-emerald-400 mb-2">Progression Through Knowledge</h3>
+                            <p class="text-gray-300 text-lg leading-relaxed">Our hybrid progression model combines traditional leveling with a 'Field Researcher' skill tree (Zoology, Botany, Ecology). Critically, knowledge itself is the key. Learning about the ecosystem directly unlocks new areas, tools, and interactions, intrinsically rewarding curiosity.</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col md:flex-row items-center gap-6 text-center md:text-left">
+                        <div class="flex-shrink-0 w-24 h-24 flex items-center justify-center bg-gray-700 rounded-full"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-emerald-300"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-emerald-400 mb-2">Emergent Narrative Engine</h3>
+                            <p class="text-gray-300 text-lg leading-relaxed">We don't write a story; we build a story generator. The narrative emerges from the dynamic interplay between the simulated ecosystem and the player's choices. Every action has a tangible, lasting impact, creating a unique chronicle for every player.</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col md:flex-row items-center gap-6 text-center md:text-left">
+                        <div class="flex-shrink-0 w-24 h-24 flex items-center justify-center bg-gray-700 rounded-full"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-emerald-300"><path d="M21 9H8a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1Z"/><path d="M5 2h2v2H5z"/><path d="M8 5h2v2H8z"/><path d="m8 8 2-2 2-2"/><path d="M3 11v2h2v-2z"/><path d="m11 11-2 2-2 2"/><path d="M14 8h2v2h-2z"/><path d="m14 11 2 2 2 2"/><path d="M17 5h2v2h-2z"/><path d="m17 8 2-2 2-2"/></svg></div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-emerald-400 mb-2">Future-Proof AI Systems</h3>
+                            <p class="text-gray-300 text-lg leading-relaxed">We leverage Generative AI to create dynamic 'micro-quests' based on the current state of the ecosystem. An AI 'Chaos Director' can introduce plausible long-term events like invasive species, ensuring the simulation is always unpredictable and challenging.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Endgame Section -->
+        <section id="endgame" class="scroll-mt-20 py-20 md:py-28">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12 md:mb-16">
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-emerald-400 tracking-tight">Endgame & Community</h2>
+                    <p class="mt-4 text-lg md:text-xl text-gray-400 max-w-3xl mx-auto">Fostering long-term engagement and connecting players to real-world conservation.</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
+                    <div class="bg-gray-800 p-8 rounded-lg shadow-lg hover:shadow-emerald-500/20 transition-shadow duration-300">
+                        <div class="flex justify-center mb-4"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-emerald-400"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
+                        <h3 class="text-xl font-bold text-white mb-3">Capstone Projects</h3>
+                        <p class="text-gray-400">High-level players can undertake ambitious conservation projects like species reintroduction or watershed restoration, leaving a permanent mark on their simulated world.</p>
+                    </div>
+                    <div class="bg-gray-800 p-8 rounded-lg shadow-lg hover:shadow-emerald-500/20 transition-shadow duration-300">
+                        <div class="flex justify-center mb-4"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-emerald-400"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+                        <h3 class="text-xl font-bold text-white mb-3">Citizen Science Hub</h3>
+                        <p class="text-gray-400">Integrated systems for sharing discoveries, community-wide research goals, and a 'Scenario Editor' empower players to create and share their own challenges.</p>
+                    </div>
+                    <div class="bg-gray-800 p-8 rounded-lg shadow-lg hover:shadow-emerald-500/20 transition-shadow duration-300">
+                        <div class="flex justify-center mb-4"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-emerald-400"><path d="M21 9H8a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1Z"/><path d="M5 2h2v2H5z"/><path d="M8 5h2v2H8z"/><path d="m8 8 2-2 2-2"/><path d="M3 11v2h2v-2z"/><path d="m11 11-2 2-2 2"/><path d="M14 8h2v2h-2z"/><path d="m14 11 2 2 2 2"/><path d="M17 5h2v2h-2z"/><path d="m17 8 2-2 2-2"/></svg></div>
+                        <h3 class="text-xl font-bold text-white mb-3">Real-World Impact</h3>
+                        <p class="text-gray-400">We will partner with conservation organizations active in Itatiaia. A portion of revenue from future expansions will be donated to support their vital on-the-ground work.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Investor Section -->
+        <section id="contact" class="scroll-mt-20 bg-gray-900 border-t border-emerald-800 py-20 md:py-28">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12 md:mb-16">
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-emerald-400 tracking-tight">Join Our Mission</h2>
+                    <p class="mt-4 text-lg md:text-xl text-gray-400 max-w-3xl mx-auto">We are seeking partners to help us build a genre-defining educational experience. Let's create a better world, one player at a time.</p>
+                </div>
+                <div class="max-w-2xl mx-auto bg-gray-800 p-8 sm:p-12 rounded-2xl shadow-2xl">
+                    <form name="contact" method="POST" data-netlify="true">
+                        <input type="hidden" name="form-name" value="contact" />
+                        <div class="space-y-6">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="name" class="block text-sm font-medium text-gray-300 mb-2">Full Name</label>
+                                    <input type="text" name="name" id="name" required class="w-full bg-gray-700 border border-gray-600 rounded-md py-3 px-4 text-white focus:ring-emerald-500 focus:border-emerald-500"/>
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email Address</label>
+                                    <input type="email" name="email" id="email" required class="w-full bg-gray-700 border border-gray-600 rounded-md py-3 px-4 text-white focus:ring-emerald-500 focus:border-emerald-500"/>
+                                </div>
+                            </div>
+                             <div>
+                                <label for="organization" class="block text-sm font-medium text-gray-300 mb-2">Organization / Fund</label>
+                                <input type="text" name="organization" id="organization" class="w-full bg-gray-700 border border-gray-600 rounded-md py-3 px-4 text-white focus:ring-emerald-500 focus:border-emerald-500"/>
+                            </div>
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-gray-300 mb-2">Message</label>
+                                <textarea name="message" id="message" rows="4" required class="w-full bg-gray-700 border border-gray-600 rounded-md py-3 px-4 text-white focus:ring-emerald-500 focus:border-emerald-500"></textarea>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="w-full bg-emerald-600 text-white font-bold py-3 px-6 rounded-lg text-lg hover:bg-emerald-700 transition-colors duration-300 shadow-lg">
+                                    Request Pitch Deck
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="form-success-message" class="hidden mt-6 text-center text-emerald-400 bg-emerald-900/50 p-4 rounded-lg">
+                        Thank you for your interest! We will be in touch shortly.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 border-t border-gray-800">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center text-gray-500">
+            <p>&copy; 2024 Eco-Explorer Game Studios. All Rights Reserved.</p>
+            <p class="text-sm mt-2">Pioneering the future of interactive conservation education.</p>
+        </div>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script src="assets/js/main.js"></script>
+
+</body>
+</html>
