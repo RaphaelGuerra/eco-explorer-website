@@ -20,6 +20,10 @@
     <!-- Gradio Web Component -->
     <script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/5.34.2/gradio.js"></script>
     
+    <!-- Multilingual Support -->
+    <script src="translations.js"></script>
+    <script src="language-switcher.js"></script>
+    
     <!-- Custom Styles -->
     <style>
         body {
@@ -86,13 +90,29 @@
                 Eco<span class="gradient-text">Explorer</span> 🐆
             </h1>
             <nav class="hidden md:flex space-x-6 items-center">
-                <a href="#about" class="text-slate-300 hover:text-blue-400 transition-colors">About</a>
-                <a href="#chatbot" class="text-slate-300 hover:text-blue-400 transition-colors">AI Assistant</a>
-                <a href="#features" class="text-slate-300 hover:text-blue-400 transition-colors">Features</a>
-                <a href="#vision" class="text-slate-300 hover:text-blue-400 transition-colors">Vision</a>
-                <a href="#contact" class="bg-blue-500 text-white font-semibold px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors glow-effect">
-                    Contact
+                <a href="#about" class="text-slate-300 hover:text-blue-400 transition-colors" data-translate="about">About</a>
+                <a href="#chatbot" class="text-slate-300 hover:text-blue-400 transition-colors" data-translate="aiAssistant">AI Assistant</a>
+                <a href="#features" class="text-slate-300 hover:text-blue-400 transition-colors" data-translate="features">Features</a>
+                <a href="#vision" class="text-slate-300 hover:text-blue-400 transition-colors" data-translate="vision">Vision</a>
+                <a href="#contact" class="bg-blue-500 text-white font-semibold px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors glow-effect" data-translate="contactUs">
+                    Get Wild
                 </a>
+                
+                <!-- Language Switcher -->
+                <div class="relative">
+                    <button id="language-btn" class="flex items-center space-x-2 text-slate-300 hover:text-blue-400 transition-colors">
+                        <span id="current-lang">EN</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div id="language-dropdown" class="absolute right-0 mt-2 w-32 bg-slate-800 border border-slate-700 rounded-lg shadow-lg hidden z-50">
+                        <button class="w-full text-left px-4 py-2 text-slate-300 hover:bg-slate-700 transition-colors" data-lang="en">🇺🇸 English</button>
+                        <button class="w-full text-left px-4 py-2 text-slate-300 hover:bg-slate-700 transition-colors" data-lang="pt">🇧🇷 Português</button>
+                        <button class="w-full text-left px-4 py-2 text-slate-300 hover:bg-slate-700 transition-colors" data-lang="es">🇪🇸 Español</button>
+                        <button class="w-full text-left px-4 py-2 text-slate-300 hover:bg-slate-700 transition-colors" data-lang="fr">🇫🇷 Français</button>
+                    </div>
+                </div>
             </nav>
             <button id="menu-btn" class="md:hidden focus:outline-none">
                 <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -132,17 +152,17 @@
             
             <div class="container mx-auto px-6 relative z-10">
                 <div class="max-w-3xl">
-                    <h2 class="text-lg font-semibold text-blue-400 tracking-wider mb-4">🐆 WILD EDUCATIONAL GAMING</h2>
+                    <h2 class="text-lg font-semibold text-blue-400 tracking-wider mb-4" data-translate="wildEducationalGaming">🐆 WILD EDUCATIONAL GAMING</h2>
                     <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tighter mb-4">
                         Eco<span class="gradient-text">Explorer</span>
                     </h1>
-                    <h3 class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-slate-400 tracking-tighter mb-6">
+                    <h3 class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-slate-400 tracking-tighter mb-6" data-translate="whereWildMeetsWisdom">
                         Where the wild meets wisdom.
                     </h3>
-                    <p class="max-w-xl text-xl text-slate-300 leading-relaxed mb-8">
+                    <p class="max-w-xl text-xl text-slate-300 leading-relaxed mb-8" data-translate="heroDescription">
                         An immersive educational simulation where you become a Lead Ecologist in Brazil's <span class="text-blue-400 font-semibold">Itatiaia National Park</span>. Track the elusive <span class="text-blue-400 font-semibold">onça pintada</span> (jaguar) and discover a living ecosystem with AI-powered features, dynamic weather, and real conservation impact.
                     </p>
-                    <a href="#chatbot" class="bg-transparent border-2 border-blue-400 text-blue-400 font-bold text-lg px-8 py-4 rounded-lg hover:bg-blue-400 hover:text-slate-900 transition-all duration-300 wild-glow">
+                    <a href="#chatbot" class="bg-transparent border-2 border-blue-400 text-blue-400 font-bold text-lg px-8 py-4 rounded-lg hover:bg-blue-400 hover:text-slate-900 transition-all duration-300 wild-glow" data-translate="huntForKnowledge">
                         🐆 Hunt for Knowledge!
                     </a>
                 </div>
@@ -157,11 +177,11 @@
                 <div class="text-center mb-16">
                     <div class="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-500/20 to-indigo-500/20 px-4 py-2 rounded-full border border-blue-500/30 mb-6">
                         <div class="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
-                        <span class="text-blue-400 text-sm font-semibold tracking-wider">🐆 LIVE AI DEMO</span>
+                        <span class="text-blue-400 text-sm font-semibold tracking-wider" data-translate="liveAiDemo">🐆 LIVE AI DEMO</span>
                     </div>
-                    <h2 class="text-3xl font-bold text-white mb-2"><span class="gradient-text">01.</span> AI Assistant</h2>
+                    <h2 class="text-3xl font-bold text-white mb-2"><span class="gradient-text">01.</span> <span data-translate="aiAssistantTitle">AI Assistant</span></h2>
                     <div class="w-24 h-1 bg-blue-500 mx-auto mb-4"></div>
-                    <p class="max-w-3xl mx-auto text-xl text-slate-300 leading-relaxed">
+                    <p class="max-w-3xl mx-auto text-xl text-slate-300 leading-relaxed" data-translate="aiAssistantDescription">
                         Have questions about the Eco-Explorer project? Ask our AI-powered assistant, trained on the complete project documentation and vision.
                     </p>
                 </div>
@@ -174,7 +194,7 @@
                                 
                                 <!-- Chat interface -->
                                 <gradio-app 
-                                    src="https://huggingface.co/spaces/Phaelix/eco-explorer-bot"
+                                    src="https://phaelix-eco-explorer-bot.hf.space/"
                                     class="relative w-full h-96 min-h-[400px] rounded-lg border border-slate-700 bg-slate-900/50 backdrop-blur-sm">
                                 </gradio-app>
                                 
@@ -194,8 +214,8 @@
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
                                             </svg>
                                         </div>
-                                        <h4 class="text-white font-semibold mb-1">Expert Knowledge</h4>
-                                        <p class="text-slate-400 text-sm">Complete project documentation and vision</p>
+                                        <h4 class="text-white font-semibold mb-1" data-translate="expertKnowledge">Expert Knowledge</h4>
+                                        <p class="text-slate-400 text-sm" data-translate="expertKnowledgeDesc">Complete project documentation and vision</p>
                                     </div>
                                     <div class="text-center">
                                         <div class="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center mx-auto mb-3">
@@ -203,8 +223,8 @@
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                                             </svg>
                                         </div>
-                                        <h4 class="text-white font-semibold mb-1">Instant Responses</h4>
-                                        <p class="text-slate-400 text-sm">Powered by cutting-edge AI technology</p>
+                                        <h4 class="text-white font-semibold mb-1" data-translate="instantResponses">Instant Responses</h4>
+                                        <p class="text-slate-400 text-sm" data-translate="instantResponsesDesc">Powered by cutting-edge AI technology</p>
                                     </div>
                                     <div class="text-center">
                                         <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl flex items-center justify-center mx-auto mb-3">
@@ -212,12 +232,12 @@
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
                                             </svg>
                                         </div>
-                                        <h4 class="text-white font-semibold mb-1">Secure & Reliable</h4>
-                                        <p class="text-slate-400 text-sm">Enterprise-grade security and privacy</p>
+                                        <h4 class="text-white font-semibold mb-1" data-translate="secureReliable">Secure & Reliable</h4>
+                                        <p class="text-slate-400 text-sm" data-translate="secureReliableDesc">Enterprise-grade security and privacy</p>
                                     </div>
                                 </div>
                                 
-                                <p class="text-slate-300 text-lg leading-relaxed max-w-2xl mx-auto">
+                                <p class="text-slate-300 text-lg leading-relaxed max-w-2xl mx-auto" data-translate="conversationPrompt">
                                     Start a conversation and learn about the Eco-Explorer project. 
                                     <span class="text-blue-400 font-semibold">Ask anything</span> about the game mechanics, vision, or technical architecture.
                                 </p>
@@ -231,18 +251,18 @@
         <!-- Section 3: About -->
         <section id="about" class="py-20 md:py-32">
             <div class="container mx-auto px-6">
-                <h2 class="text-3xl font-bold text-white mb-2 text-center"><span class="gradient-text">02.</span> About Eco-Explorer</h2>
+                <h2 class="text-3xl font-bold text-white mb-2 text-center"><span class="gradient-text">02.</span> <span data-translate="aboutEcoExplorer">About Eco-Explorer</span></h2>
                 <div class="w-24 h-1 bg-blue-500 mx-auto mb-12"></div>
                 
                 <div class="grid grid-cols-1 md:grid-cols-5 gap-12 items-center">
                     <div class="md:col-span-3 text-slate-300 text-lg space-y-4">
-                        <p>
+                        <p data-translate="aboutDescription1">
                             Eco-Explorer represents a revolutionary approach to educational gaming, shifting from a game <em>about</em> an ecosystem to a playable, living ecosystem. Players step into the role of Lead Ecologists in Brazil's Itatiaia National Park, tracking the elusive <span class="text-blue-400 font-semibold">onça pintada</span> (jaguar) and discovering the intricate web of life within one of the country's most vital nature reserves.
                         </p>
-                        <p>
+                        <p data-translate="aboutDescription2">
                             The game combines cutting-edge AI technology with ecological science to create an immersive learning experience. Through dynamic weather systems, procedural content generation, and AI-powered interactions, players discover the wild beauty of the Brazilian rainforest while developing real conservation skills.
                         </p>
-                        <p>Here are the core technologies powering Eco-Explorer:</p>
+                        <p data-translate="coreTechnologies">Here are the core technologies powering Eco-Explorer:</p>
                         <ul class="grid grid-cols-2 gap-2 mt-4">
                             <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>React & TypeScript</li>
                             <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>AI-Powered Interactions</li>
@@ -267,9 +287,9 @@
             
             <div class="container mx-auto px-6 relative z-10">
                 <div class="text-center mb-16">
-                    <h2 class="text-3xl font-bold text-white mb-2"><span class="gradient-text">03.</span> 🐆 Wild Features</h2>
+                    <h2 class="text-3xl font-bold text-white mb-2"><span class="gradient-text">03.</span> <span data-translate="wildFeatures">🐆 Wild Features</span></h2>
                     <div class="w-24 h-1 bg-blue-500 mx-auto mb-4"></div>
-                    <p class="max-w-3xl mx-auto text-xl text-slate-300 leading-relaxed">
+                    <p class="max-w-3xl mx-auto text-xl text-slate-300 leading-relaxed" data-translate="featuresDescription">
                         Core mechanics that make learning about ecology engaging and wild.
                     </p>
                 </div>
@@ -281,8 +301,8 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                             </svg>
                         </div>
-                        <h3 class="text-xl font-semibold text-white mb-3">🐆 Jaguar Tracking</h3>
-                        <p class="text-slate-400">Track the elusive onça pintada through the Brazilian rainforest with advanced AI-powered detection systems.</p>
+                        <h3 class="text-xl font-semibold text-white mb-3" data-translate="jaguarTracking">🐆 Jaguar Tracking</h3>
+                        <p class="text-slate-400" data-translate="jaguarTrackingDesc">Track the elusive onça pintada through the Brazilian rainforest with advanced AI-powered detection systems.</p>
                     </div>
                     <div class="bg-slate-800/50 backdrop-blur-sm p-6 rounded-lg border border-slate-700 hover:border-indigo-500 transition-colors">
                         <div class="w-12 h-12 bg-indigo-500 rounded-lg flex items-center justify-center mb-4">
@@ -290,8 +310,8 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
                             </svg>
                         </div>
-                        <h3 class="text-xl font-semibold text-white mb-3">🌿 Research & Learn</h3>
-                        <p class="text-slate-400">Observe animals to trigger educational quizzes and unlock knowledge about species.</p>
+                        <h3 class="text-xl font-semibold text-white mb-3" data-translate="researchLearn">🌿 Research & Learn</h3>
+                        <p class="text-slate-400" data-translate="researchLearnDesc">Observe animals to trigger educational quizzes and unlock knowledge about species.</p>
                     </div>
                     <div class="bg-slate-800/50 backdrop-blur-sm p-6 rounded-lg border border-slate-700 hover:border-purple-500 transition-colors">
                         <div class="w-12 h-12 bg-purple-500 rounded-lg flex items-center justify-center mb-4">
@@ -299,8 +319,8 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                             </svg>
                         </div>
-                        <h3 class="text-xl font-semibold text-white mb-3">⚡ Master & Progress</h3>
-                        <p class="text-slate-400">Reach mastery levels to unlock special abilities and progress through the ecosystem.</p>
+                        <h3 class="text-xl font-semibold text-white mb-3" data-translate="masterProgress">⚡ Master & Progress</h3>
+                        <p class="text-slate-400" data-translate="masterProgressDesc">Reach mastery levels to unlock special abilities and progress through the ecosystem.</p>
                     </div>
                     <div class="bg-slate-800/50 backdrop-blur-sm p-6 rounded-lg border border-slate-700 hover:border-cyan-500 transition-colors">
                         <div class="w-12 h-12 bg-cyan-500 rounded-lg flex items-center justify-center mb-4">
@@ -308,8 +328,8 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
                             </svg>
                         </div>
-                        <h3 class="text-xl font-semibold text-white mb-3">🌦️ Dynamic Weather</h3>
-                        <p class="text-slate-400">Experience realistic weather patterns that affect wildlife behavior and exploration opportunities.</p>
+                        <h3 class="text-xl font-semibold text-white mb-3" data-translate="dynamicWeather">🌦️ Dynamic Weather</h3>
+                        <p class="text-slate-400" data-translate="dynamicWeatherDesc">Experience realistic weather patterns that affect wildlife behavior and exploration opportunities.</p>
                     </div>
                     <div class="bg-slate-800/50 backdrop-blur-sm p-6 rounded-lg border border-slate-700 hover:border-pink-500 transition-colors">
                         <div class="w-12 h-12 bg-pink-500 rounded-lg flex items-center justify-center mb-4">
@@ -317,8 +337,8 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                             </svg>
                         </div>
-                        <h3 class="text-xl font-semibold text-white mb-3">🤖 AI-Powered Eco-Log</h3>
-                        <p class="text-slate-400">Advanced AI system that adapts to player behavior and provides personalized learning experiences.</p>
+                        <h3 class="text-xl font-semibold text-white mb-3" data-translate="aiPoweredEcoLog">🤖 AI-Powered Eco-Log</h3>
+                        <p class="text-slate-400" data-translate="aiPoweredEcoLogDesc">Advanced AI system that adapts to player behavior and provides personalized learning experiences.</p>
                     </div>
                     <div class="bg-slate-800/50 backdrop-blur-sm p-6 rounded-lg border border-slate-700 hover:border-blue-400 transition-colors">
                         <div class="w-12 h-12 bg-blue-400 rounded-lg flex items-center justify-center mb-4">
@@ -326,8 +346,8 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
                             </svg>
                         </div>
-                        <h3 class="text-xl font-semibold text-white mb-3">🌍 Living World</h3>
-                        <p class="text-slate-400">Procedural generation creates a truly dynamic ecosystem where every interaction matters.</p>
+                        <h3 class="text-xl font-semibold text-white mb-3" data-translate="livingWorld">🌍 Living World</h3>
+                        <p class="text-slate-400" data-translate="livingWorldDesc">Procedural generation creates a truly dynamic ecosystem where every interaction matters.</p>
                     </div>
                 </div>
             </div>
@@ -339,9 +359,9 @@
             
             <div class="container mx-auto px-6 relative z-10">
                 <div class="text-center mb-16">
-                    <h2 class="text-3xl font-bold text-white mb-2"><span class="gradient-text">04.</span> 🐆 Our Wild Vision</h2>
+                    <h2 class="text-3xl font-bold text-white mb-2"><span class="gradient-text">04.</span> <span data-translate="ourWildVision">🐆 Our Wild Vision</span></h2>
                     <div class="w-24 h-1 bg-blue-500 mx-auto mb-4"></div>
-                    <p class="max-w-3xl mx-auto text-xl text-slate-300 leading-relaxed">
+                    <p class="max-w-3xl mx-auto text-xl text-slate-300 leading-relaxed" data-translate="visionDescription">
                         Creating a living, breathing ecosystem simulation that goes beyond traditional educational games.
                     </p>
                 </div>
@@ -351,29 +371,29 @@
                         <div class="flex items-start space-x-4">
                             <div class="w-8 h-8 bg-blue-500 rounded-full flex-shrink-0 mt-1"></div>
                             <div>
-                                <h3 class="text-xl font-semibold text-white mb-2">🌍 Living World</h3>
-                                <p class="text-slate-300">Using AI and procedural generation to create a truly dynamic ecosystem where every interaction matters.</p>
+                                <h3 class="text-xl font-semibold text-white mb-2" data-translate="livingWorldTitle">🌍 Living World</h3>
+                                <p class="text-slate-300" data-translate="livingWorldDesc">Using AI and procedural generation to create a truly dynamic ecosystem where every interaction matters.</p>
                             </div>
                         </div>
                         <div class="flex items-start space-x-4">
                             <div class="w-8 h-8 bg-indigo-500 rounded-full flex-shrink-0 mt-1"></div>
                             <div>
-                                <h3 class="text-xl font-semibold text-white mb-2">🎓 Knowledge-Based Progression</h3>
-                                <p class="text-slate-300">Learning about the ecosystem directly unlocks new areas and abilities, making education intrinsically rewarding.</p>
+                                <h3 class="text-xl font-semibold text-white mb-2" data-translate="knowledgeBasedProgression">🎓 Knowledge-Based Progression</h3>
+                                <p class="text-slate-300" data-translate="knowledgeBasedProgressionDesc">Learning about the ecosystem directly unlocks new areas and abilities, making education intrinsically rewarding.</p>
                             </div>
                         </div>
                         <div class="flex items-start space-x-4">
                             <div class="w-8 h-8 bg-purple-500 rounded-full flex-shrink-0 mt-1"></div>
                             <div>
-                                <h3 class="text-xl font-semibold text-white mb-2">🌿 Real Conservation Impact</h3>
-                                <p class="text-slate-300">Players contribute to real conservation efforts through in-game actions and community engagement.</p>
+                                <h3 class="text-xl font-semibold text-white mb-2" data-translate="realConservationImpact">🌿 Real Conservation Impact</h3>
+                                <p class="text-slate-300" data-translate="realConservationImpactDesc">Players contribute to real conservation efforts through in-game actions and community engagement.</p>
                             </div>
                         </div>
                         <div class="flex items-start space-x-4">
                             <div class="w-8 h-8 bg-pink-500 rounded-full flex-shrink-0 mt-1"></div>
                             <div>
-                                <h3 class="text-xl font-semibold text-white mb-2">🔬 Citizen Science Hub</h3>
-                                <p class="text-slate-300">Building a platform where players can contribute to real scientific research and conservation projects.</p>
+                                <h3 class="text-xl font-semibold text-white mb-2" data-translate="citizenScienceHub">🔬 Citizen Science Hub</h3>
+                                <p class="text-slate-300" data-translate="citizenScienceHubDesc">Building a platform where players can contribute to real scientific research and conservation projects.</p>
                             </div>
                         </div>
                     </div>
@@ -392,9 +412,9 @@
             
             <div class="container mx-auto px-6 relative z-10">
                 <div class="text-center mb-16">
-                    <h2 class="text-3xl font-bold text-white mb-2"><span class="gradient-text">05.</span> 🐆 Get Wild</h2>
+                    <h2 class="text-3xl font-bold text-white mb-2"><span class="gradient-text">05.</span> <span data-translate="getWild">🐆 Get Wild</span></h2>
                     <div class="w-24 h-1 bg-blue-500 mx-auto mb-4"></div>
-                    <p class="max-w-3xl mx-auto text-xl text-slate-300 leading-relaxed">
+                    <p class="max-w-3xl mx-auto text-xl text-slate-300 leading-relaxed" data-translate="contactDescription">
                         Interested in supporting wild educational gaming for conservation? Let's talk about partnerships, investments, or collaboration opportunities.
                     </p>
                 </div>
@@ -442,8 +462,8 @@
     <footer class="bg-slate-900 border-t border-slate-800 py-8">
         <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="text-slate-400 text-sm">
-                    © 2024 Eco-Explorer. All rights reserved.
+                <div class="text-slate-400 text-sm" data-translate="footerCopyright">
+                    © 2025 Eco-Explorer. All Rights Reserved.
                 </div>
                 <div class="flex space-x-6 mt-4 md:mt-0">
                     <a href="#about" class="text-slate-400 hover:text-green-400 transition-colors">About</a>
