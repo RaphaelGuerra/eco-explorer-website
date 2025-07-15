@@ -1,4 +1,4 @@
-/* Enhanced CSS for Eco-Explorer Atlantic Jungle Experience */
+/* Eco-Explorer - Unified Main Styles */
 
 /* Base Styles */
 * {
@@ -10,12 +10,12 @@ html {
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: 'Inter', sans-serif;
+  background-color: #0a0f1a; /* Dark blue-tone */
+  color: #e6f1ff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.6;
-  color: #ffffff;
-  background-color: #111827;
 }
 
 /* Typography */
@@ -30,6 +30,73 @@ h1, h2, h3, h4, h5, h6 {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
+}
+
+/* Gradient Text */
+.gradient-text {
+  background: -webkit-linear-gradient(45deg, #3b82f6, #1d4ed8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glass Effect */
+.glass-effect {
+  background: rgba(10, 15, 26, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+/* Glow Effect */
+.glow-effect {
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.4), 0 0 5px rgba(147, 197, 253, 0.6);
+}
+
+/* Gradient Border */
+.gradient-border {
+  border-radius: 0.75rem;
+  padding: 2px;
+  background: linear-gradient(45deg, rgba(59, 130, 246, 0.3), rgba(147, 197, 253, 0.3));
+  transition: all 0.3s ease;
+}
+
+.gradient-border > div {
+  background-color: #0a0f1a;
+  border-radius: 0.6rem;
+  padding: 2rem;
+}
+
+.gradient-border:hover {
+  background: linear-gradient(45deg, rgba(59, 130, 246, 0.6), rgba(147, 197, 253, 0.6));
+}
+
+/* Wild Pattern Background */
+.wild-pattern {
+  background-image: 
+    radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 80% 80%, rgba(147, 197, 253, 0.08) 0%, transparent 40%),
+    linear-gradient(45deg, transparent 49%, rgba(59, 130, 246, 0.03) 50%, transparent 51%);
+  background-size: 100% 100%, 100% 100%, 30px 30px;
+}
+
+/* Jaguar Spots Pattern */
+.jaguar-spots {
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(59, 130, 246, 0.1) 0%, transparent 20%),
+    radial-gradient(circle at 75% 75%, rgba(147, 197, 253, 0.1) 0%, transparent 20%),
+    radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.05) 0%, transparent 15%);
+  background-size: 60px 60px, 80px 80px, 40px 40px;
+}
+
+/* Wild Glow Animation */
+.wild-glow {
+  animation: wildPulse 3s ease-in-out infinite alternate;
+}
+
+@keyframes wildPulse {
+  0% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
+  100% { box-shadow: 0 0 30px rgba(147, 197, 253, 0.5); }
 }
 
 /* Navigation */
@@ -200,16 +267,100 @@ h1, h2, h3, h4, h5, h6 {
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(5, 150, 105, 0.2));
 }
 
-/* Enhanced borders for jungle feel */
 .border-jungle {
-  border: 1px solid #065f46;
+  border-color: #34d399;
 }
 
 .border-jungle-left {
   border-left: 4px solid #34d399;
+  padding-left: 1rem;
 }
 
-/* Responsive Design */
+/* Language Switcher Styles */
+.language-switcher {
+  position: relative;
+  display: inline-block;
+}
+
+.language-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.5rem;
+  color: white;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.language-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-1px);
+}
+
+.language-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 0.5rem;
+  min-width: 8rem;
+  background: rgba(15, 23, 42, 0.95);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+}
+
+.language-dropdown.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.language-option {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  color: #E2E8F0;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 0.875rem;
+}
+
+.language-option:hover {
+  background: rgba(99, 102, 241, 0.1);
+  color: #A5B4FC;
+}
+
+.language-option.active {
+  background: rgba(99, 102, 241, 0.2);
+  color: #A5B4FC;
+  font-weight: 600;
+}
+
+/* Language Transition Effects */
+[data-translate] {
+  transition: opacity 0.3s ease;
+}
+
+.language-transition {
+  opacity: 0.7;
+}
+
+/* Responsive adjustments */
 @media (max-width: 768px) {
   .container {
     padding: 0 1rem;
@@ -218,11 +369,20 @@ h1, h2, h3, h4, h5, h6 {
   h1 { font-size: 2.5rem; }
   h2 { font-size: 2rem; }
   h3 { font-size: 1.75rem; }
+  
+  .language-switcher {
+    margin-left: auto;
+  }
+  
+  .language-dropdown {
+    right: 0;
+    min-width: 7rem;
+  }
 }
 
 @media (min-width: 768px) {
   .container {
-    padding: 0 1.5rem;
+    padding: 0 2rem;
   }
   
   h1 { font-size: 3rem; }
@@ -232,7 +392,7 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (min-width: 1024px) {
   .container {
-    padding: 0 2rem;
+    padding: 0 3rem;
   }
   
   h1 { font-size: 3.5rem; }
@@ -240,8 +400,9 @@ h1, h2, h3, h4, h5, h6 {
   h3 { font-size: 2.25rem; }
 }
 
-/* Hero section enhancements */
+/* Hero Jungle Styles */
 .hero-jungle {
+  background: linear-gradient(135deg, #065f46 0%, #047857 50%, #059669 100%);
   position: relative;
   overflow: hidden;
 }
@@ -253,34 +414,37 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(45deg, rgba(5, 150, 105, 0.1) 0%, rgba(0, 0, 0, 0.3) 100%);
-  z-index: 1;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="80" r="1.5" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="60" r="1" fill="rgba(255,255,255,0.1)"/></svg>');
+  background-size: 100px 100px;
+  animation: leafSway 4s ease-in-out infinite;
 }
 
-/* Card hover effects for jungle theme */
 .jungle-card {
-  background: linear-gradient(145deg, #1f2937 0%, #111827 100%);
-  border: 1px solid #065f46;
+  background: rgba(31, 41, 55, 0.9);
+  border: 1px solid #34d399;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
   transition: all 0.3s ease;
 }
 
 .jungle-card:hover {
-  border-color: #34d399;
-  box-shadow: 0 20px 40px rgba(5, 150, 105, 0.2);
-  transform: translateY(-8px);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px rgba(52, 211, 153, 0.2);
+  border-color: #10b981;
 }
 
-/* Button jungle styling */
 .btn-jungle {
-  background: linear-gradient(135deg, #059669 0%, #047857 100%);
-  border: none;
+  background: linear-gradient(135deg, #059669, #047857);
   color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
   font-weight: 600;
   transition: all 0.3s ease;
 }
 
 .btn-jungle:hover {
-  background: linear-gradient(135deg, #047857 0%, #065f46 100%);
+  background: linear-gradient(135deg, #047857, #065f46);
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(5, 150, 105, 0.4);
+  box-shadow: 0 10px 25px rgba(52, 211, 153, 0.3);
 } 

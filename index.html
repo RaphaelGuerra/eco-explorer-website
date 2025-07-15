@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eco-Explorer - Wild Educational Gaming</title>
+    <title data-translate="pageTitle">Eco-Explorer - Wild Educational Gaming</title>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐆</text></svg>">
     
     <!-- Tailwind CSS -->
@@ -20,66 +20,13 @@
     <!-- Gradio Web Component -->
     <script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/5.34.2/gradio.js"></script>
     
-    <!-- Multilingual Support -->
-    <script src="translations.js"></script>
-    <script src="language-switcher.js"></script>
-    
     <!-- Custom Styles -->
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0a0f1a; /* Dark blue-tone */
-            color: #e6f1ff;
-        }
-        .gradient-text {
-            background: -webkit-linear-gradient(45deg, #3b82f6, #1d4ed8);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .glass-effect {
-            background: rgba(10, 15, 26, 0.8);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(59, 130, 246, 0.2);
-        }
-        .glow-effect {
-            box-shadow: 0 0 15px rgba(59, 130, 246, 0.4), 0 0 5px rgba(147, 197, 253, 0.6);
-        }
-        .gradient-border {
-            border-radius: 0.75rem;
-            padding: 2px;
-            background: linear-gradient(45deg, rgba(59, 130, 246, 0.3), rgba(147, 197, 253, 0.3));
-            transition: all 0.3s ease;
-        }
-        .gradient-border > div {
-            background-color: #0a0f1a;
-            border-radius: 0.6rem;
-            padding: 2rem;
-        }
-        .gradient-border:hover {
-            background: linear-gradient(45deg, rgba(59, 130, 246, 0.6), rgba(147, 197, 253, 0.6));
-        }
-        .wild-pattern {
-            background-image: 
-                radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.08) 0%, transparent 40%),
-                radial-gradient(circle at 80% 80%, rgba(147, 197, 253, 0.08) 0%, transparent 40%),
-                linear-gradient(45deg, transparent 49%, rgba(59, 130, 246, 0.03) 50%, transparent 51%);
-            background-size: 100% 100%, 100% 100%, 30px 30px;
-        }
-        .jaguar-spots {
-            background-image: 
-                radial-gradient(circle at 25% 25%, rgba(59, 130, 246, 0.1) 0%, transparent 20%),
-                radial-gradient(circle at 75% 75%, rgba(147, 197, 253, 0.1) 0%, transparent 20%),
-                radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.05) 0%, transparent 15%);
-            background-size: 60px 60px, 80px 80px, 40px 40px;
-        }
-        .wild-glow {
-            animation: wildPulse 3s ease-in-out infinite alternate;
-        }
-        @keyframes wildPulse {
-            0% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
-            100% { box-shadow: 0 0 30px rgba(147, 197, 253, 0.5); }
-        }
-    </style>
+    <link rel="stylesheet" href="assets/css/main.css">
+    
+    <!-- Unified i18n System -->
+    <script src="assets/js/i18n.js"></script>
+    <script src="assets/js/language-switcher.js"></script>
+    <script src="assets/js/main.js"></script>
 </head>
 <body class="antialiased">
 
