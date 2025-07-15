@@ -1,85 +1,110 @@
-# Eco-Explorer Website
+# 🐆 Eco-Explorer Website
 
-A professional investor pitch website for Eco-Explorer, an educational simulation game set in Brazil's Itatiaia National Park.
+A wild, blue-toned website for the Eco-Explorer educational gaming project, featuring the elusive onça pintada (jaguar) and an integrated AI chatbot.
 
-## Project Structure
+## 🌟 Features
 
-```
-eco-explorer-website/
-├── index.html                 # Main website file
-├── README.md                  # Project documentation
-├── assets/                    # Static assets
-│   ├── images/               # Image resources
-│   │   ├── hero/            # Hero section images
-│   │   ├── sections/        # Section-specific images
-│   │   ├── icons/           # Custom icons and logos
-│   │   └── backgrounds/     # Background images
-│   ├── css/                 # Stylesheets
-│   │   ├── main.css         # Main stylesheet
-│   │   ├── components.css   # Component-specific styles
-│   │   └── responsive.css   # Responsive design styles
-│   ├── js/                  # JavaScript files
-│   │   ├── main.js          # Main JavaScript functionality
-│   │   ├── navigation.js    # Navigation and scroll handling
-│   │   └── forms.js         # Form handling and validation
-│   └── fonts/               # Custom fonts (if any)
-├── docs/                    # Documentation
-│   ├── technical/           # Technical documentation
-│   ├── design/              # Design system and guidelines
-│   └── content/             # Content strategy and copy
-├── resources/               # External resources and references
-│   ├── research/            # Research materials
-│   ├── references/          # Reference materials
-│   └── assets/              # External asset references
-└── .gitignore              # Git ignore file
+- **Wild Blue Theme** - Unique jaguar-inspired design with blue tones
+- **AI Chatbot Integration** - Embedded Hugging Face Spaces chatbot
+- **Responsive Design** - Works on all devices
+- **Jaguar Focus** - Celebrates Brazil's iconic onça pintada
+- **Educational Gaming** - Showcases conservation through gaming
+
+## 🚀 Quick Start
+
+### Option 1: Simple HTTP Server (Recommended)
+```bash
+# Navigate to the website directory
+cd eco-explorer-website
+
+# Start the local server
+python server.py
+
+# Open your browser to: http://localhost:8000
 ```
 
-## Features
+### Option 2: Python Built-in Server
+```bash
+# Navigate to the website directory
+cd eco-explorer-website
 
-- **Responsive Design**: Mobile-first approach with Tailwind CSS
-- **Smooth Navigation**: Intersection Observer for active section highlighting
-- **Professional Layout**: Clean, modern design optimized for investor presentations
-- **Form Integration**: Netlify form handling for investor inquiries
-- **Performance Optimized**: Optimized images and minimal dependencies
+# Start Python's built-in server
+python -m http.server 8000
 
-## Technologies Used
+# Open your browser to: http://localhost:8000
+```
 
-- HTML5
-- CSS3 (Tailwind CSS)
-- Vanilla JavaScript
-- Netlify Forms
-- Responsive Design Principles
+### Option 3: Live Server (VS Code)
+1. Install the "Live Server" extension in VS Code
+2. Right-click on `index.html`
+3. Select "Open with Live Server"
 
-## Getting Started
+## 🔧 Why Use a Server?
 
-1. Clone the repository
-2. Open `index.html` in a web browser
-3. For development, use a local server (e.g., `python -m http.server 8000`)
+The website needs to be served from a proper HTTP server (not just opening the HTML file) because:
 
-## Deployment
+1. **CORS Issues** - The Hugging Face chatbot embedding requires proper HTTP headers
+2. **Security** - Modern browsers block certain features when opening files directly
+3. **Functionality** - The AI chatbot won't work without proper server setup
 
-The website is designed to be deployed on Netlify with zero configuration:
-- Connect your repository to Netlify
-- Deploy automatically on push to main branch
-- Forms will work out of the box
+## 🐆 AI Chatbot
 
-## Content Sections
+The website embeds the EcoExplorerBot from Hugging Face Spaces:
+- **URL**: https://huggingface.co/spaces/Phaelix/eco-explorer-bot
+- **Features**: Answers questions about Eco-Explorer, jaguars, conservation, and game mechanics
+- **Theme**: Blue-toned interface matching the website
 
-1. **Hero**: Main value proposition and call-to-action
-2. **The Game**: Overview of Eco-Explorer gameplay
-3. **The World**: Itatiaia National Park background
-4. **Gameplay**: Core mechanics and features
-5. **Our Vision**: Technical vision and innovation
-6. **Endgame**: Long-term engagement and community
-7. **Investors**: Contact form for potential partners
+## 🎨 Design Features
 
-## Maintenance
+- **Jaguar Spots Pattern** - Subtle background pattern inspired by onça pintada
+- **Wild Glow Effects** - Animated elements with blue glow
+- **Glass Morphism** - Modern glass-like effects
+- **Responsive Navigation** - Works on mobile and desktop
+- **Gradient Text** - Blue gradient effects throughout
 
-- Update images in `assets/images/`
-- Modify styles in `assets/css/`
-- Update JavaScript functionality in `assets/js/`
-- Keep documentation current in `docs/`
+## 📱 Sections
 
-## License
+1. **Hero** - Wild introduction with jaguar theme
+2. **AI Assistant** - Embedded chatbot for questions
+3. **About** - Project overview and technology stack
+4. **Wild Features** - Game mechanics and capabilities
+5. **Vision** - Future goals and impact
+6. **Contact** - Get involved and connect
 
-© 2024 Eco-Explorer Game Studios. All Rights Reserved.
+## 🌿 Conservation Focus
+
+The website emphasizes:
+- Brazilian rainforest conservation
+- Jaguar (onça pintada) protection
+- Educational gaming for environmental awareness
+- Citizen science and real conservation impact
+
+## 🛠️ Technical Stack
+
+- **HTML5** - Semantic markup
+- **Tailwind CSS** - Utility-first styling
+- **Gradio** - AI chatbot integration
+- **Hugging Face Spaces** - Hosted AI application
+- **Python** - Local development server
+
+## 🚨 Troubleshooting
+
+### Chatbot Not Loading?
+- Make sure you're using a proper HTTP server (not just opening the HTML file)
+- Check that the Hugging Face Spaces URL is accessible
+- Try refreshing the page
+
+### CORS Errors?
+- Use the provided `server.py` script
+- Don't open the HTML file directly in the browser
+- Ensure you're accessing via `http://localhost:8000`
+
+### Port Already in Use?
+```bash
+# Try a different port
+python server.py --port 8001
+```
+
+## 🌍 Live Demo
+
+The website is designed to showcase the Eco-Explorer project and provide an interactive way to learn about conservation through educational gaming, with a special focus on Brazil's iconic jaguar.

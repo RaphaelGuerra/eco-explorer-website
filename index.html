@@ -3,104 +3,224 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eco-Explorer | Educational Gaming</title>
+    <title>Eco-Explorer - Wild Educational Gaming</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐆</text></svg>">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-
+    
     <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Gradio for AI Chatbot -->
+    <script type="module" crossorigin src="https://cdn.jsdelivr.net/npm/@gradio/app@4.44.0/dist/index.js"></script>
+    
+    <!-- Gradio Web Component -->
+    <script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/5.34.2/gradio.js"></script>
+    
     <!-- Custom Styles -->
-    <link rel="stylesheet" href="assets/css/main.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0f1a; /* Dark blue-tone */
+            color: #e6f1ff;
+        }
+        .gradient-text {
+            background: -webkit-linear-gradient(45deg, #3b82f6, #1d4ed8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .glass-effect {
+            background: rgba(10, 15, 26, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+        }
+        .glow-effect {
+            box-shadow: 0 0 15px rgba(59, 130, 246, 0.4), 0 0 5px rgba(147, 197, 253, 0.6);
+        }
+        .gradient-border {
+            border-radius: 0.75rem;
+            padding: 2px;
+            background: linear-gradient(45deg, rgba(59, 130, 246, 0.3), rgba(147, 197, 253, 0.3));
+            transition: all 0.3s ease;
+        }
+        .gradient-border > div {
+            background-color: #0a0f1a;
+            border-radius: 0.6rem;
+            padding: 2rem;
+        }
+        .gradient-border:hover {
+            background: linear-gradient(45deg, rgba(59, 130, 246, 0.6), rgba(147, 197, 253, 0.6));
+        }
+        .wild-pattern {
+            background-image: 
+                radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 80% 80%, rgba(147, 197, 253, 0.08) 0%, transparent 40%),
+                linear-gradient(45deg, transparent 49%, rgba(59, 130, 246, 0.03) 50%, transparent 51%);
+            background-size: 100% 100%, 100% 100%, 30px 30px;
+        }
+        .jaguar-spots {
+            background-image: 
+                radial-gradient(circle at 25% 25%, rgba(59, 130, 246, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 75% 75%, rgba(147, 197, 253, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.05) 0%, transparent 15%);
+            background-size: 60px 60px, 80px 80px, 40px 40px;
+        }
+        .wild-glow {
+            animation: wildPulse 3s ease-in-out infinite alternate;
+        }
+        @keyframes wildPulse {
+            0% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
+            100% { box-shadow: 0 0 30px rgba(147, 197, 253, 0.5); }
+        }
+    </style>
 </head>
-<body class="bg-gray-900 text-white font-sans">
+<body class="antialiased">
 
-    <!-- Header -->
-    <header class="fixed top-0 left-0 right-0 z-50 bg-gray-900/90 backdrop-blur-sm border-b border-gray-800">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="flex items-center justify-between h-16">
-                <a href="#home" class="flex items-center space-x-2">
-                    <svg class="w-8 h-8 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
-                    </svg>
-                    <span class="text-xl font-bold text-white">Eco-Explorer</span>
+    <!-- Header Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-effect">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold tracking-tighter text-white">
+                Eco<span class="gradient-text">Explorer</span> 🐆
+            </h1>
+            <nav class="hidden md:flex space-x-6 items-center">
+                <a href="#about" class="text-slate-300 hover:text-blue-400 transition-colors">About</a>
+                <a href="#chatbot" class="text-slate-300 hover:text-blue-400 transition-colors">AI Assistant</a>
+                <a href="#features" class="text-slate-300 hover:text-blue-400 transition-colors">Features</a>
+                <a href="#vision" class="text-slate-300 hover:text-blue-400 transition-colors">Vision</a>
+                <a href="#contact" class="bg-blue-500 text-white font-semibold px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors glow-effect">
+                    Contact
                 </a>
-                <nav class="hidden md:flex items-center space-x-8">
-                    <a href="#about" class="text-sm font-medium text-gray-300 hover:text-emerald-400 transition-colors">About</a>
-                    <a href="#features" class="text-sm font-medium text-gray-300 hover:text-emerald-400 transition-colors">Features</a>
-                    <a href="#vision" class="text-sm font-medium text-gray-300 hover:text-emerald-400 transition-colors">Vision</a>
-                    <a href="#contact" class="text-sm font-medium text-gray-300 hover:text-emerald-400 transition-colors">Contact</a>
-                </nav>
-                <button id="mobile-menu-button" class="md:hidden text-gray-300 hover:text-white">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
-            </div>
+            </nav>
+            <button id="menu-btn" class="md:hidden focus:outline-none">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
         </div>
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-gray-800 border-t border-gray-700">
-            <nav class="flex flex-col py-4">
-                <a href="#about" class="px-4 py-2 text-gray-300 hover:text-emerald-400 hover:bg-gray-700 transition-colors">About</a>
-                <a href="#features" class="px-4 py-2 text-gray-300 hover:text-emerald-400 hover:bg-gray-700 transition-colors">Features</a>
-                <a href="#vision" class="px-4 py-2 text-gray-300 hover:text-emerald-400 hover:bg-gray-700 transition-colors">Vision</a>
-                <a href="#contact" class="px-4 py-2 text-gray-300 hover:text-emerald-400 hover:bg-gray-700 transition-colors">Contact</a>
-            </nav>
+        <div id="mobile-menu" class="hidden md:hidden glass-effect">
+            <a href="#about" class="block py-2 px-6 text-slate-300 hover:bg-slate-800">About</a>
+            <a href="#chatbot" class="block py-2 px-6 text-slate-300 hover:bg-slate-800">AI Assistant</a>
+            <a href="#features" class="block py-2 px-6 text-slate-300 hover:bg-slate-800">Features</a>
+            <a href="#vision" class="block py-2 px-6 text-slate-300 hover:bg-slate-800">Vision</a>
+            <a href="#contact" class="block py-2 px-6 text-slate-300 hover:bg-slate-800">Contact</a>
         </div>
     </header>
 
-    <main class="pt-16">
-        <!-- Hero Section -->
-        <section id="home" class="relative min-h-screen flex items-center justify-center text-center">
-            <div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-emerald-900"></div>
-            <div class="relative z-10 max-w-4xl mx-auto px-4">
-                <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">
-                    Educational Gaming for Conservation
-                </h1>
-                <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto">
-                    Explore Brazil's Itatiaia National Park through an immersive simulation game that teaches ecology and conservation.
-                </p>
-                <a href="#about" class="inline-block bg-emerald-500 text-white font-semibold py-3 px-8 rounded-lg hover:bg-emerald-600 transition-colors">
-                    Learn More
-                </a>
+    <main>
+        <!-- Section 1: Hero -->
+        <section id="hero" class="min-h-screen flex items-center pt-24 pb-12 relative overflow-hidden">
+            <div class="absolute inset-0 wild-pattern"></div>
+            <div class="absolute inset-0 jaguar-spots"></div>
+            
+            <!-- Floating wild elements -->
+            <div class="absolute inset-0 overflow-hidden pointer-events-none">
+                <div class="absolute top-20 left-10 w-4 h-4 bg-blue-400 rounded-full animate-pulse wild-glow" style="animation-delay: 0s;"></div>
+                <div class="absolute top-40 right-20 w-3 h-3 bg-indigo-400 rounded-full animate-pulse wild-glow" style="animation-delay: 1s;"></div>
+                <div class="absolute bottom-20 left-20 w-2 h-2 bg-blue-300 rounded-full animate-pulse wild-glow" style="animation-delay: 2s;"></div>
+                <div class="absolute bottom-40 right-10 w-3 h-3 bg-indigo-300 rounded-full animate-pulse wild-glow" style="animation-delay: 3s;"></div>
+                <!-- Jaguar silhouette -->
+                <div class="absolute top-1/2 right-10 w-32 h-16 opacity-10">
+                    <svg viewBox="0 0 100 50" fill="currentColor" class="text-blue-400">
+                        <path d="M20,25 Q30,15 40,25 Q50,35 60,25 Q70,15 80,25 L80,30 Q70,40 60,30 Q50,20 40,30 Q30,40 20,30 Z"/>
+                    </svg>
+                </div>
+            </div>
+            
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="max-w-3xl">
+                    <h2 class="text-lg font-semibold text-blue-400 tracking-wider mb-4">🐆 WILD EDUCATIONAL GAMING</h2>
+                    <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tighter mb-4">
+                        Eco<span class="gradient-text">Explorer</span>
+                    </h1>
+                    <h3 class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-slate-400 tracking-tighter mb-6">
+                        Where the wild meets wisdom.
+                    </h3>
+                    <p class="max-w-xl text-xl text-slate-300 leading-relaxed mb-8">
+                        An immersive educational simulation where you become a Lead Ecologist in Brazil's <span class="text-blue-400 font-semibold">Itatiaia National Park</span>. Track the elusive <span class="text-blue-400 font-semibold">onça pintada</span> (jaguar) and discover a living ecosystem with AI-powered features, dynamic weather, and real conservation impact.
+                    </p>
+                    <a href="#chatbot" class="bg-transparent border-2 border-blue-400 text-blue-400 font-bold text-lg px-8 py-4 rounded-lg hover:bg-blue-400 hover:text-slate-900 transition-all duration-300 wild-glow">
+                        🐆 Hunt for Knowledge!
+                    </a>
+                </div>
             </div>
         </section>
-
-        <!-- About Section -->
-        <section id="about" class="py-20 bg-gray-800">
-            <div class="max-w-6xl mx-auto px-4">
+        
+        <!-- Section 2: AI Chatbot -->
+        <section id="chatbot" class="py-20 md:py-32 relative">
+            <div class="absolute inset-0 wild-pattern"></div>
+        
+            <div class="container mx-auto px-6 relative z-10">
                 <div class="text-center mb-16">
-                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">About Eco-Explorer</h2>
-                    <p class="text-xl text-gray-300 max-w-3xl mx-auto">
-                        An educational simulation game where players become Lead Ecologists in Brazil's Itatiaia National Park.
+                    <div class="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-500/20 to-indigo-500/20 px-4 py-2 rounded-full border border-blue-500/30 mb-6">
+                        <div class="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
+                        <span class="text-blue-400 text-sm font-semibold tracking-wider">🐆 LIVE AI DEMO</span>
+                    </div>
+                    <h2 class="text-3xl font-bold text-white mb-2"><span class="gradient-text">01.</span> AI Assistant</h2>
+                    <div class="w-24 h-1 bg-blue-500 mx-auto mb-4"></div>
+                    <p class="max-w-3xl mx-auto text-xl text-slate-300 leading-relaxed">
+                        Have questions about the Eco-Explorer project? Ask our AI-powered assistant, trained on the complete project documentation and vision.
                     </p>
                 </div>
-                <div class="grid md:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <img src="https://images.pexels.com/photos/145939/pexels-photo-145939.jpeg?auto=compress&cs=tinysrgb&w=800" 
-                             alt="Forest landscape" 
-                             class="rounded-lg shadow-lg w-full h-64 object-cover">
-                    </div>
-                    <div class="space-y-6">
-                        <p class="text-lg text-gray-300 leading-relaxed">
-                            Eco-Explorer drops players into the heart of one of Brazil's most vital nature reserves. 
-                            The mission is to explore, research, and understand the intricate web of life within the park.
-                        </p>
-                        <div class="space-y-4">
-                            <div class="flex items-start space-x-3">
-                                <div class="w-6 h-6 bg-emerald-500 rounded-full flex-shrink-0 mt-1"></div>
-                                <p class="text-gray-300">Role-play as a Lead Ecologist driving research and conservation</p>
+                
+                <div class="max-w-4xl mx-auto">
+                    <div class="gradient-border">
+                        <div>
+                            <div class="relative">
+                                <div class="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-indigo-500/10 rounded-lg blur-xl"></div>
+                                
+                                <!-- Chat interface -->
+                                <gradio-app 
+                                    src="https://huggingface.co/spaces/Phaelix/eco-explorer-bot"
+                                    class="relative w-full h-96 min-h-[400px] rounded-lg border border-slate-700 bg-slate-900/50 backdrop-blur-sm">
+                                </gradio-app>
+                                
+                                <!-- Floating status indicator -->
+                                <div class="absolute -top-2 -right-2 bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-3 py-1 rounded-full text-sm font-bold shadow-lg flex items-center space-x-2">
+                                    <div class="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+                                    <span>🐆 ONLINE</span>
+                                </div>
                             </div>
-                            <div class="flex items-start space-x-3">
-                                <div class="w-6 h-6 bg-emerald-500 rounded-full flex-shrink-0 mt-1"></div>
-                                <p class="text-gray-300">Experience dynamic day/night cycles and weather systems</p>
-                            </div>
-                            <div class="flex items-start space-x-3">
-                                <div class="w-6 h-6 bg-emerald-500 rounded-full flex-shrink-0 mt-1"></div>
-                                <p class="text-gray-300">Unlock knowledge through research and exploration</p>
+                            
+                            <!-- Enhanced Description -->
+                            <div class="mt-8 text-center">
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                                    <div class="text-center">
+                                        <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center mx-auto mb-3">
+                                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                                            </svg>
+                                        </div>
+                                        <h4 class="text-white font-semibold mb-1">Expert Knowledge</h4>
+                                        <p class="text-slate-400 text-sm">Complete project documentation and vision</p>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center mx-auto mb-3">
+                                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                            </svg>
+                                        </div>
+                                        <h4 class="text-white font-semibold mb-1">Instant Responses</h4>
+                                        <p class="text-slate-400 text-sm">Powered by cutting-edge AI technology</p>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl flex items-center justify-center mx-auto mb-3">
+                                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                                            </svg>
+                                        </div>
+                                        <h4 class="text-white font-semibold mb-1">Secure & Reliable</h4>
+                                        <p class="text-slate-400 text-sm">Enterprise-grade security and privacy</p>
+                                    </div>
+                                </div>
+                                
+                                <p class="text-slate-300 text-lg leading-relaxed max-w-2xl mx-auto">
+                                    Start a conversation and learn about the Eco-Explorer project. 
+                                    <span class="text-blue-400 font-semibold">Ask anything</span> about the game mechanics, vision, or technical architecture.
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -108,70 +228,152 @@
             </div>
         </section>
 
-        <!-- Features Section -->
-        <section id="features" class="py-20 bg-gray-900">
-            <div class="max-w-6xl mx-auto px-4">
+        <!-- Section 3: About -->
+        <section id="about" class="py-20 md:py-32">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-white mb-2 text-center"><span class="gradient-text">02.</span> About Eco-Explorer</h2>
+                <div class="w-24 h-1 bg-blue-500 mx-auto mb-12"></div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-12 items-center">
+                    <div class="md:col-span-3 text-slate-300 text-lg space-y-4">
+                        <p>
+                            Eco-Explorer represents a revolutionary approach to educational gaming, shifting from a game <em>about</em> an ecosystem to a playable, living ecosystem. Players step into the role of Lead Ecologists in Brazil's Itatiaia National Park, tracking the elusive <span class="text-blue-400 font-semibold">onça pintada</span> (jaguar) and discovering the intricate web of life within one of the country's most vital nature reserves.
+                        </p>
+                        <p>
+                            The game combines cutting-edge AI technology with ecological science to create an immersive learning experience. Through dynamic weather systems, procedural content generation, and AI-powered interactions, players discover the wild beauty of the Brazilian rainforest while developing real conservation skills.
+                        </p>
+                        <p>Here are the core technologies powering Eco-Explorer:</p>
+                        <ul class="grid grid-cols-2 gap-2 mt-4">
+                            <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>React & TypeScript</li>
+                            <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>AI-Powered Interactions</li>
+                            <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>Procedural Generation</li>
+                            <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>Dynamic Weather</li>
+                            <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>Agent-Based AI</li>
+                            <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>Conservation Science</li>
+                        </ul>
+                    </div>
+                    <div class="md:col-span-2">
+                        <img src="https://images.pexels.com/photos/145939/pexels-photo-145939.jpeg?auto=compress&cs=tinysrgb&w=800" 
+                             alt="Itatiaia National Park" 
+                             class="rounded-lg shadow-lg w-full h-64 object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Features -->
+        <section id="features" class="py-20 md:py-32 relative">
+            <div class="absolute inset-0 wild-pattern"></div>
+            
+            <div class="container mx-auto px-6 relative z-10">
                 <div class="text-center mb-16">
-                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Game Features</h2>
-                    <p class="text-xl text-gray-300 max-w-3xl mx-auto">
-                        Core mechanics that make learning about ecology engaging and rewarding.
+                    <h2 class="text-3xl font-bold text-white mb-2"><span class="gradient-text">03.</span> 🐆 Wild Features</h2>
+                    <div class="w-24 h-1 bg-blue-500 mx-auto mb-4"></div>
+                    <p class="max-w-3xl mx-auto text-xl text-slate-300 leading-relaxed">
+                        Core mechanics that make learning about ecology engaging and wild.
                     </p>
                 </div>
+                
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="bg-gray-800 p-6 rounded-lg">
-                        <div class="w-12 h-12 bg-emerald-500 rounded-lg flex items-center justify-center mb-4">
+                    <div class="bg-slate-800/50 backdrop-blur-sm p-6 rounded-lg border border-slate-700 hover:border-blue-500 transition-colors">
+                        <div class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mb-4">
                             <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                             </svg>
                         </div>
-                        <h3 class="text-xl font-semibold text-white mb-3">Explore & Discover</h3>
-                        <p class="text-gray-400">Venture into the park to find species with a dynamic encounter system influenced by weather and time.</p>
+                        <h3 class="text-xl font-semibold text-white mb-3">🐆 Jaguar Tracking</h3>
+                        <p class="text-slate-400">Track the elusive onça pintada through the Brazilian rainforest with advanced AI-powered detection systems.</p>
                     </div>
-                    <div class="bg-gray-800 p-6 rounded-lg">
-                        <div class="w-12 h-12 bg-emerald-500 rounded-lg flex items-center justify-center mb-4">
+                    <div class="bg-slate-800/50 backdrop-blur-sm p-6 rounded-lg border border-slate-700 hover:border-indigo-500 transition-colors">
+                        <div class="w-12 h-12 bg-indigo-500 rounded-lg flex items-center justify-center mb-4">
                             <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
                             </svg>
                         </div>
-                        <h3 class="text-xl font-semibold text-white mb-3">Research & Learn</h3>
-                        <p class="text-gray-400">Observe animals to trigger educational quizzes and unlock knowledge about species.</p>
+                        <h3 class="text-xl font-semibold text-white mb-3">🌿 Research & Learn</h3>
+                        <p class="text-slate-400">Observe animals to trigger educational quizzes and unlock knowledge about species.</p>
                     </div>
-                    <div class="bg-gray-800 p-6 rounded-lg">
-                        <div class="w-12 h-12 bg-emerald-500 rounded-lg flex items-center justify-center mb-4">
+                    <div class="bg-slate-800/50 backdrop-blur-sm p-6 rounded-lg border border-slate-700 hover:border-purple-500 transition-colors">
+                        <div class="w-12 h-12 bg-purple-500 rounded-lg flex items-center justify-center mb-4">
                             <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                             </svg>
                         </div>
-                        <h3 class="text-xl font-semibold text-white mb-3">Master & Progress</h3>
-                        <p class="text-gray-400">Reach mastery levels to unlock special abilities and progress through the ecosystem.</p>
+                        <h3 class="text-xl font-semibold text-white mb-3">⚡ Master & Progress</h3>
+                        <p class="text-slate-400">Reach mastery levels to unlock special abilities and progress through the ecosystem.</p>
+                    </div>
+                    <div class="bg-slate-800/50 backdrop-blur-sm p-6 rounded-lg border border-slate-700 hover:border-cyan-500 transition-colors">
+                        <div class="w-12 h-12 bg-cyan-500 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white mb-3">🌦️ Dynamic Weather</h3>
+                        <p class="text-slate-400">Experience realistic weather patterns that affect wildlife behavior and exploration opportunities.</p>
+                    </div>
+                    <div class="bg-slate-800/50 backdrop-blur-sm p-6 rounded-lg border border-slate-700 hover:border-pink-500 transition-colors">
+                        <div class="w-12 h-12 bg-pink-500 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white mb-3">🤖 AI-Powered Eco-Log</h3>
+                        <p class="text-slate-400">Advanced AI system that adapts to player behavior and provides personalized learning experiences.</p>
+                    </div>
+                    <div class="bg-slate-800/50 backdrop-blur-sm p-6 rounded-lg border border-slate-700 hover:border-blue-400 transition-colors">
+                        <div class="w-12 h-12 bg-blue-400 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white mb-3">🌍 Living World</h3>
+                        <p class="text-slate-400">Procedural generation creates a truly dynamic ecosystem where every interaction matters.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Vision Section -->
-        <section id="vision" class="py-20 bg-gray-800">
-            <div class="max-w-6xl mx-auto px-4">
+        <!-- Section 5: Vision -->
+        <section id="vision" class="py-20 md:py-32 relative">
+            <div class="absolute inset-0 wild-pattern"></div>
+            
+            <div class="container mx-auto px-6 relative z-10">
                 <div class="text-center mb-16">
-                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Our Vision</h2>
-                    <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    <h2 class="text-3xl font-bold text-white mb-2"><span class="gradient-text">04.</span> 🐆 Our Wild Vision</h2>
+                    <div class="w-24 h-1 bg-blue-500 mx-auto mb-4"></div>
+                    <p class="max-w-3xl mx-auto text-xl text-slate-300 leading-relaxed">
                         Creating a living, breathing ecosystem simulation that goes beyond traditional educational games.
                     </p>
                 </div>
+                
                 <div class="grid md:grid-cols-2 gap-12">
                     <div class="space-y-6">
                         <div class="flex items-start space-x-4">
-                            <div class="w-8 h-8 bg-emerald-500 rounded-full flex-shrink-0 mt-1"></div>
+                            <div class="w-8 h-8 bg-blue-500 rounded-full flex-shrink-0 mt-1"></div>
                             <div>
-                                <h3 class="text-xl font-semibold text-white mb-2">Living World</h3>
-                                <p class="text-gray-300">Using AI and procedural generation to create a truly dynamic ecosystem where every interaction matters.</p>
+                                <h3 class="text-xl font-semibold text-white mb-2">🌍 Living World</h3>
+                                <p class="text-slate-300">Using AI and procedural generation to create a truly dynamic ecosystem where every interaction matters.</p>
                             </div>
                         </div>
                         <div class="flex items-start space-x-4">
-                            <div class="w-8 h-8 bg-emerald-500 rounded-full flex-shrink-0 mt-1"></div>
+                            <div class="w-8 h-8 bg-indigo-500 rounded-full flex-shrink-0 mt-1"></div>
                             <div>
-                                <h3 class="text-xl font-semibold text-white mb-2">Knowledge-Based Progression</h3>
-                                <p class="text-gray-300">Learning about the ecosystem directly unlocks new areas and abilities, making education intrinsically rewarding.</p>
+                                <h3 class="text-xl font-semibold text-white mb-2">🎓 Knowledge-Based Progression</h3>
+                                <p class="text-slate-300">Learning about the ecosystem directly unlocks new areas and abilities, making education intrinsically rewarding.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 bg-purple-500 rounded-full flex-shrink-0 mt-1"></div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-white mb-2">🌿 Real Conservation Impact</h3>
+                                <p class="text-slate-300">Players contribute to real conservation efforts through in-game actions and community engagement.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 bg-pink-500 rounded-full flex-shrink-0 mt-1"></div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-white mb-2">🔬 Citizen Science Hub</h3>
+                                <p class="text-slate-300">Building a platform where players can contribute to real scientific research and conservation projects.</p>
                             </div>
                         </div>
                     </div>
@@ -184,44 +386,52 @@
             </div>
         </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="py-20 bg-gray-900">
-            <div class="max-w-4xl mx-auto px-4">
+        <!-- Section 6: Contact -->
+        <section id="contact" class="py-20 md:py-32 relative">
+            <div class="absolute inset-0 wild-pattern"></div>
+            
+            <div class="container mx-auto px-6 relative z-10">
                 <div class="text-center mb-16">
-                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Get In Touch</h2>
-                    <p class="text-xl text-gray-300">
-                        Interested in supporting educational gaming for conservation? Let's talk.
+                    <h2 class="text-3xl font-bold text-white mb-2"><span class="gradient-text">05.</span> 🐆 Get Wild</h2>
+                    <div class="w-24 h-1 bg-blue-500 mx-auto mb-4"></div>
+                    <p class="max-w-3xl mx-auto text-xl text-slate-300 leading-relaxed">
+                        Interested in supporting wild educational gaming for conservation? Let's talk about partnerships, investments, or collaboration opportunities.
                     </p>
                 </div>
-                <div class="bg-gray-800 p-8 rounded-lg">
-                    <form name="contact" method="POST" data-netlify="true" class="space-y-6">
-                        <input type="hidden" name="form-name" value="contact" />
-                        <div class="grid md:grid-cols-2 gap-6">
-                            <div>
-                                <label for="name" class="block text-sm font-medium text-gray-300 mb-2">Name</label>
-                                <input type="text" name="name" id="name" required 
-                                       class="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-3 text-white focus:ring-2 focus:ring-emerald-500 focus:border-transparent">
+                
+                <div class="max-w-4xl mx-auto">
+                    <div class="bg-slate-800/50 backdrop-blur-sm p-8 rounded-lg border border-slate-700">
+                        <form name="contact" method="POST" data-netlify="true" class="space-y-6">
+                            <input type="hidden" name="form-name" value="contact" />
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="name" class="block text-sm font-medium text-slate-300 mb-2">Name</label>
+                                    <input type="text" id="name" name="name" required 
+                                           class="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-green-500">
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-sm font-medium text-slate-300 mb-2">Email</label>
+                                    <input type="email" id="email" name="email" required 
+                                           class="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-green-500">
+                                </div>
                             </div>
                             <div>
-                                <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email</label>
-                                <input type="email" name="email" id="email" required 
-                                       class="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-3 text-white focus:ring-2 focus:ring-emerald-500 focus:border-transparent">
+                                <label for="subject" class="block text-sm font-medium text-slate-300 mb-2">Subject</label>
+                                <input type="text" id="subject" name="subject" required 
+                                       class="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-green-500">
                             </div>
-                        </div>
-                        <div>
-                            <label for="message" class="block text-sm font-medium text-gray-300 mb-2">Message</label>
-                            <textarea name="message" id="message" rows="4" required 
-                                      class="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-3 text-white focus:ring-2 focus:ring-emerald-500 focus:border-transparent"></textarea>
-                        </div>
-                        <div class="text-center">
-                            <button type="submit" 
-                                    class="bg-emerald-500 text-white font-semibold py-3 px-8 rounded-lg hover:bg-emerald-600 transition-colors">
-                                Send Message
-                            </button>
-                        </div>
-                    </form>
-                    <div id="form-success-message" class="hidden mt-6 text-center text-emerald-400 bg-emerald-900/50 p-4 rounded-lg">
-                        Thank you for your message! We'll get back to you soon.
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-slate-300 mb-2">Message</label>
+                                <textarea id="message" name="message" rows="6" required 
+                                          class="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-green-500"></textarea>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" 
+                                        class="bg-green-500 text-white font-semibold px-8 py-3 rounded-lg hover:bg-green-600 transition-colors glow-effect">
+                                    Send Message
+                                </button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -229,14 +439,53 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 border-t border-gray-800 py-8">
-        <div class="max-w-6xl mx-auto px-4 text-center">
-            <p class="text-gray-400">&copy; 2024 Eco-Explorer. All rights reserved.</p>
+    <footer class="bg-slate-900 border-t border-slate-800 py-8">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="text-slate-400 text-sm">
+                    © 2024 Eco-Explorer. All rights reserved.
+                </div>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#about" class="text-slate-400 hover:text-green-400 transition-colors">About</a>
+                    <a href="#features" class="text-slate-400 hover:text-green-400 transition-colors">Features</a>
+                    <a href="#vision" class="text-slate-400 hover:text-green-400 transition-colors">Vision</a>
+                    <a href="#contact" class="text-slate-400 hover:text-green-400 transition-colors">Contact</a>
+                </div>
+            </div>
         </div>
     </footer>
-    
-    <!-- JavaScript -->
-    <script src="assets/js/main.js"></script>
 
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Close mobile menu when clicking on a link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>

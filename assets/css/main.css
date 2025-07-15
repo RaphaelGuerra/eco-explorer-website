@@ -1,4 +1,4 @@
-/* Simplified CSS for Eco-Explorer Website */
+/* Enhanced CSS for Eco-Explorer Atlantic Jungle Experience */
 
 /* Base Styles */
 * {
@@ -60,13 +60,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-primary {
-  background-color: #34d399;
+  background-color: #059669;
   color: #ffffff;
 }
 
 .btn-primary:hover {
-  background-color: #059669;
+  background-color: #047857;
   transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(5, 150, 105, 0.3);
 }
 
 /* Cards */
@@ -76,11 +77,13 @@ h1, h2, h3, h4, h5, h6 {
   padding: 1.5rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
+  border: 1px solid #065f46;
 }
 
 .card:hover {
   transform: translateY(-4px);
   box-shadow: 0 20px 25px rgba(0, 0, 0, 0.2);
+  border-color: #34d399;
 }
 
 /* Forms */
@@ -133,6 +136,17 @@ h1, h2, h3, h4, h5, h6 {
   animation: fadeInUp 0.6s ease-out;
 }
 
+/* Jungle-specific animations */
+@keyframes leafSway {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(2deg); }
+}
+
+@keyframes mistFloat {
+  0%, 100% { opacity: 0.3; transform: translateY(0px); }
+  50% { opacity: 0.6; transform: translateY(-10px); }
+}
+
 /* Section Spacing */
 .section {
   padding: 5rem 0;
@@ -177,6 +191,24 @@ h1, h2, h3, h4, h5, h6 {
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
 }
 
+/* Jungle-themed gradients */
+.jungle-gradient {
+  background: linear-gradient(135deg, #065f46 0%, #047857 50%, #059669 100%);
+}
+
+.jungle-overlay {
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(5, 150, 105, 0.2));
+}
+
+/* Enhanced borders for jungle feel */
+.border-jungle {
+  border: 1px solid #065f46;
+}
+
+.border-jungle-left {
+  border-left: 4px solid #34d399;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .container {
@@ -206,4 +238,49 @@ h1, h2, h3, h4, h5, h6 {
   h1 { font-size: 3.5rem; }
   h2 { font-size: 3rem; }
   h3 { font-size: 2.25rem; }
+}
+
+/* Hero section enhancements */
+.hero-jungle {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-jungle::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(5, 150, 105, 0.1) 0%, rgba(0, 0, 0, 0.3) 100%);
+  z-index: 1;
+}
+
+/* Card hover effects for jungle theme */
+.jungle-card {
+  background: linear-gradient(145deg, #1f2937 0%, #111827 100%);
+  border: 1px solid #065f46;
+  transition: all 0.3s ease;
+}
+
+.jungle-card:hover {
+  border-color: #34d399;
+  box-shadow: 0 20px 40px rgba(5, 150, 105, 0.2);
+  transform: translateY(-8px);
+}
+
+/* Button jungle styling */
+.btn-jungle {
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  border: none;
+  color: white;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-jungle:hover {
+  background: linear-gradient(135deg, #047857 0%, #065f46 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(5, 150, 105, 0.4);
 } 
