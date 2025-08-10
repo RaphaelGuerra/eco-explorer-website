@@ -12,18 +12,7 @@ A wild, blue-toned website for the Eco-Explorer educational gaming project, feat
 
 ## 🚀 Quick Start
 
-### Option 1: Simple HTTP Server (Recommended)
-```bash
-# Navigate to the website directory
-cd eco-explorer-website
-
-# Start the local server
-python server.py
-
-# Open your browser to: http://localhost:8000
-```
-
-### Option 2: Python Built-in Server
+### Option 1: Python Built-in Server
 ```bash
 # Navigate to the website directory
 cd eco-explorer-website
@@ -34,7 +23,7 @@ python -m http.server 8000
 # Open your browser to: http://localhost:8000
 ```
 
-### Option 3: Live Server (VS Code)
+### Option 2: Live Server (VS Code)
 1. Install the "Live Server" extension in VS Code
 2. Right-click on `index.html`
 3. Select "Open with Live Server"
@@ -95,14 +84,13 @@ The website emphasizes:
 - Try refreshing the page
 
 ### CORS Errors?
-- Use the provided `server.py` script
-- Don't open the HTML file directly in the browser
+- Don't open the HTML file directly in the browser (use a local HTTP server)
 - Ensure you're accessing via `http://localhost:8000`
 
 ### Port Already in Use?
 ```bash
 # Try a different port
-python server.py --port 8001
+python -m http.server 8001
 ```
 
 ## 🌍 Live Demo
