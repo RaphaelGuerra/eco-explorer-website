@@ -158,6 +158,10 @@ class LanguageSwitcher {
     async changeLanguage(lang) {
         if (window.i18n) {
             await window.i18n.setLanguage(lang);
+            // Ensure all nodes update immediately
+            if (typeof window.i18n.translatePageWithTransition === 'function') {
+                window.i18n.translatePageWithTransition();
+            }
         }
     }
 

@@ -100,7 +100,9 @@ class I18nManager {
         this.updateURL();
         
         // Dispatch custom event for other components
-        document.dispatchEvent(new CustomEvent('languageChanged', { detail: { language: lang } }));
+        requestAnimationFrame(() => {
+            document.dispatchEvent(new CustomEvent('languageChanged', { detail: { language: lang } }));
+        });
     }
 
     /**

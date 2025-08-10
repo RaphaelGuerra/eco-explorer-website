@@ -360,4 +360,8 @@ document.addEventListener('DOMContentLoaded', () => {
     window.mainApp.handleURLParameters();
     window.mainApp.initializeParticles();
     window.mainApp.initializeFloatingShapes();
+    // Re-translate once DOM-ready for late mounts
+    if (window.i18n && typeof window.i18n.translatePageWithTransition === 'function') {
+        window.i18n.translatePageWithTransition();
+    }
 }); 
