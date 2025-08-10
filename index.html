@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" data-translate="metaDescription" content="An immersive educational simulation where you become a Lead Ecologist in Brazil's Itatiaia National Park. Track the elusive onça pintada (jaguar) and discover a living ecosystem with AI-powered features, dynamic weather, and real conservation impact.">
     <title data-translate="pageTitle">Eco-Explorer - Wild Educational Gaming</title>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐆</text></svg>">
     
@@ -17,18 +18,18 @@
     <!-- Gradio for AI Chatbot -->
     <script type="module" crossorigin src="https://cdn.jsdelivr.net/npm/@gradio/app@4.44.0/dist/index.js"></script>
     
-    <!-- Gradio Web Component -->
-    <script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/5.34.2/gradio.js"></script>
+    <!-- Gradio Web Component (legacy script removed) -->
     
     <!-- Custom Styles -->
     <link rel="stylesheet" href="assets/css/main.css">
     
     <!-- Unified i18n System -->
-    <script src="assets/js/i18n.js"></script>
-    <script src="assets/js/language-switcher.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script defer src="assets/js/i18n.js"></script>
+    <script defer src="assets/js/language-switcher.js"></script>
+    <script defer src="assets/js/main.js"></script>
 </head>
 <body class="antialiased">
+    <a href="#main-content" class="skip-link">Skip to content</a>
 
     <!-- Header Navigation -->
     <header class="fixed top-0 left-0 right-0 z-50 glass-effect">
@@ -69,15 +70,15 @@
         </div>
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden glass-effect">
-            <a href="#about" class="block py-2 px-6 text-slate-300 hover:bg-slate-800">About</a>
-            <a href="#chatbot" class="block py-2 px-6 text-slate-300 hover:bg-slate-800">AI Assistant</a>
-            <a href="#features" class="block py-2 px-6 text-slate-300 hover:bg-slate-800">Features</a>
-            <a href="#vision" class="block py-2 px-6 text-slate-300 hover:bg-slate-800">Vision</a>
-            <a href="#contact" class="block py-2 px-6 text-slate-300 hover:bg-slate-800">Contact</a>
+            <a href="#about" class="block py-2 px-6 text-slate-300 hover:bg-slate-800" data-translate="about">About</a>
+            <a href="#chatbot" class="block py-2 px-6 text-slate-300 hover:bg-slate-800" data-translate="aiAssistant">AI Assistant</a>
+            <a href="#features" class="block py-2 px-6 text-slate-300 hover:bg-slate-800" data-translate="features">Features</a>
+            <a href="#vision" class="block py-2 px-6 text-slate-300 hover:bg-slate-800" data-translate="vision">Vision</a>
+            <a href="#contact" class="block py-2 px-6 text-slate-300 hover:bg-slate-800" data-translate="contact">Contact</a>
         </div>
     </header>
 
-    <main>
+    <main id="main-content">
         <!-- Section 1: Hero -->
         <section id="hero" class="min-h-screen flex items-center pt-24 pb-12 relative overflow-hidden">
             <div class="absolute inset-0 wild-pattern"></div>
@@ -220,7 +221,7 @@
                         </ul>
                     </div>
                     <div class="md:col-span-2">
-                        <img src="https://images.pexels.com/photos/145939/pexels-photo-145939.jpeg?auto=compress&cs=tinysrgb&w=800" 
+                        <img loading="lazy" src="https://images.pexels.com/photos/145939/pexels-photo-145939.jpeg?auto=compress&cs=tinysrgb&w=800" 
                              alt="Itatiaia National Park" 
                              class="rounded-lg shadow-lg w-full h-64 object-cover">
                     </div>
@@ -345,7 +346,7 @@
                         </div>
                     </div>
                     <div>
-                        <img src="https://images.pexels.com/photos/1367192/pexels-photo-1367192.jpeg?auto=compress&cs=tinysrgb&w=800" 
+                        <img loading="lazy" src="https://images.pexels.com/photos/1367192/pexels-photo-1367192.jpeg?auto=compress&cs=tinysrgb&w=800" 
                              alt="Technology and nature" 
                              class="rounded-lg shadow-lg w-full h-64 object-cover">
                     </div>
@@ -422,37 +423,6 @@
         </div>
     </footer>
 
-    <!-- JavaScript -->
-    <script>
-        // Mobile menu toggle
-        const menuBtn = document.getElementById('menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-        
-        // Close mobile menu when clicking on a link
-        const mobileLinks = mobileMenu.querySelectorAll('a');
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
-        });
-        
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-    </script>
+    <!-- JavaScript loaded via deferred external scripts -->
 </body>
 </html>

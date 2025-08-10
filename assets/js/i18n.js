@@ -111,6 +111,11 @@ class I18nManager {
         if (title) {
             document.title = title;
         }
+        const meta = document.querySelector('meta[name="description"][data-translate="metaDescription"]');
+        const description = this.translations[this.currentLanguage]?.metaDescription;
+        if (meta && description) {
+            meta.setAttribute('content', description);
+        }
     }
 
     /**
