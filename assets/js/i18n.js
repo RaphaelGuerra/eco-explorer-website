@@ -149,8 +149,12 @@ class I18nManager {
             
             if (translation) {
                 // Handle different element types
-                if (element.tagName === 'INPUT' && element.type === 'placeholder') {
-                    element.placeholder = translation;
+                if (element.tagName === 'INPUT') {
+                    // Translate value/placeholder when appropriate
+                    if (element.hasAttribute('placeholder')) element.placeholder = translation;
+                    if (element.hasAttribute('value')) element.value = translation;
+                } else if (element.tagName === 'TEXTAREA') {
+                    if (element.hasAttribute('placeholder')) element.placeholder = translation;
                 } else if (element.tagName === 'META' && element.name === 'description') {
                     element.content = translation;
                 } else {
