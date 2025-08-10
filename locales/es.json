@@ -42,6 +42,8 @@
   "ecoExplorerDescription": "Una simulación educativa inmersiva donde te conviertes en un Ecólogo Jefe en el Parque Nacional de Itatiaia, Brasil. Rastrea la elusiva onza pintada (jaguar) y descubre un ecosistema vivo con características alimentadas por IA, clima dinámico e impacto real en la conservación.",
   "keyFeatures": "🐆 Características Salvajes:",
   "aboutEcoExplorer": "Sobre Eco-Explorer",
+  "aboutDescription1": "Eco-Explorer representa un enfoque revolucionario al gaming educativo, pasando de un juego sobre un ecosistema a un ecosistema jugable y vivo. Los jugadores asumen el papel de Ecólogos Jefes en el Parque Nacional de Itatiaia, Brasil, rastreando la elusiva onza pintada (jaguar) y descubriendo la intrincada red de vida dentro de una de las reservas naturales más vitales del país.",
+  "aboutDescription2": "El juego combina tecnología de IA de vanguardia con ciencia ecológica para crear una experiencia de aprendizaje inmersiva. A través de sistemas climáticos dinámicos, generación de contenido procedural e interacciones impulsadas por IA, los jugadores descubren la belleza salvaje de la selva tropical brasileña mientras desarrollan habilidades reales de conservación.",
   "coreTechnologies": "Estas son las tecnologías clave de Eco-Explorer:",
   "techReactTs": "React & TypeScript",
   "techAiInteractions": "Interacciones impulsadas por IA",
