@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" data-translate="metaDescription" content="An immersive educational simulation where you become a Lead Ecologist in Brazil's Itatiaia National Park. Track the elusive onça pintada (jaguar) and discover a living ecosystem with AI-powered features, dynamic weather, and real conservation impact.">
     <title data-translate="pageTitle">Eco-Explorer - Wild Educational Gaming</title>
+    <!-- Open Graph & Twitter -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Eco-Explorer - Wild Educational Gaming">
+    <meta property="og:description" content="An immersive educational simulation where you become a Lead Ecologist in Brazil's Itatiaia National Park.">
+    <meta property="og:image" content="https://images.pexels.com/photos/145939/pexels-photo-145939.jpeg?auto=compress&cs=tinysrgb&w=1200">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Eco-Explorer - Wild Educational Gaming">
+    <meta name="twitter:description" content="Learn ecology through play. Track jaguars. Explore a living world.">
+    <meta name="twitter:image" content="https://images.pexels.com/photos/145939/pexels-photo-145939.jpeg?auto=compress&cs=tinysrgb&w=1200">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐆</text></svg>">
     
     <!-- Tailwind CSS -->
@@ -33,6 +42,8 @@
     <script defer src="assets/js/main.js"></script>
 </head>
 <body class="antialiased">
+    <!-- Scroll progress bar -->
+    <div id="scroll-progress" aria-hidden="true"></div>
     <a href="#main-content" class="skip-link">Skip to content</a>
 
     <!-- Header Navigation -->
@@ -87,6 +98,7 @@
         <section id="hero" class="min-h-screen flex items-center pt-24 pb-12 relative overflow-hidden">
             <div class="absolute inset-0 wild-pattern"></div>
             <div class="absolute inset-0 jaguar-spots"></div>
+            <div class="absolute inset-0 animated-gradient pointer-events-none"></div>
             
             <!-- Floating wild elements -->
             <div class="absolute inset-0 overflow-hidden pointer-events-none">
@@ -225,7 +237,7 @@
                         </ul>
                     </div>
                     <div class="md:col-span-2">
-                        <img loading="lazy" src="https://images.pexels.com/photos/145939/pexels-photo-145939.jpeg?auto=compress&cs=tinysrgb&w=800" 
+                        <img loading="lazy" decoding="async" width="800" height="256" src="https://images.pexels.com/photos/145939/pexels-photo-145939.jpeg?auto=compress&cs=tinysrgb&w=800" 
                              alt="Itatiaia National Park" 
                              class="rounded-lg shadow-lg w-full h-64 object-cover">
                     </div>
@@ -350,7 +362,7 @@
                         </div>
                     </div>
                     <div>
-                        <img loading="lazy" src="https://images.pexels.com/photos/1367192/pexels-photo-1367192.jpeg?auto=compress&cs=tinysrgb&w=800" 
+                        <img loading="lazy" decoding="async" width="800" height="256" src="https://images.pexels.com/photos/1367192/pexels-photo-1367192.jpeg?auto=compress&cs=tinysrgb&w=800" 
                              alt="Technology and nature" 
                              class="rounded-lg shadow-lg w-full h-64 object-cover">
                     </div>
@@ -428,5 +440,11 @@
     </footer>
 
     <!-- JavaScript loaded via deferred external scripts -->
+    <!-- Back to top button -->
+    <button id="back-to-top" aria-label="Back to top" title="Back to top" class="hidden">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </button>
 </body>
 </html>

@@ -19,6 +19,7 @@ class MainApp {
         this.initializeScrollEffects();
         this.initializeContactForm();
         this.initializeWildElements();
+        this.initializeUXEnhancements();
         
         this.isInitialized = true;
     }
@@ -110,6 +111,63 @@ class MainApp {
             card.style.animationDelay = `${index * 0.1}s`;
             observer.observe(card);
         });
+    }
+
+    /**
+     * Enhance UX: scroll progress, back-to-top, focus handling
+     */
+    initializeUXEnhancements() {
+        // Scroll progress
+        const progress = document.getElementById('scroll-progress');
+        const updateProgress = () => {
+            const scrollTop = window.scrollY;
+            const docHeight = document.body.scrollHeight - window.innerHeight;
+            const ratio = docHeight > 0 ? Math.min(100, Math.max(0, (scrollTop / docHeight) * 100)) : 0;
+            if (progress) progress.style.width = ratio + '%';
+        };
+        window.addEventListener('scroll', updateProgress, { passive: true });
+        updateProgress();
+
+        // Back to top button
+        const backToTop = document.getElementById('back-to-top');
+        const toggleBackToTop = () => {
+            if (!backToTop) return;
+            if (window.scrollY > window.innerHeight * 0.6) {
+                backToTop.classList.remove('hidden');
+            } else {
+                backToTop.classList.add('hidden');
+            }
+        };
+        window.addEventListener('scroll', toggleBackToTop, { passive: true });
+        toggleBackToTop();
+        backToTop?.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Focus trap for mobile menu when open
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (menuBtn && mobileMenu) {
+            const focusableSelector = 'a, button, [tabindex]:not([tabindex="-1"])';
+            const trapFocus = (e) => {
+                if (mobileMenu.classList.contains('hidden')) return;
+                const focusables = Array.from(mobileMenu.querySelectorAll(focusableSelector));
+                if (focusables.length === 0) return;
+                const first = focusables[0];
+                const last = focusables[focusables.length - 1];
+                if (e.key === 'Tab') {
+                    if (e.shiftKey && document.activeElement === first) {
+                        e.preventDefault(); last.focus();
+                    } else if (!e.shiftKey && document.activeElement === last) {
+                        e.preventDefault(); first.focus();
+                    }
+                } else if (e.key === 'Escape') {
+                    mobileMenu.classList.add('hidden');
+                    menuBtn.focus();
+                }
+            };
+            document.addEventListener('keydown', trapFocus);
+        }
     }
 
     /**

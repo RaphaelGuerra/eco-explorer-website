@@ -18,6 +18,18 @@ body {
   line-height: 1.6;
 }
 
+/* Scroll progress bar */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0;
+  z-index: 1000;
+  background: linear-gradient(90deg, #3b82f6, #22d3ee);
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.6);
+}
+
 /* Skip link for accessibility */
 .skip-link {
   position: absolute;
@@ -431,6 +443,19 @@ h1, h2, h3, h4, h5, h6 {
   overflow: hidden;
 }
 
+/* Animated gradient overlay for hero */
+.animated-gradient {
+  background: radial-gradient(1200px 600px at 10% 10%, rgba(59, 130, 246, 0.12), transparent 60%),
+              radial-gradient(1200px 600px at 90% 20%, rgba(99, 102, 241, 0.12), transparent 60%),
+              radial-gradient(1200px 600px at 50% 90%, rgba(34, 197, 94, 0.08), transparent 60%);
+  animation: gradientDrift 18s ease-in-out infinite alternate;
+}
+
+@keyframes gradientDrift {
+  0% { transform: translate3d(0,0,0) scale(1); filter: saturate(1); }
+  100% { transform: translate3d(0,-2%,0) scale(1.03); filter: saturate(1.2); }
+}
+
 .hero-jungle::before {
   content: '';
   position: absolute;
@@ -472,3 +497,25 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateY(-2px);
   box-shadow: 0 10px 25px rgba(52, 211, 153, 0.3);
 } 
+
+/* Back to top button */
+#back-to-top {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  background: rgba(15,23,42,0.8);
+  color: #a5b4fc;
+  border: 1px solid rgba(99,102,241,0.3);
+  border-radius: 9999px;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  transition: transform .2s ease, opacity .2s ease, background .2s ease;
+}
+
+#back-to-top:hover {
+  transform: translateY(-2px);
+  background: rgba(30,41,59,0.9);
+}
