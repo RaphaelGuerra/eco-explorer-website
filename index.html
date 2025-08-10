@@ -212,6 +212,89 @@
             </div>
         </section>
 
+        <!-- Section: Featured Project -->
+        <section id="project" class="py-20 md:py-32 relative">
+            <div class="absolute inset-0 wild-pattern"></div>
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="text-center mb-16">
+                    <h3 class="text-base font-semibold text-indigo-400 tracking-wider" data-translate="featuredProjectHeading">FEATURED PROJECT</h3>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mt-2" data-translate="featuredProjectTitle">See Our AI in Action</h2>
+                </div>
+
+                <div class="max-w-6xl mx-auto">
+                    <div class="gradient-border">
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center p-8">
+                            <!-- Project Thumbnail -->
+                            <div class="relative group">
+                                <div class="project-thumbnail glow-effect relative overflow-hidden rounded-lg">
+                                    <img src="https://images.pexels.com/photos/145939/pexels-photo-145939.jpeg?auto=compress&cs=tinysrgb&w=1200" 
+                                         alt="Eco-Explorer Project Thumbnail" 
+                                         class="w-full h-80 object-cover">
+                                    <div class="project-overlay absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity grid place-items-center">
+                                        <button onclick="openVideoModal()" class="play-button cursor-pointer bg-white/10 hover:bg-white/20 border border-white/30 rounded-full p-4">
+                                            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M8 5v14l11-7z"/>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div class="status-badge absolute top-3 left-3 bg-indigo-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow" data-translate="liveDemoBadge">Live Demo</div>
+                                </div>
+                            </div>
+
+                            <!-- Project Details -->
+                            <div class="space-y-6">
+                                <div>
+                                    <h3 class="text-2xl md:text-3xl font-bold text-white mb-3">
+                                        <span class="gradient-text">Eco-Explorer</span><span data-translate="educationalGamingShort"> - Educational Gaming</span>
+                                    </h3>
+                                    <p class="text-slate-300 text-lg leading-relaxed" data-translate="ecoExplorerDescription">
+                                        An educational simulation game where players become Lead Ecologists in Brazil's Itatiaia National Park. Experience a living ecosystem with AI-powered features, dynamic weather, and real conservation impact.
+                                    </p>
+                                </div>
+
+                                <!-- Key Features -->
+                                <div class="space-y-3">
+                                    <h4 class="text-lg font-semibold text-white" data-translate="keyFeaturesTitle">Key Features:</h4>
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                        <div class="flex items-center space-x-3">
+                                            <div class="w-2 h-2 bg-indigo-400 rounded-full"></div>
+                                            <span class="text-slate-300" data-translate="aiPoweredEcoLog">AI-Powered Eco-Log</span>
+                                        </div>
+                                        <div class="flex items-center space-x-3">
+                                            <div class="w-2 h-2 bg-purple-400 rounded-full"></div>
+                                            <span class="text-slate-300" data-translate="livingWorldSimulation">Living World Simulation</span>
+                                        </div>
+                                        <div class="flex items-center space-x-3">
+                                            <div class="w-2 h-2 bg-pink-400 rounded-full"></div>
+                                            <span class="text-slate-300" data-translate="dynamicWeatherSystem">Dynamic Weather System</span>
+                                        </div>
+                                        <div class="flex items-center space-x-3">
+                                            <div class="w-2 h-2 bg-red-400 rounded-full"></div>
+                                            <span class="text-slate-300" data-translate="conservationImpact">Conservation Impact</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- CTA Buttons -->
+                                <div class="space-y-4 pt-6">
+                                    <a href="https://raphaelguerra.github.io/eco-explorer/" target="_blank" rel="noopener noreferrer" class="gradient-border inline-block glow-effect w-full">
+                                        <div class="text-white font-bold px-8 py-4 text-center" data-translate="playDemoCta">🎮 Play Demo</div>
+                                    </a>
+                                    <div class="grid grid-cols-2 gap-3">
+                                        <a href="https://raphaelguerra.github.io/eco-explorer-website/" target="_blank" rel="noopener noreferrer" class="bg-slate-800/50 text-white font-semibold px-4 py-3 rounded-lg border border-slate-700 hover:bg-slate-700/50 transition-colors text-center" data-translate="projectInfoCta">📋 Project Info</a>
+                                        <a href="https://youtu.be/xxtkCPIoyWU?si=wgyXdYVw5BURI_Gu" target="_blank" rel="noopener noreferrer" class="bg-red-600/20 text-white font-semibold px-4 py-3 rounded-lg border border-red-500/30 hover:bg-red-600/30 transition-colors text-center flex items-center justify-center space-x-2">
+                                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                                            <span data-translate="watchVideo">Watch Video</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Section 3: About -->
         <section id="about" class="py-20 md:py-32">
             <div class="container mx-auto px-6">
