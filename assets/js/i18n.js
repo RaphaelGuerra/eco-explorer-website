@@ -149,6 +149,11 @@ class I18nManager {
             
             if (translation) {
                 // Handle different element types
+                const attrTarget = element.getAttribute('data-translate-attr');
+                if (attrTarget) {
+                    element.setAttribute(attrTarget, translation);
+                    return;
+                }
                 if (element.tagName === 'INPUT') {
                     // Translate value/placeholder when appropriate
                     if (element.hasAttribute('placeholder')) element.placeholder = translation;
