@@ -15,11 +15,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
     
-    <!-- Gradio for AI Chatbot -->
-    <script type="module" crossorigin src="https://cdn.jsdelivr.net/npm/@gradio/app@4.44.0/dist/index.js"></script>
-    
-    <!-- Gradio Web Component -->
-    <script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/5.34.2/gradio.js"></script>
+    <!-- Resource hints for third-party embeds -->
+    <link rel="preconnect" href="https://gradio.s3-us-west-2.amazonaws.com" crossorigin>
+    <link rel="preconnect" href="https://phaelix-eco-explorer-bot.hf.space" crossorigin>
+    <link rel="dns-prefetch" href="//gradio.s3-us-west-2.amazonaws.com">
+    <link rel="dns-prefetch" href="//phaelix-eco-explorer-bot.hf.space">
+
+    <!-- Gradio Web Component (pinned to latest stable CDN) -->
+    <script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/latest/gradio.js"></script>
     
     <!-- Custom Styles -->
     <link rel="stylesheet" href="assets/css/main.css">
