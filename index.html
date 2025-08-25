@@ -359,19 +359,35 @@
     <!-- Gradio Web Component (pinned to a known working version) -->
     <script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/5.34.2/gradio.js"></script>
     
-    <!-- Custom Styles -->
-    <link rel="stylesheet" href="assets/css/main.css">
-    
-    <!-- Unified i18n System -->
+    <!-- CRITICAL CSS - UNDER 15KB FOR FASTEST LOAD -->
+    <link rel="stylesheet" href="assets/css/critical.css">
+
+    <!-- CRITICAL JS - Essential functionality -->
+    <script src="assets/js/critical.js"></script>
+
+    <!-- DEFERRED: Full CSS and JS loaded progressively by critical.js -->
+    <!-- <link rel="preload" href="assets/css/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <script defer src="assets/js/i18n.js"></script>
     <script defer src="assets/js/language-switcher.js"></script>
-    <script defer src="assets/js/main.js"></script>
+    <script defer src="assets/js/main.js"></script> -->
 </head>
 <body class="antialiased">
     <!-- Enhanced Skip Links for Accessibility -->
     <div id="scroll-progress" aria-hidden="true"></div>
     <a href="#main-content" class="skip-link" aria-label="Skip to main content">Skip to content</a>
     <a href="#navigation" class="skip-link skip-link-secondary" aria-label="Skip to navigation">Skip to navigation</a>
+
+    <!-- CRITICAL HERO SECTION - Loads immediately -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h1>Eco<span class="gradient-text">Explorer</span> 🐆</h1>
+            <p class="hero-description">Experience hands-on conservation education. Track jaguars through the rainforest, make critical environmental decisions, and learn about real conservation challenges.</p>
+            <div class="hero-actions">
+                <a href="#game-section" class="btn btn-primary">🎮 Play Eco-Explorer</a>
+                <a href="#about" class="btn btn-secondary">Learn More</a>
+            </div>
+        </div>
+    </section>
 
     <!-- Header Navigation -->
     <header class="fixed top-0 left-0 right-0 z-50 glass-effect" role="banner">
@@ -1900,6 +1916,65 @@
         </div>
     </footer>
 
+    <!-- PROGRESSIVE LOADING PLACEHOLDERS -->
+    <!-- These sections will be loaded progressively by critical.js -->
+
+    <div id="about-section-placeholder" class="min-h-screen flex items-center justify-center bg-slate-900">
+        <div class="text-center">
+            <div class="loading-spinner mb-4" aria-hidden="true"></div>
+            <p class="text-slate-400">Loading About section...</p>
+        </div>
+    </div>
+
+    <div id="features-section-placeholder" class="min-h-screen flex items-center justify-center bg-slate-800">
+        <div class="text-center">
+            <div class="loading-spinner mb-4" aria-hidden="true"></div>
+            <p class="text-slate-400">Loading Features section...</p>
+        </div>
+    </div>
+
+    <div id="vision-section-placeholder" class="min-h-screen flex items-center justify-center bg-slate-900">
+        <div class="text-center">
+            <div class="loading-spinner mb-4" aria-hidden="true"></div>
+            <p class="text-slate-400">Loading Vision section...</p>
+        </div>
+    </div>
+
+    <div id="game-section-placeholder" class="min-h-screen flex items-center justify-center bg-slate-800">
+        <div class="text-center">
+            <div class="loading-spinner mb-4" aria-hidden="true"></div>
+            <p class="text-slate-400">Loading Game section...</p>
+        </div>
+    </div>
+
+    <div id="newsletter-section-placeholder" class="min-h-screen flex items-center justify-center bg-slate-900">
+        <div class="text-center">
+            <div class="loading-spinner mb-4" aria-hidden="true"></div>
+            <p class="text-slate-400">Loading Newsletter section...</p>
+        </div>
+    </div>
+
+    <div id="referral-section-placeholder" class="min-h-screen flex items-center justify-center bg-slate-800">
+        <div class="text-center">
+            <div class="loading-spinner mb-4" aria-hidden="true"></div>
+            <p class="text-slate-400">Loading Referral section...</p>
+        </div>
+    </div>
+
+    <div id="progress-section-placeholder" class="min-h-screen flex items-center justify-center bg-slate-900">
+        <div class="text-center">
+            <div class="loading-spinner mb-4" aria-hidden="true"></div>
+            <p class="text-slate-400">Loading Progress section...</p>
+        </div>
+    </div>
+
+    <div id="community-section-placeholder" class="min-h-screen flex items-center justify-center bg-slate-800">
+        <div class="text-center">
+            <div class="loading-spinner mb-4" aria-hidden="true"></div>
+            <p class="text-slate-400">Loading Community section...</p>
+        </div>
+    </div>
+
     <!-- JavaScript loaded via deferred external scripts -->
     <!-- Back to top button -->
     <button id="back-to-top" aria-label="Back to top" title="Back to top" class="hidden">
@@ -1908,5 +1983,4 @@
         </svg>
     </button>
 </body>
-</html>
 </html>
