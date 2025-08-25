@@ -1236,3 +1236,14 @@ h1:focus, h2:focus, h3:focus, h4:focus, h5:focus, h6:focus {
         box-shadow: 0 0 30px rgba(249, 115, 22, 0.7);
     }
 }
+
+/* Progressive Loading Placeholders - Hidden by default */
+#about-section-placeholder,
+#features-section-placeholder,
+#vision-section-placeholder,
+#game-section-placeholder,
+#referral-section-placeholder,
+#progress-section-placeholder,
+#community-section-placeholder {
+    display: none;
+}
