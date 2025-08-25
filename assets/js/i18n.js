@@ -100,7 +100,9 @@ class I18nManager {
         this.updateURL();
         
         // Dispatch custom event for other components
-        document.dispatchEvent(new CustomEvent('languageChanged', { detail: { language: lang } }));
+        requestAnimationFrame(() => {
+            document.dispatchEvent(new CustomEvent('languageChanged', { detail: { language: lang } }));
+        });
     }
 
     /**
@@ -123,14 +125,31 @@ class I18nManager {
      */
     translatePageWithTransition() {
         const elements = document.querySelectorAll('[data-translate]');
-        
+        const languageBtn = document.getElementById('language-btn');
+
+        // Show loading state in language switcher
+        if (languageBtn) {
+            const currentLangSpan = languageBtn.querySelector('#current-lang');
+            if (currentLangSpan) {
+                const originalText = currentLangSpan.textContent;
+                currentLangSpan.textContent = '...';
+                currentLangSpan.style.opacity = '0.7';
+
+                // Restore original text after transition
+                setTimeout(() => {
+                    currentLangSpan.textContent = this.currentLanguage.toUpperCase();
+                    currentLangSpan.style.opacity = '1';
+                }, 400);
+            }
+        }
+
         // Add transition class for smooth effect
         elements.forEach(el => el.classList.add('language-transition'));
-        
+
         // Translate after a brief delay
         setTimeout(() => {
             this.translatePage();
-            
+
             // Remove transition class
             setTimeout(() => {
                 elements.forEach(el => el.classList.remove('language-transition'));
@@ -149,8 +168,17 @@ class I18nManager {
             
             if (translation) {
                 // Handle different element types
-                if (element.tagName === 'INPUT' && element.type === 'placeholder') {
-                    element.placeholder = translation;
+                const attrTarget = element.getAttribute('data-translate-attr');
+                if (attrTarget) {
+                    element.setAttribute(attrTarget, translation);
+                    return;
+                }
+                if (element.tagName === 'INPUT') {
+                    // Translate value/placeholder when appropriate
+                    if (element.hasAttribute('placeholder')) element.placeholder = translation;
+                    if (element.hasAttribute('value')) element.value = translation;
+                } else if (element.tagName === 'TEXTAREA') {
+                    if (element.hasAttribute('placeholder')) element.placeholder = translation;
                 } else if (element.tagName === 'META' && element.name === 'description') {
                     element.content = translation;
                 } else {
