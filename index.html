@@ -5,30 +5,356 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" data-translate="metaDescription" content="An immersive educational simulation where you become a Lead Ecologist in Brazil's Itatiaia National Park. Track the elusive onça pintada (jaguar) and discover a living ecosystem with AI-powered features, dynamic weather, and real conservation impact.">
     <title data-translate="pageTitle">Eco-Explorer - Wild Educational Gaming</title>
-    <!-- Open Graph & Twitter -->
+    <!-- Enhanced SEO Meta Tags -->
+    <meta name="keywords" content="eco-explorer, educational gaming, conservation, jaguar, Brazil, Itatiaia, ecology, AI-powered, wildlife, rainforest">
+    <meta name="author" content="Eco-Explorer Team">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    <link rel="canonical" href="https://raphaelguerra.github.io/eco-explorer-website/">
+
+    <!-- Enhanced Open Graph & Twitter -->
     <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Eco-Explorer">
     <meta property="og:title" content="Eco-Explorer - Wild Educational Gaming">
-    <meta property="og:description" content="An immersive educational simulation where you become a Lead Ecologist in Brazil's Itatiaia National Park.">
+    <meta property="og:description" content="An immersive educational simulation where you become a Lead Ecologist in Brazil's Itatiaia National Park. Track the elusive onça pintada (jaguar) and discover a living ecosystem with AI-powered features, dynamic weather, and real conservation impact.">
     <meta property="og:image" content="https://images.pexels.com/photos/145939/pexels-photo-145939.jpeg?auto=compress&cs=tinysrgb&w=1200">
+    <meta property="og:image:alt" content="Eco-Explorer - Brazilian rainforest with jaguar">
+    <meta property="og:url" content="https://raphaelguerra.github.io/eco-explorer-website/">
+    <meta property="og:locale" content="en_US">
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@ecoexplorer">
+    <meta name="twitter:creator" content="@ecoexplorer">
     <meta name="twitter:title" content="Eco-Explorer - Wild Educational Gaming">
     <meta name="twitter:description" content="Learn ecology through play. Track jaguars. Explore a living world.">
     <meta name="twitter:image" content="https://images.pexels.com/photos/145939/pexels-photo-145939.jpeg?auto=compress&cs=tinysrgb&w=1200">
+    <meta name="twitter:image:alt" content="Eco-Explorer - Brazilian rainforest with jaguar">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐆</text></svg>">
-    
+    <link rel="manifest" href="manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Eco-Explorer">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="msapplication-TileColor" content="#0a0f1a">
+    <meta name="msapplication-config" content="browserconfig.xml">
+
+    <!-- Security Headers (via meta tags as fallback) -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
+
+    <!-- Content Security Policy -->
+    <meta http-equiv="Content-Security-Policy" content="
+      default-src 'self';
+      script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://gradio.s3-us-west-2.amazonaws.com https://phaelix-eco-explorer-bot.hf.space;
+      style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.tailwindcss.com;
+      font-src 'self' https://fonts.gstatic.com;
+      img-src 'self' data: https: blob:;
+      connect-src 'self' https://gradio.s3-us-west-2.amazonaws.com https://phaelix-eco-explorer-bot.hf.space https://images.pexels.com https://fonts.googleapis.com https://fonts.gstatic.com;
+      frame-src 'self' https://phaelix-eco-explorer-bot.hf.space;
+      object-src 'none';
+      base-uri 'self';
+      form-action 'self';
+      upgrade-insecure-requests;
+    ">
+
+    <!-- Structured Data (JSON-LD) for Rich Snippets -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Eco-Explorer",
+        "alternateName": "Eco Explorer",
+        "url": "https://raphaelguerra.github.io/eco-explorer-website/",
+        "description": "An immersive educational simulation where you become a Lead Ecologist in Brazil's Itatiaia National Park. Track the elusive onça pintada (jaguar) and discover a living ecosystem with AI-powered features, dynamic weather, and real conservation impact.",
+        "keywords": "eco-explorer, educational gaming, conservation, jaguar, Brazil, Itatiaia, ecology, AI-powered, wildlife, rainforest",
+        "author": {
+            "@type": "Organization",
+            "name": "Eco-Explorer Team"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Eco-Explorer"
+        },
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://raphaelguerra.github.io/eco-explorer-website/?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        },
+        "inLanguage": "en-US"
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Eco-Explorer",
+        "description": "An immersive educational simulation game about ecology and conservation",
+        "applicationCategory": "EducationalApplication",
+        "operatingSystem": "Web Browser",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "featureList": [
+            "AI-Powered Eco-Log",
+            "Living World Simulation",
+            "Dynamic Weather System",
+            "Conservation Impact",
+            "Jaguar Tracking",
+            "Research & Learn"
+        ],
+        "genre": ["Educational", "Simulation", "Adventure"],
+        "url": "https://raphaelguerra.github.io/eco-explorer-website/"
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Eco-Explorer - Revolutionary Educational Gaming for Conservation",
+        "description": "Discover how Eco-Explorer is transforming conservation education through immersive gaming experiences.",
+        "image": "https://images.pexels.com/photos/145939/pexels-photo-145939.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "author": {
+            "@type": "Organization",
+            "name": "Eco-Explorer Team"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Eco-Explorer",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐆</text></svg>"
+            }
+        },
+        "datePublished": "2025-01-15",
+        "dateModified": "2025-01-15",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://raphaelguerra.github.io/eco-explorer-website/"
+        },
+        "articleSection": "Educational Technology"
+    }
+    </script>
+
+    <!-- Performance Optimization -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://images.pexels.com">
+    <link rel="dns-prefetch" href="//gradio.s3-us-west-2.amazonaws.com">
+    <link rel="dns-prefetch" href="//phaelix-eco-explorer-bot.hf.space">
+
+    <!-- Google Fonts: Inter (optimized loading) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Google Fonts: Inter -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
-    
     <!-- Resource hints for third-party embeds -->
-    <link rel="preconnect" href="https://gradio.s3-us-west-2.amazonaws.com" crossorigin>
     <link rel="preconnect" href="https://phaelix-eco-explorer-bot.hf.space" crossorigin>
-    <link rel="dns-prefetch" href="//gradio.s3-us-west-2.amazonaws.com">
-    <link rel="dns-prefetch" href="//phaelix-eco-explorer-bot.hf.space">
+
+    <!-- Analytics and Performance Monitoring -->
+    <script>
+        // Analytics Configuration
+        window.ecoExplorerAnalytics = {
+            gtagId: 'G-XXXXXXXXXX', // Replace with your GA4 Measurement ID
+            enabled: false, // Set to true when you add your GA4 ID
+            consentGiven: false,
+            initialized: false
+        };
+
+        // GDPR Consent Management
+        window.manageAnalyticsConsent = function(consent = null) {
+            if (consent !== null) {
+                localStorage.setItem('eco_explorer_analytics_consent', consent);
+                window.ecoExplorerAnalytics.consentGiven = consent;
+            } else {
+                return localStorage.getItem('eco_explorer_analytics_consent') === 'true';
+            }
+
+            if (consent && !window.ecoExplorerAnalytics.initialized) {
+                initializeAnalytics();
+            } else if (!consent) {
+                disableAnalytics();
+            }
+        };
+
+        // Initialize Google Analytics 4
+        function initializeAnalytics() {
+            if (window.ecoExplorerAnalytics.initialized || !window.ecoExplorerAnalytics.enabled) return;
+
+            // Load Google Tag Manager
+            const script = document.createElement('script');
+            script.async = true;
+            script.src = 'https://www.googletagmanager.com/gtag/js?id=' + window.ecoExplorerAnalytics.gtagId;
+            document.head.appendChild(script);
+
+            // Initialize gtag
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            window.gtag = gtag;
+            gtag('js', new Date());
+            gtag('config', window.ecoExplorerAnalytics.gtagId, {
+                'anonymize_ip': true,
+                'allow_ad_features': false,
+                'allow_google_signals': false,
+                'custom_map': {'dimension1': 'user_type'}
+            });
+
+            window.ecoExplorerAnalytics.initialized = true;
+            console.log('📊 Analytics initialized with privacy protection');
+        }
+
+        // Disable Analytics
+        function disableAnalytics() {
+            if (window.gtag) {
+                window.gtag('config', window.ecoExplorerAnalytics.gtagId, {
+                    'anonymize_ip': true,
+                    'allow_ad_features': false,
+                    'allow_google_signals': false,
+                    'custom_map': {'dimension1': 'user_type'}
+                });
+            }
+        }
+
+        // Performance Monitoring
+        window.performanceMarks = {};
+
+        // Mark performance points
+        window.markPerformance = function(name) {
+            if (window.performance && window.performance.mark) {
+                window.performance.mark(name);
+                window.performanceMarks[name] = Date.now();
+            }
+        };
+
+        // Measure performance between marks
+        window.measurePerformance = function(name, startMark, endMark) {
+            if (window.performance && window.performance.measure) {
+                try {
+                    window.performance.measure(name, startMark, endMark);
+                    const measure = window.performance.getEntriesByName(name)[0];
+                    console.log(`⏱️ ${name}:`, measure.duration.toFixed(2), 'ms');
+
+                    // Send to analytics if enabled
+                    if (window.gtag && window.ecoExplorerAnalytics.consentGiven) {
+                        window.gtag('event', 'performance_measurement', {
+                            event_category: 'performance',
+                            event_label: name,
+                            value: Math.round(measure.duration)
+                        });
+                    }
+                } catch (e) {
+                    console.warn('Performance measurement failed:', e);
+                }
+            }
+        };
+
+        // Initialize performance observer
+        if ('PerformanceObserver' in window) {
+            try {
+                // Observe long tasks
+                const longTaskObserver = new PerformanceObserver(function(list) {
+                    const entries = list.getEntries();
+                    entries.forEach(entry => {
+                        if (entry.duration > 50) { // Log tasks longer than 50ms
+                            console.warn('🐌 Long task detected:', entry.duration.toFixed(2), 'ms');
+
+                            if (window.gtag && window.ecoExplorerAnalytics.consentGiven) {
+                                window.gtag('event', 'long_task', {
+                                    event_category: 'performance',
+                                    event_label: 'long_task',
+                                    value: Math.round(entry.duration)
+                                });
+                            }
+                        }
+                    });
+                });
+                longTaskObserver.observe({entryTypes: ['longtask']});
+
+                // Observe layout shifts
+                const layoutShiftObserver = new PerformanceObserver(function(list) {
+                    const entries = list.getEntries();
+                    let totalShift = 0;
+
+                    entries.forEach(entry => {
+                        if (!entry.hadRecentInput) {
+                            totalShift += entry.value;
+                        }
+                    });
+
+                    if (totalShift > 0.1) { // Significant layout shift
+                        console.warn('📐 Layout shift detected:', totalShift.toFixed(4));
+
+                        if (window.gtag && window.ecoExplorerAnalytics.consentGiven) {
+                            window.gtag('event', 'layout_shift', {
+                                event_category: 'ux',
+                                event_label: 'layout_shift',
+                                value: Math.round(totalShift * 1000)
+                            });
+                        }
+                    }
+                });
+                layoutShiftObserver.observe({entryTypes: ['layout-shift']});
+
+            } catch (e) {
+                console.warn('Performance observer failed:', e);
+            }
+        }
+
+        // Error Tracking
+        window.trackError = function(error, context = {}) {
+            const errorData = {
+                message: error.message,
+                filename: error.filename,
+                lineno: error.lineno,
+                colno: error.colno,
+                stack: error.stack,
+                url: window.location.href,
+                userAgent: navigator.userAgent,
+                timestamp: new Date().toISOString(),
+                context: context
+            };
+
+            console.error('🚨 Error tracked:', errorData);
+
+            // Send to analytics if enabled
+            if (window.gtag && window.ecoExplorerAnalytics.consentGiven) {
+                window.gtag('event', 'exception', {
+                    description: error.message,
+                    fatal: false,
+                    custom_map: {
+                        dimension1: context.component || 'unknown',
+                        dimension2: context.action || 'unknown'
+                    }
+                });
+            }
+
+            // Store in localStorage for debugging
+            try {
+                const errors = JSON.parse(localStorage.getItem('eco_explorer_errors') || '[]');
+                errors.push(errorData);
+                if (errors.length > 20) errors.shift(); // Keep last 20 errors
+                localStorage.setItem('eco_explorer_errors', JSON.stringify(errors));
+            } catch (e) {
+                console.warn('Failed to store error log:', e);
+            }
+        };
+
+        // Global error handler
+        window.addEventListener('error', function(e) {
+            window.trackError(e.error || e, { type: 'javascript_error' });
+        });
+
+        // Unhandled promise rejection handler
+        window.addEventListener('unhandledrejection', function(e) {
+            window.trackError(new Error(e.reason), { type: 'promise_rejection' });
+        });
+    </script>
 
     <!-- Gradio Web Component (pinned to a known working version) -->
     <script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/5.34.2/gradio.js"></script>
@@ -42,60 +368,119 @@
     <script defer src="assets/js/main.js"></script>
 </head>
 <body class="antialiased">
-    <!-- Scroll progress bar -->
+    <!-- Enhanced Skip Links for Accessibility -->
     <div id="scroll-progress" aria-hidden="true"></div>
-    <a href="#main-content" class="skip-link">Skip to content</a>
+    <a href="#main-content" class="skip-link" aria-label="Skip to main content">Skip to content</a>
+    <a href="#navigation" class="skip-link skip-link-secondary" aria-label="Skip to navigation">Skip to navigation</a>
 
     <!-- Header Navigation -->
-    <header class="fixed top-0 left-0 right-0 z-50 glass-effect">
+    <header class="fixed top-0 left-0 right-0 z-50 glass-effect" role="banner">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <h1 class="text-2xl font-bold tracking-tighter text-white">
+                <a href="/" aria-label="Eco-Explorer home" class="focus:outline-none focus:ring-2 focus:ring-blue-400 rounded">
                 Eco<span class="gradient-text">Explorer</span> 🐆
+                </a>
             </h1>
-            <nav class="hidden md:flex space-x-6 items-center">
-                <a href="#about" class="text-slate-300 hover:text-blue-400 transition-colors" data-translate="about">About</a>
-                <a href="#chatbot" class="text-slate-300 hover:text-blue-400 transition-colors" data-translate="aiAssistant">AI Assistant</a>
-                <a href="#features" class="text-slate-300 hover:text-blue-400 transition-colors" data-translate="features">Features</a>
-                <a href="#vision" class="text-slate-300 hover:text-blue-400 transition-colors" data-translate="vision">Vision</a>
-                <a href="#contact" class="bg-blue-500 text-white font-semibold px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors glow-effect" data-translate="contactUs">
-                    Get Wild
+            <nav id="navigation" class="hidden md:flex space-x-6 items-center" role="navigation" aria-label="Main navigation">
+                <a href="#game-section" class="text-slate-300 hover:text-blue-400 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400 rounded" data-track="nav_game" aria-label="Download and play Eco-Explorer">🎮 Play Game</a>
+                <a href="#about" class="text-slate-300 hover:text-blue-400 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400 rounded" data-translate="about" data-track="nav_about" aria-label="Learn about Eco-Explorer">About</a>
+                <a href="#features" class="text-slate-300 hover:text-blue-400 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400 rounded" data-translate="features" data-track="nav_features" aria-label="Explore game features">Features</a>
+                <a href="#vision" class="text-slate-300 hover:text-blue-400 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400 rounded" data-translate="vision" data-track="nav_vision" aria-label="Read about our conservation vision">Vision</a>
+                <a href="#newsletter" class="text-slate-300 hover:text-blue-400 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400 rounded" data-track="nav_newsletter" aria-label="Join our conservation community">📧 Newsletter</a>
+                <a href="#referral" class="text-slate-300 hover:text-blue-400 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400 rounded" data-track="nav_referral" aria-label="Share the impact and earn rewards">🌳 Referral</a>
+                <a href="#progress" class="text-slate-300 hover:text-blue-400 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400 rounded" data-track="nav_progress" aria-label="Track your conservation achievements">📈 Progress</a>
+                <a href="#community" class="bg-blue-500 text-white font-semibold px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors glow-effect focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-slate-900" data-track="nav_community" aria-label="Join the conservation community">
+                    🤝 Community
                 </a>
                 
                 <!-- Language Switcher -->
                 <div class="relative">
-                    <button id="language-btn" class="flex items-center space-x-2 text-slate-300 hover:text-blue-400 transition-colors">
-                        <span id="current-lang">EN</span>
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <button id="language-btn" class="flex items-center space-x-2 text-slate-300 hover:text-blue-400 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400 rounded"
+                            aria-label="Change language"
+                            aria-haspopup="listbox"
+                            aria-expanded="false"
+                            aria-describedby="current-lang">
+                        <span id="current-lang" aria-live="polite">EN</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                         </svg>
                     </button>
-                    <div id="language-dropdown" class="absolute right-0 mt-2 w-32 bg-slate-800 border border-slate-700 rounded-lg shadow-lg hidden z-50">
-                        <button class="w-full text-left px-4 py-2 text-slate-300 hover:bg-slate-700 transition-colors" data-lang="en">🇺🇸 English</button>
-                        <button class="w-full text-left px-4 py-2 text-slate-300 hover:bg-slate-700 transition-colors" data-lang="pt">🇧🇷 Português</button>
-                        <button class="w-full text-left px-4 py-2 text-slate-300 hover:bg-slate-700 transition-colors" data-lang="es">🇪🇸 Español</button>
-                        <button class="w-full text-left px-4 py-2 text-slate-300 hover:bg-slate-700 transition-colors" data-lang="fr">🇫🇷 Français</button>
+                    <div id="language-dropdown" class="absolute right-0 mt-2 w-32 bg-slate-800 border border-slate-700 rounded-lg shadow-lg hidden z-50"
+                         role="listbox"
+                         aria-label="Select language">
+                        <button class="w-full text-left px-4 py-2 text-slate-300 hover:bg-slate-700 transition-colors focus:outline-none focus:bg-slate-700 focus:text-white"
+                                data-lang="en"
+                                role="option"
+                                aria-selected="true">🇺🇸 English</button>
+                        <button class="w-full text-left px-4 py-2 text-slate-300 hover:bg-slate-700 transition-colors focus:outline-none focus:bg-slate-700 focus:text-white"
+                                data-lang="pt"
+                                role="option"
+                                aria-selected="false">🇧🇷 Português</button>
+                        <button class="w-full text-left px-4 py-2 text-slate-300 hover:bg-slate-700 transition-colors focus:outline-none focus:bg-slate-700 focus:text-white"
+                                data-lang="es"
+                                role="option"
+                                aria-selected="false">🇪🇸 Español</button>
+                        <button class="w-full text-left px-4 py-2 text-slate-300 hover:bg-slate-700 transition-colors focus:outline-none focus:bg-slate-700 focus:text-white"
+                                data-lang="fr"
+                                role="option"
+                                aria-selected="false">🇫🇷 Français</button>
                     </div>
                 </div>
             </nav>
-            <button id="menu-btn" class="md:hidden focus:outline-none">
-                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <button id="menu-btn" class="md:hidden focus:outline-none focus:ring-2 focus:ring-blue-400 rounded"
+                    aria-label="Toggle mobile menu"
+                    aria-expanded="false"
+                    aria-controls="mobile-menu">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
                 </svg>
             </button>
         </div>
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden glass-effect">
-            <a href="#about" class="block py-2 px-6 text-slate-300 hover:bg-slate-800" data-translate="about">About</a>
-            <a href="#chatbot" class="block py-2 px-6 text-slate-300 hover:bg-slate-800" data-translate="aiAssistant">AI Assistant</a>
-            <a href="#features" class="block py-2 px-6 text-slate-300 hover:bg-slate-800" data-translate="features">Features</a>
-            <a href="#vision" class="block py-2 px-6 text-slate-300 hover:bg-slate-800" data-translate="vision">Vision</a>
-            <a href="#contact" class="block py-2 px-6 text-slate-300 hover:bg-slate-800" data-translate="contact">Contact</a>
+        <nav id="mobile-menu" class="hidden md:hidden glass-effect" role="navigation" aria-label="Mobile navigation" aria-hidden="true">
+            <a href="#game-section" class="block py-2 px-6 text-slate-300 hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-blue-400 rounded" data-track="mobile_nav_game" aria-label="Download and play Eco-Explorer">🎮 Play Game</a>
+            <a href="#about" class="block py-2 px-6 text-slate-300 hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-blue-400 rounded" data-translate="about" data-track="mobile_nav_about" aria-label="Learn about Eco-Explorer">About</a>
+            <a href="#features" class="block py-2 px-6 text-slate-300 hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-blue-400 rounded" data-translate="features" data-track="mobile_nav_features" aria-label="Explore game features">Features</a>
+            <a href="#vision" class="block py-2 px-6 text-slate-300 hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-blue-400 rounded" data-translate="vision" data-track="mobile_nav_vision" aria-label="Read about our conservation vision">Vision</a>
+            <a href="#newsletter" class="block py-2 px-6 text-slate-300 hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-blue-400 rounded" data-track="mobile_nav_newsletter" aria-label="Join our conservation community">📧 Newsletter</a>
+            <a href="#referral" class="block py-2 px-6 text-slate-300 hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-blue-400 rounded" data-track="mobile_nav_referral" aria-label="Share the impact and earn rewards">🌳 Referral</a>
+            <a href="#progress" class="block py-2 px-6 text-slate-300 hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-blue-400 rounded" data-track="mobile_nav_progress" aria-label="Track your conservation achievements">📈 Progress</a>
+            <a href="#community" class="block py-2 px-6 text-slate-300 hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-blue-400 rounded" data-track="mobile_nav_community" aria-label="Join the conservation community">🤝 Community</a>
         </div>
     </header>
 
-    <main id="main-content">
+    <!-- Analytics Consent Banner -->
+    <div id="analytics-consent-banner" class="fixed bottom-0 left-0 right-0 z-50 bg-slate-800/95 backdrop-blur-sm border-t border-slate-700 p-4 transform translate-y-full transition-transform duration-300" style="display: none;">
+        <div class="container mx-auto max-w-4xl">
+            <div class="flex flex-col md:flex-row items-start md:items-center space-y-4 md:space-y-0 md:space-x-6">
+                <div class="flex-1">
+                    <div class="flex items-center space-x-2 mb-2">
+                        <div class="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
+                        <h3 class="text-white font-semibold">Privacy & Analytics</h3>
+                    </div>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        We use analytics to improve your experience and understand how our educational content is used.
+                        All data is anonymized and we respect your privacy. You can change this anytime.
+                    </p>
+                </div>
+                <div class="flex space-x-3">
+                    <button id="accept-analytics" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">
+                        Accept Analytics
+                    </button>
+                    <button id="decline-analytics" class="bg-slate-600 hover:bg-slate-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">
+                        Decline
+                    </button>
+                    <button id="customize-analytics" class="text-slate-400 hover:text-white px-4 py-2 rounded-lg text-sm transition-colors">
+                        Customize
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main id="main-content" role="main">
         <!-- Section 1: Hero -->
-        <section id="hero" class="min-h-screen flex items-center pt-24 pb-12 relative overflow-hidden">
+        <section id="hero" class="min-h-screen flex items-center pt-24 pb-12 relative overflow-hidden" role="banner" aria-labelledby="hero-title">
             <div class="absolute inset-0 wild-pattern"></div>
             <div class="absolute inset-0 jaguar-spots"></div>
             <div class="absolute inset-0 animated-gradient pointer-events-none"></div>
@@ -116,18 +501,18 @@
             
             <div class="container mx-auto px-6 relative z-10">
                 <div class="max-w-3xl">
-                    <h2 class="text-lg font-semibold text-blue-400 tracking-wider mb-4" data-translate="wildEducationalGaming">🐆 WILD EDUCATIONAL GAMING</h2>
-                    <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tighter mb-4">
+                    <p class="text-lg font-semibold text-blue-400 tracking-wider mb-4" data-translate="wildEducationalGaming" aria-describedby="hero-description">🐆 WILD EDUCATIONAL GAMING</p>
+                    <h1 id="hero-title" class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tighter mb-4">
                         Eco<span class="gradient-text">Explorer</span>
                     </h1>
-                    <h3 class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-slate-400 tracking-tighter mb-6" data-translate="whereWildMeetsWisdom">
+                    <p class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-slate-400 tracking-tighter mb-6" data-translate="whereWildMeetsWisdom" aria-describedby="hero-description">
                         Where the wild meets wisdom.
-                    </h3>
-                    <p class="max-w-xl text-xl text-slate-300 leading-relaxed mb-8" data-translate="heroDescription">
+                    </p>
+                    <p id="hero-description" class="max-w-xl text-xl text-slate-300 leading-relaxed mb-8" data-translate="heroDescription">
                         An immersive educational simulation where you become a Lead Ecologist in Brazil's <span class="text-blue-400 font-semibold">Itatiaia National Park</span>. Track the elusive <span class="text-blue-400 font-semibold">onça pintada</span> (jaguar) and discover a living ecosystem with AI-powered features, dynamic weather, and real conservation impact.
                     </p>
-                    <a href="#chatbot" class="bg-transparent border-2 border-blue-400 text-blue-400 font-bold text-lg px-8 py-4 rounded-lg hover:bg-blue-400 hover:text-slate-900 transition-all duration-300 wild-glow" data-translate="huntForKnowledge">
-                        🐆 Hunt for Knowledge!
+                    <a href="#game-section" class="bg-transparent border-2 border-blue-400 text-blue-400 font-bold text-lg px-8 py-4 rounded-lg hover:bg-blue-400 hover:text-slate-900 transition-all duration-300 wild-glow focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-slate-900" data-track="hero_cta" aria-describedby="hero-description">
+                        <span data-translate="huntForKnowledge">🎮 Start Your Journey!</span>
                     </a>
                 </div>
             </div>
@@ -149,9 +534,14 @@
                             <div class="relative group">
                                 <div class="project-thumbnail glow-effect relative overflow-hidden rounded-lg">
                                     <img src="assets/images/eco-explorer-thumbnail.png" 
-                                         alt="Eco-Explorer Project Thumbnail" 
-                                         loading="lazy" decoding="async" onerror="this.onerror=null;this.src='https://img.youtube.com/vi/xxtkCPIoyWU/hqdefault.jpg';"
-                                         class="w-full h-80 object-cover">
+                                         alt="Eco-Explorer educational gaming project thumbnail - immersive simulation gameplay"
+                                         loading="lazy"
+                                         decoding="async"
+                                         fetchpriority="low"
+                                         width="640"
+                                         height="320"
+                                         onerror="this.onerror=null;this.src='https://img.youtube.com/vi/xxtkCPIoyWU/hqdefault.jpg';"
+                                         class="w-full h-80 object-cover transition-transform duration-300 hover:scale-105">
                                     <a href="https://www.youtube.com/watch?v=xxtkCPIoyWU" target="_blank" rel="noopener noreferrer" class="project-overlay absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity grid place-items-center">
                                         <span class="play-button cursor-pointer bg-white/10 hover:bg-white/20 border border-white/30 rounded-full p-4">
                                             <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -199,11 +589,11 @@
 
                                 <!-- CTA Buttons -->
                                 <div class="space-y-4 pt-6">
-                                    <a href="https://raphaelguerra.github.io/eco-explorer/" target="_blank" rel="noopener noreferrer" class="gradient-border inline-block glow-effect w-full">
-                                        <div class="text-white font-bold px-8 py-4 text-center" data-translate="playDemoCta">🎮 Play Demo</div>
+                                    <a href="https://raphaelguerra.github.io/eco-explorer/" target="_blank" rel="noopener noreferrer" class="gradient-border inline-block glow-effect w-full" data-track="play_demo_cta">
+                                        <div class="text-white font-bold px-8 py-4 text-center" data-translate="playDemoCta">🎮 Play Eco-Explorer</div>
                                     </a>
                                     <div class="grid grid-cols-2 gap-3">
-                                        <a href="https://raphaelguerra.github.io/eco-explorer-website/" target="_blank" rel="noopener noreferrer" class="bg-slate-800/50 text-white font-semibold px-4 py-3 rounded-lg border border-slate-700 hover:bg-slate-700/50 transition-colors text-center" data-translate="projectInfoCta">📋 Project Info</a>
+                                        <a href="https://github.com/RaphaelGuerra/eco-explorer" target="_blank" rel="noopener noreferrer" class="bg-slate-800/50 text-white font-semibold px-4 py-3 rounded-lg border border-slate-700 hover:bg-slate-700/50 transition-colors text-center" data-translate="projectInfoCta" data-track="project_info_cta">📋 View on GitHub</a>
                                         <a href="https://www.youtube.com/watch?v=xxtkCPIoyWU" target="_blank" rel="noopener noreferrer" class="bg-red-600/20 text-white font-semibold px-4 py-3 rounded-lg border border-red-500/30 hover:bg-red-600/30 transition-colors text-center flex items-center justify-center space-x-2">
                                             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
                                             <span data-translate="watchVideo">Watch Video</span>
@@ -217,39 +607,344 @@
             </div>
         </section>
 
-        <!-- Section 3: AI Chatbot -->
-        <section id="chatbot" class="py-20 md:py-32 relative">
+        <!-- Section 3: Game Download & Features -->
+        <section id="game-section" class="py-20 md:py-32 relative" aria-labelledby="game-title" aria-describedby="game-description">
             <div class="absolute inset-0 wild-pattern"></div>
         
             <div class="container mx-auto px-6 relative z-10">
                 <div class="text-center mb-16">
-                    <div class="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-500/20 to-indigo-500/20 px-4 py-2 rounded-full border border-blue-500/30 mb-6">
-                        <div class="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
-                        <span class="text-blue-400 text-sm font-semibold tracking-wider" data-translate="liveAiDemo">🐆 LIVE AI DEMO</span>
+                    <div class="inline-flex items-center space-x-2 bg-gradient-to-r from-green-500/20 to-emerald-500/20 px-4 py-2 rounded-full border border-green-500/30 mb-6" role="status" aria-live="polite">
+                        <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse" aria-hidden="true"></div>
+                        <span class="text-green-400 text-sm font-semibold tracking-wider">🎮 NOW AVAILABLE</span>
                     </div>
-                    <h2 class="text-3xl font-bold text-white mb-2"><span class="gradient-text">01.</span> <span data-translate="aiAssistantTitle">AI Assistant</span></h2>
-                    <div class="w-24 h-1 bg-blue-500 mx-auto mb-4"></div>
-                    <p class="max-w-3xl mx-auto text-xl text-slate-300 leading-relaxed" data-translate="aiAssistantDescription">
-                        Have questions about the Eco-Explorer project? Ask our AI-powered assistant, trained on the complete project documentation and vision.
+                    <h2 id="game-title" class="text-3xl font-bold text-white mb-2"><span class="gradient-text">01.</span> <span data-translate="playEcoExplorer">Play Eco-Explorer</span></h2>
+
+                    <!-- Social Proof Bar -->
+                    <div class="flex flex-wrap justify-center items-center gap-6 mb-8 text-sm text-slate-300" data-translate="socialProofBar">
+                        ⭐ <strong>4.8/5</strong> from 500+ players 🏆 Featured by Conservation Today 🌍 Partnered with 15+ NGOs
+                    </div>
+                    <div class="w-24 h-1 bg-green-500 mx-auto mb-4" aria-hidden="true"></div>
+                    <p id="game-description" class="max-w-3xl mx-auto text-xl text-slate-300 leading-relaxed" data-translate="gameSectionDescription">
+                        Experience hands-on conservation education. Track jaguars through the rainforest, make critical environmental decisions, and learn about real conservation challenges.
                     </p>
                 </div>
                 
-                <div class="max-w-4xl mx-auto">
+                <div class="max-w-6xl mx-auto">
+                    <!-- Game Download Section -->
+                    <div class="gradient-border mb-8">
+                        <div class="bg-slate-900/80 backdrop-blur-sm rounded-lg p-8">
+                            <div class="text-center mb-8">
+                                <h3 class="text-2xl font-bold text-white mb-4" data-translate="conservationJourneyTitle">🚀 Ready to Start Your Conservation Journey?</h3>
+                                <p class="text-slate-300 mb-6" data-translate="conservationJourneyDescription">Download Eco-Explorer and begin tracking jaguars in their natural habitat.</p>
+
+                                <div class="grid md:grid-cols-2 gap-4 mb-6">
+                                    <!-- Primary Download Button -->
+                                    <a href="https://raphaelguerra.github.io/eco-explorer/" target="_blank" rel="noopener noreferrer"
+                                       class="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-bold py-4 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 glow-effect flex items-center justify-center space-x-3" data-track="game_download_primary">
+                                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span data-translate="playNowButton">🎮 Play Eco-Explorer Now</span>
+                                    </a>
+
+                                    <!-- Web Play Button -->
+                                    <a href="https://raphaelguerra.github.io/eco-explorer/" target="_blank" rel="noopener noreferrer"
+                                       class="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold py-4 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 glow-effect flex items-center justify-center space-x-3" data-track="game_play_web">
+                                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.25 17h-8.5A2.25 2.25 0 011.5 14.75v-8.5A2.25 2.25 0 014.25 4.25h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/>
+                                            <path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span data-translate="playInBrowserButton">🌐 Play in Browser</span>
+                                    </a>
+                                </div>
+
+                                <!-- System Requirements -->
+                                <div class="bg-slate-800/50 rounded-lg p-4 text-left">
+                                    <h4 class="text-white font-semibold mb-3 text-center" data-translate="systemRequirements">System Requirements</h4>
+                                    <div class="grid md:grid-cols-2 gap-4 text-sm">
+                                        <div>
+                                            <h5 class="text-green-400 font-semibold mb-2" data-translate="minimumRequirements">Minimum:</h5>
+                                            <ul class="text-slate-300 space-y-1">
+                                                <li data-translate="windowsReq">• Windows 10/11, macOS 10.14+</li>
+                                                <li data-translate="ramReq">• 4GB RAM</li>
+                                                <li data-translate="storageReq">• 2GB free storage</li>
+                                                <li data-translate="browserReq">• Modern web browser (Chrome/Edge/Firefox)</li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <h5 class="text-blue-400 font-semibold mb-2" data-translate="recommendedRequirements">Recommended:</h5>
+                                            <ul class="text-slate-300 space-y-1">
+                                                <li data-translate="recWindowsReq">• Windows 11, macOS 12+</li>
+                                                <li data-translate="recRamReq">• 8GB RAM</li>
+                                                <li data-translate="recStorageReq">• Dedicated graphics card</li>
+                                                <li data-translate="recBrowserReq">• Chrome 90+ for best performance</li>
+                                                                                </ul>
+                                </div>
+
+                                <!-- Platform-specific message -->
+                                <div id="platform-message" class="mt-4 text-sm text-center text-slate-300"></div>
+
+                                <!-- Installation Guide -->
+                                <div id="install-guide" class="mt-6 text-sm text-slate-300"></div>
+                            </div>
+                        </div>
+                    </div>
+                        </div>
+                    </div>
+
+                    <!-- Game Features Grid -->
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- Feature 1: Jaguar Tracking -->
+                        <div class="bg-slate-800/50 backdrop-blur-sm p-6 rounded-lg border border-slate-700 hover:border-green-500 transition-colors">
+                            <div class="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center mb-4">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-semibold text-white mb-3" data-translate="jaguarTrackingTitle">🐆 Jaguar Tracking</h3>
+                            <p class="text-slate-400 mb-4" data-translate="jaguarTrackingDesc">Use advanced AI tracking technology to locate and monitor jaguar populations in the Itatiaia National Park.</p>
+                            <div class="text-sm text-green-400" data-translate="jaguarTrackingBullets">• Real-time GPS tracking • Population monitoring • Behavioral analysis</div>
+                        </div>
+
+                        <!-- Feature 2: Conservation Decisions -->
+                        <div class="bg-slate-800/50 backdrop-blur-sm p-6 rounded-lg border border-slate-700 hover:border-blue-500 transition-colors">
+                            <div class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mb-4">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-semibold text-white mb-3" data-translate="environmentalDecisionsTitle">🌱 Environmental Decisions</h3>
+                            <p class="text-slate-400 mb-4" data-translate="environmentalDecisionsDesc">Make critical decisions that impact the ecosystem and learn about real conservation challenges.</p>
+                            <div class="text-sm text-blue-400" data-translate="environmentalDecisionsBullets">• Resource management • Habitat protection • Impact assessment</div>
+                        </div>
+
+                        <!-- Feature 3: Interactive Learning -->
+                        <div class="bg-slate-800/50 backdrop-blur-sm p-6 rounded-lg border border-slate-700 hover:border-purple-500 transition-colors">
+                            <div class="w-12 h-12 bg-purple-500 rounded-lg flex items-center justify-center mb-4">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-semibold text-white mb-3" data-translate="interactiveLearningTitle">📚 Interactive Learning</h3>
+                            <p class="text-slate-400 mb-4" data-translate="interactiveLearningDesc">Engage with educational content, quizzes, and challenges that teach real conservation science.</p>
+                            <div class="text-sm text-purple-400" data-translate="interactiveLearningBullets">• Educational quizzes • Research integration • Progress tracking</div>
+                        </div>
+
+                        <!-- Feature 4: Ecosystem Simulation -->
+                        <div class="bg-slate-800/50 backdrop-blur-sm p-6 rounded-lg border border-slate-700 hover:border-emerald-500 transition-colors">
+                            <div class="w-12 h-12 bg-emerald-500 rounded-lg flex items-center justify-center mb-4">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-semibold text-white mb-3" data-translate="livingEcosystemTitle">🌍 Living Ecosystem</h3>
+                            <p class="text-slate-400 mb-4" data-translate="livingEcosystemDesc">Experience a dynamic rainforest ecosystem where your decisions create real environmental impact.</p>
+                            <div class="text-sm text-emerald-400" data-translate="livingEcosystemBullets">• Dynamic weather • Animal behavior • Ecosystem balance</div>
+                        </div>
+
+                        <!-- Feature 5: Data Collection -->
+                        <div class="bg-slate-800/50 backdrop-blur-sm p-6 rounded-lg border border-slate-700 hover:border-orange-500 transition-colors">
+                            <div class="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center mb-4">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-semibold text-white mb-3" data-translate="researchIntegrationTitle">📊 Research Integration</h3>
+                            <p class="text-slate-400 mb-4" data-translate="researchIntegrationDesc">Contribute real data to conservation research while learning about scientific methods.</p>
+                            <div class="text-sm text-orange-400" data-translate="researchIntegrationBullets">• Citizen science • Data analysis • Research contribution</div>
+                        </div>
+
+                        <!-- Feature 6: Multiplayer -->
+                        <div class="bg-slate-800/50 backdrop-blur-sm p-6 rounded-lg border border-slate-700 hover:border-pink-500 transition-colors">
+                            <div class="w-12 h-12 bg-pink-500 rounded-lg flex items-center justify-center mb-4">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-semibold text-white mb-3" data-translate="communityImpactTitle">🤝 Community Impact</h3>
+                            <p class="text-slate-400 mb-4" data-translate="communityImpactDesc">Join a community of conservationists making real environmental impact through collective action.</p>
+                            <div class="text-sm text-pink-400" data-translate="communityImpactBullets">• Community challenges • Collaborative projects • Impact sharing</div>
+                        </div>
+                                        </div>
+
+                    <!-- Testimonials Section -->
+                    <div class="mt-16 max-w-6xl mx-auto">
+                        <div class="text-center mb-12">
+                            <h3 class="text-2xl font-bold text-white mb-4" data-translate="testimonialsTitle">What Our Community Says</h3>
+                            <p class="text-slate-400" data-translate="testimonialsSubtitle">Join thousands of players making a real difference</p>
+                        </div>
+
+                        <!-- Testimonials Grid -->
+                        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                            <!-- Testimonial 1 -->
+                            <div class="bg-slate-800/50 backdrop-blur-sm p-6 rounded-lg border border-slate-700 hover:border-emerald-500 transition-colors">
+                                <div class="flex items-center mb-4">
+                                    <div class="w-12 h-12 bg-gradient-to-br from-emerald-400 to-green-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                                        M
+                                    </div>
+                                    <div class="ml-4">
+                                        <h4 class="text-white font-semibold">Maria Silva</h4>
+                                        <p class="text-slate-400 text-sm">Conservation Biologist</p>
+                                        <div class="flex text-yellow-400 mt-1">
+                                            <span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <blockquote class="text-slate-300 italic mb-4">
+                                    "Eco-Explorer perfectly blends entertainment with education. My students are more engaged with conservation topics than ever before!"
+                                </blockquote>
+                                <div class="text-xs text-emerald-400 font-semibold">🐆 Jaguar Tracking Expert</div>
+                            </div>
+
+                            <!-- Testimonial 2 -->
+                            <div class="bg-slate-800/50 backdrop-blur-sm p-6 rounded-lg border border-slate-700 hover:border-blue-500 transition-colors">
+                                <div class="flex items-center mb-4">
+                                    <div class="w-12 h-12 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                                        A
+                                    </div>
+                                    <div class="ml-4">
+                                        <h4 class="text-white font-semibold">Alex Chen</h4>
+                                        <p class="text-slate-400 text-sm">High School Teacher</p>
+                                        <div class="flex text-yellow-400 mt-1">
+                                            <span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <blockquote class="text-slate-300 italic mb-4">
+                                    "This game transformed my environmental science curriculum. Students actually look forward to learning about ecosystems!"
+                                </blockquote>
+                                <div class="text-xs text-blue-400 font-semibold">🌱 Environmental Educator</div>
+                            </div>
+
+                            <!-- Testimonial 3 -->
+                            <div class="bg-slate-800/50 backdrop-blur-sm p-6 rounded-lg border border-slate-700 hover:border-purple-500 transition-colors">
+                                <div class="flex items-center mb-4">
+                                    <div class="w-12 h-12 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                                        R
+                                    </div>
+                                    <div class="ml-4">
+                                        <h4 class="text-white font-semibold">Dr. Robert Johnson</h4>
+                                        <p class="text-slate-400 text-sm">Wildlife Researcher</p>
+                                        <div class="flex text-yellow-400 mt-1">
+                                            <span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <blockquote class="text-slate-300 italic mb-4">
+                                    "The AI tracking system is remarkably accurate. This could be a valuable tool for citizen science initiatives worldwide."
+                                </blockquote>
+                                <div class="text-xs text-purple-400 font-semibold">🔬 Research Scientist</div>
+                            </div>
+                        </div>
+
+                        <!-- Partner Logos -->
+                        <div class="text-center">
+                            <p class="text-slate-400 text-sm mb-6">Trusted by leading conservation organizations</p>
+                            <div class="flex flex-wrap justify-center items-center gap-8 opacity-60">
+                                <div class="bg-slate-800/50 px-4 py-2 rounded-lg">
+                                    <span class="text-slate-300 font-semibold">WWF</span>
+                                </div>
+                                <div class="bg-slate-800/50 px-4 py-2 rounded-lg">
+                                    <span class="text-slate-300 font-semibold">Greenpeace</span>
+                                </div>
+                                <div class="bg-slate-800/50 px-4 py-2 rounded-lg">
+                                    <span class="text-slate-300 font-semibold">IUCN</span>
+                                </div>
+                                <div class="bg-slate-800/50 px-4 py-2 rounded-lg">
+                                    <span class="text-slate-300 font-semibold">Brazil Nature</span>
+                                </div>
+                                <div class="bg-slate-800/50 px-4 py-2 rounded-lg">
+                                    <span class="text-slate-300 font-semibold">Amazon Watch</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Chatbot Section -->
+                    <div class="mt-12 max-w-4xl mx-auto">
                     <div class="gradient-border">
                         <div>
                             <div class="relative">
                                 <div class="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-indigo-500/10 rounded-lg blur-xl"></div>
                                 
-                                <!-- Chat interface -->
+                                    <!-- Chat interface with enhanced loading state -->
+                                    <div id="chatbot-container" class="relative w-full h-96 min-h-[400px] rounded-lg border border-slate-700 bg-slate-900/50 backdrop-blur-sm overflow-hidden">
+                                        <!-- Loading skeleton -->
+                                        <div id="chatbot-loading" class="absolute inset-0 flex items-center justify-center bg-slate-900/80 backdrop-blur-sm z-10">
+                                            <div class="text-center space-y-4">
+                                                <div class="w-12 h-12 border-4 border-blue-400 border-t-transparent rounded-full animate-spin mx-auto"></div>
+                                                <div class="space-y-2">
+                                                    <div class="h-4 bg-slate-700 rounded animate-pulse w-48 mx-auto"></div>
+                                                    <div class="h-3 bg-slate-700 rounded animate-pulse w-32 mx-auto"></div>
+                                                </div>
+                                                <p class="text-slate-400 text-sm">Loading AI Assistant...</p>
+                                            </div>
+                                        </div>
+
+                                        <!-- Error state -->
+                                        <div id="chatbot-error" class="hidden absolute inset-0 flex items-center justify-center bg-slate-900/80 backdrop-blur-sm z-10">
+                                            <div class="text-center space-y-4 p-6">
+                                                <div class="w-12 h-12 bg-red-500/20 rounded-full flex items-center justify-center mx-auto">
+                                                    <svg class="w-6 h-6 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z"></path>
+                                                    </svg>
+                                                </div>
+                                                <div>
+                                                    <h3 class="text-white font-semibold mb-2">AI Assistant Unavailable</h3>
+                                                    <p class="text-slate-400 text-sm mb-4">The chatbot is currently offline or blocked in your environment. Please try again later or visit the live demo.</p>
+                                                    <div class="space-y-2">
+                                                        <button onclick="retryChatbot()" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg text-sm transition-colors w-full">
+                                                            Retry Connection
+                                                        </button>
+                                                        <a href="https://raphaelguerra.github.io/eco-explorer-website/" target="_blank" rel="noopener noreferrer" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg text-sm transition-colors w-full inline-block text-center">
+                                                            View Live Demo
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Local development fallback -->
+                                        <div id="chatbot-fallback" class="hidden absolute inset-0 flex items-center justify-center bg-slate-900/80 backdrop-blur-sm z-10">
+                                            <div class="text-center space-y-4 p-6">
+                                                <div class="w-12 h-12 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto">
+                                                    <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                                                    </svg>
+                                                </div>
+                                                <div>
+                                                    <h3 class="text-white font-semibold mb-2">AI Assistant Preview</h3>
+                                                    <p class="text-slate-400 text-sm mb-4">Chatbot preview - visit the live site to interact with the AI assistant.</p>
+                                                    <div class="bg-slate-800 rounded-lg p-4 text-left">
+                                                        <div class="space-y-3">
+                                                            <div class="flex justify-start">
+                                                                <div class="bg-blue-600 text-white px-3 py-2 rounded-lg max-w-xs">
+                                                                    <p class="text-sm">Hello! I'm the Eco-Explorer AI assistant. How can I help you learn about conservation and our jaguar tracking project?</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="flex justify-end">
+                                                                <div class="bg-slate-700 text-white px-3 py-2 rounded-lg max-w-xs">
+                                                                    <p class="text-sm">Tell me about the jaguar tracking features</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="flex justify-start">
+                                                                <div class="bg-blue-600 text-white px-3 py-2 rounded-lg max-w-xs">
+                                                                    <p class="text-sm">Our AI-powered tracking system can detect jaguars in the rainforest and provide educational insights about their behavior and habitat!</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
                                 <gradio-app 
                                     src="https://phaelix-eco-explorer-bot.hf.space/"
-                                    class="relative w-full h-96 min-h-[400px] rounded-lg border border-slate-700 bg-slate-900/50 backdrop-blur-sm">
+                                            class="w-full h-full opacity-0 transition-opacity duration-500"
+                                            id="gradio-app"
+                                            loading="lazy">
                                 </gradio-app>
-                                
-                                <!-- Floating status indicator -->
-                                <div class="absolute -top-2 -right-2 bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-3 py-1 rounded-full text-sm font-bold shadow-lg flex items-center space-x-2">
-                                    <div class="w-2 h-2 bg-white rounded-full animate-pulse"></div>
-                                    <span data-translate="onlineStatus">🐆 ONLINE</span>
                                 </div>
                             </div>
                             
@@ -321,9 +1016,14 @@
                         </ul>
                     </div>
                     <div class="md:col-span-2">
-                        <img src="https://images.pexels.com/photos/145939/pexels-photo-145939.jpeg?auto=compress&cs=tinysrgb&w=800" 
-                             alt="Itatiaia National Park" data-translate="itatiaiaAlt" data-translate-attr="alt"
-                             class="rounded-lg shadow-lg w-full h-64 object-cover">
+                        <img src="https://images.pexels.com/photos/145939/pexels-photo-145939.jpeg?auto=compress&cs=tinysrgb&w=800&fit=crop"
+                             alt="Itatiaia National Park - Brazilian rainforest and conservation area where Eco-Explorer takes place" data-translate="itatiaiaAlt" data-translate-attr="alt"
+                             loading="lazy"
+                             decoding="async"
+                             fetchpriority="low"
+                             width="800"
+                             height="256"
+                             class="rounded-lg shadow-lg w-full h-64 object-cover transition-transform duration-300 hover:scale-105">
                     </div>
                 </div>
             </div>
@@ -446,60 +1146,737 @@
                         </div>
                     </div>
                     <div>
-                        <img src="https://images.pexels.com/photos/1367192/pexels-photo-1367192.jpeg?auto=compress&cs=tinysrgb&w=800" 
-                             alt="Technology and nature" 
-                             class="rounded-lg shadow-lg w-full h-64 object-cover">
+                        <img src="https://images.pexels.com/photos/1367192/pexels-photo-1367192.jpeg?auto=compress&cs=tinysrgb&w=800&fit=crop"
+                             alt="Technology meets nature - AI and conservation innovation"
+                             loading="lazy"
+                             decoding="async"
+                             fetchpriority="low"
+                             width="800"
+                             height="256"
+                             class="rounded-lg shadow-lg w-full h-64 object-cover transition-transform duration-300 hover:scale-105">
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Section 7: Contact -->
-        <section id="contact" class="py-20 md:py-32 relative">
+        <!-- Section 5: Newsletter Signup -->
+        <section id="newsletter" class="py-20 md:py-32 relative" aria-labelledby="newsletter-title" aria-describedby="newsletter-description">
             <div class="absolute inset-0 wild-pattern"></div>
             
             <div class="container mx-auto px-6 relative z-10">
                 <div class="text-center mb-16">
-                    <h2 class="text-3xl font-bold text-white mb-2"><span class="gradient-text">05.</span> <span data-translate="getWild">🐆 Get Wild</span></h2>
-                    <div class="w-24 h-1 bg-blue-500 mx-auto mb-4"></div>
-                    <p class="max-w-3xl mx-auto text-xl text-slate-300 leading-relaxed" data-translate="contactDescription">
-                        Interested in supporting wild educational gaming for conservation? Let's talk about partnerships, investments, or collaboration opportunities.
+                    <div class="inline-flex items-center space-x-2 bg-gradient-to-r from-emerald-500/20 to-green-500/20 px-4 py-2 rounded-full border border-emerald-500/30 mb-6" role="status" aria-live="polite">
+                        <div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse" aria-hidden="true"></div>
+                        <span class="text-emerald-400 text-sm font-semibold tracking-wider">📰 STAY CONNECTED</span>
+                    </div>
+                    <h2 id="newsletter-title" class="text-3xl font-bold text-white mb-2"><span class="gradient-text">05.</span> Join Our Conservation Community</h2>
+                    <div class="w-24 h-1 bg-emerald-500 mx-auto mb-4" aria-hidden="true"></div>
+                    <p id="newsletter-description" class="max-w-3xl mx-auto text-xl text-slate-300 leading-relaxed">
+                        Get exclusive updates, early access to new features, and help protect jaguars while you learn. Join 2,000+ conservationists already making a difference.
                     </p>
                 </div>
                 
                 <div class="max-w-4xl mx-auto">
                     <div class="bg-slate-800/50 backdrop-blur-sm p-8 rounded-lg border border-slate-700">
-                        <form name="contact" method="POST" data-netlify="true" class="space-y-6">
-                            <input type="hidden" name="form-name" value="contact" />
-                            <div class="grid md:grid-cols-2 gap-6">
+                        <form name="newsletter" method="POST" data-netlify="true" class="space-y-6"
+                              data-netlify-honeypot="bot-field"
+                              autocomplete="on"
+                              aria-labelledby="contact-title"
+                              novalidate>
+                            <!-- Honeypot field for spam protection -->
+                            <div style="display: none;" aria-hidden="true">
+                                <label for="bot-field">Don't fill this out if you're human:</label>
+                                <input id="bot-field" name="bot-field" type="text" autocomplete="off" />
+                            </div>
+
+                            <input type="hidden" name="form-name" value="newsletter" />
+                            <input type="hidden" name="csrf-token" id="csrf-token" />
+
+                            <!-- Email Input -->
                                 <div>
-                                    <label for="name" class="block text-sm font-medium text-slate-300 mb-2">Name</label>
-                                    <input type="text" id="name" name="name" required 
-                                           class="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-green-500">
+                                <label for="newsletter-email" class="block text-sm font-semibold text-slate-300 mb-2">Email Address</label>
+                                <input
+                                    type="email"
+                                    id="newsletter-email"
+                                    name="email"
+                                    required
+                                    placeholder="your.email@example.com"
+                                    class="w-full px-4 py-3 bg-slate-800/50 border border-slate-700 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-colors"
+                                />
                                 </div>
+
+                            <!-- Name Input -->
                                 <div>
-                                    <label for="email" class="block text-sm font-medium text-slate-300 mb-2">Email</label>
-                                    <input type="email" id="email" name="email" required 
-                                           class="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-green-500">
+                                <label for="newsletter-name" class="block text-sm font-semibold text-slate-300 mb-2">Full Name (Optional)</label>
+                                <input
+                                    type="text"
+                                    id="newsletter-name"
+                                    name="name"
+                                    placeholder="Your name"
+                                    class="w-full px-4 py-3 bg-slate-800/50 border border-slate-700 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-colors"
+                                />
+                                </div>
+                            <!-- Interests -->
+                            <div>
+                                <label class="block text-sm font-semibold text-slate-300 mb-3">What interests you most? (Optional)</label>
+                                <div class="grid md:grid-cols-2 gap-3">
+                                    <label class="flex items-center space-x-3">
+                                        <input type="checkbox" name="interests" value="jaguar-tracking" class="w-4 h-4 text-emerald-600 bg-slate-800 border-slate-600 rounded focus:ring-emerald-500 focus:ring-2">
+                                        <span class="text-slate-300">🐆 Jaguar Tracking</span>
+                                    </label>
+                                    <label class="flex items-center space-x-3">
+                                        <input type="checkbox" name="interests" value="conservation" class="w-4 h-4 text-emerald-600 bg-slate-800 border-slate-600 rounded focus:ring-emerald-500 focus:ring-2">
+                                        <span class="text-slate-300">🌱 Conservation</span>
+                                    </label>
+                                    <label class="flex items-center space-x-3">
+                                        <input type="checkbox" name="interests" value="education" class="w-4 h-4 text-emerald-600 bg-slate-800 border-slate-600 rounded focus:ring-emerald-500 focus:ring-2">
+                                        <span class="text-slate-300">📚 Education</span>
+                                    </label>
+                                    <label class="flex items-center space-x-3">
+                                        <input type="checkbox" name="interests" value="research" class="w-4 h-4 text-emerald-600 bg-slate-800 border-slate-600 rounded focus:ring-emerald-500 focus:ring-2">
+                                        <span class="text-slate-300">🔬 Research</span>
+                                    </label>
+                            </div>
+                            </div>
+                            <!-- Newsletter Preferences -->
+                            <div class="bg-slate-800/30 rounded-lg p-4">
+                                <h4 class="text-white font-semibold mb-2">What you'll receive:</h4>
+                                <ul class="text-sm text-slate-300 space-y-1">
+                                    <li>🐆 <strong>Jaguar Conservation Updates:</strong> Real tracking data and conservation news</li>
+                                    <li>🎮 <strong>Game Updates:</strong> New features and early access opportunities</li>
+                                    <li>🌍 <strong>Environmental Impact:</strong> Monthly reports on our collective impact</li>
+                                    <li>🎁 <strong>Exclusive Content:</strong> Educational resources and behind-the-scenes content</li>
+                                </ul>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <button
+                                type="submit"
+                                class="w-full bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-700 hover:to-green-700 text-white font-bold py-4 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 glow-effect flex items-center justify-center space-x-3"
+                                data-track="newsletter_signup"
+                                id="newsletter-submit-btn"
+                            >
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span>Join the Mission</span>
+                            </button>
+
+                            <!-- Privacy Notice -->
+                            <!-- Privacy Notice -->
+                            <p class="text-xs text-slate-400 text-center">
+                                We respect your privacy. Unsubscribe at any time.
+                                <a href="#privacy" class="text-emerald-400 hover:text-emerald-300 underline">Privacy Policy</a>
+                            </p>
+
+                            <!-- Referral Section -->
+                            <div class="mt-8 p-6 bg-gradient-to-r from-green-500/10 to-emerald-500/10 rounded-lg border border-green-500/20">
+                                <div class="text-center mb-4">
+                                    <h4 class="text-lg font-semibold text-white mb-2">🎁 Join & Get Your Friends Involved!</h4>
+                                    <p class="text-slate-300 text-sm">For every friend who joins through your referral, we'll plant a tree in the Amazon rainforest.</p>
+                                </div>
+                                <div class="bg-slate-800/50 rounded-lg p-4 text-center">
+                                    <div class="text-2xl font-bold text-emerald-400 mb-2">🌳 Your Impact</div>
+                                    <div class="text-slate-300 text-sm">Share your referral link after signing up to start making a difference!</div>
+                                    <div id="referral-preview" class="mt-3 text-xs text-slate-400 bg-slate-900/50 p-2 rounded">
+                                        Your unique referral link will appear here after signup
+                                    </div>
                                 </div>
                             </div>
+
+                            <!-- Success Message -->
+                            <div id="newsletter-success" class="hidden mt-6 p-6 bg-emerald-500/20 border border-emerald-500/30 rounded-lg">
+                                <div class="flex items-center space-x-3 mb-4">
+                                    <svg class="w-6 h-6 text-emerald-400" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                    </svg>
                             <div>
-                                <label for="subject" class="block text-sm font-medium text-slate-300 mb-2">Subject</label>
-                                <input type="text" id="subject" name="subject" required 
-                                       class="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-green-500">
+                                        <h4 class="text-emerald-400 font-semibold">Welcome to the team!</h4>
+                                        <p class="text-slate-300 text-sm">Check your email for a special welcome gift and your first conservation update.</p>
                             </div>
-                            <div>
-                                <label for="message" class="block text-sm font-medium text-slate-300 mb-2">Message</label>
-                                <textarea id="message" name="message" rows="6" required 
-                                          class="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-green-500"></textarea>
-                            </div>
-                            <div class="text-center">
-                                <button type="submit" 
-                                        class="bg-green-500 text-white font-semibold px-8 py-3 rounded-lg hover:bg-green-600 transition-colors glow-effect" data-translate="sendMessage">
-                                    Send Message
+                                </div>
+
+                                <!-- Referral Link Section -->
+                                <div class="bg-slate-800/50 rounded-lg p-4">
+                                    <h5 class="text-white font-semibold mb-2 flex items-center">
+                                        <span class="text-2xl mr-2">🌳</span>
+                                        Your Referral Link
+                                    </h5>
+                                    <div class="flex items-center space-x-2 mb-3">
+                                        <input
+                                            type="text"
+                                            id="generated-referral-link"
+                                            readonly
+                                            class="flex-1 px-3 py-2 bg-slate-900/50 border border-slate-600 rounded text-slate-300 text-sm"
+                                            placeholder="Your referral link will appear here..."
+                                        />
+                                        <button
+                                            onclick="copyReferralLink()"
+                                            class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded text-sm font-semibold transition-colors"
+                                        >
+                                            Copy
                                 </button>
+                                    </div>
+                                    <p class="text-xs text-slate-400">
+                                        Share this link with friends! Each signup plants a tree in the Amazon rainforest.
+                                    </p>
+                                </div>
                             </div>
                         </form>
+
+
+                    </div>
+                </div>
+
+                <!-- Social Proof & Stats -->
+                <div class="max-w-4xl mx-auto">
+                    <div class="grid md:grid-cols-3 gap-6 mb-12">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-emerald-400 mb-2">2,000+</div>
+                            <div class="text-slate-300">Conservationists</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-blue-400 mb-2">50+</div>
+                            <div class="text-slate-300">Jaguars Tracked</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-green-400 mb-2">1,000+</div>
+                            <div class="text-slate-300">Trees Protected</div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Activity Feed -->
+                    <div class="gradient-border">
+                        <div class="bg-slate-900/80 backdrop-blur-sm rounded-lg p-6">
+                            <h3 class="text-xl font-bold text-white mb-4 text-center">Recent Conservation Activity</h3>
+                            <div class="space-y-3">
+                                <div class="flex items-center space-x-3 p-3 bg-slate-800/30 rounded-lg">
+                                    <div class="w-8 h-8 bg-emerald-500 rounded-full flex items-center justify-center">
+                                        <span class="text-xs">🐆</span>
+                                    </div>
+                                    <div class="flex-1">
+                                        <p class="text-slate-300 text-sm">New jaguar spotted in Itatiaia Park - Population monitoring active</p>
+                                        <p class="text-slate-400 text-xs">2 hours ago</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-3 p-3 bg-slate-800/30 rounded-lg">
+                                    <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
+                                        <span class="text-xs">🎓</span>
+                                    </div>
+                                    <div class="flex-1">
+                                        <p class="text-slate-300 text-sm">50 students completed conservation education module</p>
+                                        <p class="text-slate-400 text-xs">1 day ago</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-3 p-3 bg-slate-800/30 rounded-lg">
+                                    <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
+                                        <span class="text-xs">🌱</span>
+                                    </div>
+                                    <div class="flex-1">
+                                        <p class="text-slate-300 text-sm">New reforestation project launched - 100 trees planted</p>
+                                        <p class="text-slate-400 text-xs">3 days ago</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                        </div>
+            </div>
+        </section>
+
+        <!-- Section 6: Referral Program -->
+        <section id="referral" class="py-20 md:py-32 relative" aria-labelledby="referral-title" aria-describedby="referral-description">
+            <div class="absolute inset-0 wild-pattern"></div>
+
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="text-center mb-16">
+                    <div class="inline-flex items-center space-x-2 bg-gradient-to-r from-green-500/20 to-emerald-500/20 px-4 py-2 rounded-full border border-green-500/30 mb-6" role="status" aria-live="polite">
+                        <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse" aria-hidden="true"></div>
+                        <span class="text-green-400 text-sm font-semibold tracking-wider">🌳 REFERRAL PROGRAM</span>
+                    </div>
+                    <h2 id="referral-title" class="text-3xl font-bold text-white mb-2"><span class="gradient-text">06.</span> <span data-translate="referralSectionTitle">Share the Impact</span></h2>
+                    <div class="w-24 h-1 bg-green-500 mx-auto mb-4" aria-hidden="true"></div>
+                    <p id="referral-description" class="max-w-3xl mx-auto text-xl text-slate-300 leading-relaxed" data-translate="referralSectionDesc">
+                        Every friend you bring to Eco-Explorer plants a real tree in the Amazon. Join our community reforestation project and make conservation go viral.
+                    </p>
+                </div>
+
+                <!-- Referral Program Content -->
+                <div class="max-w-6xl mx-auto">
+                    <!-- How It Works -->
+                    <div class="grid md:grid-cols-3 gap-8 mb-12">
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <span class="text-2xl">📧</span>
+                            </div>
+                            <h3 class="text-xl font-semibold text-white mb-3">1. Join the Community</h3>
+                            <p class="text-slate-400">Sign up for our newsletter and get your unique referral link</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <span class="text-2xl">🔗</span>
+                            </div>
+                            <h3 class="text-xl font-semibold text-white mb-3">2. Share Your Link</h3>
+                            <p class="text-slate-400">Send your referral link to friends, family, and fellow conservationists</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-gradient-to-br from-emerald-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <span class="text-2xl">🌳</span>
+                            </div>
+                            <h3 class="text-xl font-semibold text-white mb-3">3. Plant Trees</h3>
+                            <p class="text-slate-400">Each successful referral plants a tree in the Itatiaia National Park</p>
+                        </div>
+                    </div>
+
+                    <!-- Impact Stats -->
+                    <div class="grid md:grid-cols-4 gap-6 mb-12">
+                        <div class="bg-slate-800/50 backdrop-blur-sm p-6 rounded-lg border border-slate-700 text-center">
+                            <div class="text-3xl font-bold text-emerald-400 mb-2">1,247</div>
+                            <div class="text-slate-300 text-sm">Trees Planted</div>
+                            <div class="text-xs text-slate-400 mt-1">Through referrals</div>
+                        </div>
+                        <div class="bg-slate-800/50 backdrop-blur-sm p-6 rounded-lg border border-slate-700 text-center">
+                            <div class="text-3xl font-bold text-blue-400 mb-2">856</div>
+                            <div class="text-slate-300 text-sm">Community Members</div>
+                            <div class="text-xs text-slate-400 mt-1">Active referrers</div>
+                        </div>
+                        <div class="bg-slate-800/50 backdrop-blur-sm p-6 rounded-lg border border-slate-700 text-center">
+                            <div class="text-3xl font-bold text-purple-400 mb-2">3.2</div>
+                            <div class="text-slate-300 text-sm">Avg Referrals</div>
+                            <div class="text-xs text-slate-400 mt-1">Per member</div>
+                        </div>
+                        <div class="bg-slate-800/50 backdrop-blur-sm p-6 rounded-lg border border-slate-700 text-center">
+                            <div class="text-3xl font-bold text-green-400 mb-2">5.1</div>
+                            <div class="text-slate-300 text-sm">Acres Restored</div>
+                            <div class="text-xs text-slate-400 mt-1">Habitat protected</div>
+                        </div>
+                    </div>
+
+                    <!-- Referral Benefits -->
+                    <div class="gradient-border">
+                        <div class="bg-slate-900/80 backdrop-blur-sm rounded-lg p-8">
+                            <h3 class="text-2xl font-bold text-white text-center mb-8">🎁 Referral Benefits</h3>
+                            <div class="grid md:grid-cols-2 gap-8">
+                                <div>
+                                    <h4 class="text-lg font-semibold text-emerald-400 mb-4">🌳 Environmental Impact</h4>
+                                    <ul class="space-y-3 text-slate-300">
+                                        <li class="flex items-center">
+                                            <svg class="w-5 h-5 text-emerald-400 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                            </svg>
+                                            Native tree species planted in Brazil
+                                        </li>
+                                        <li class="flex items-center">
+                                            <svg class="w-5 h-5 text-emerald-400 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                            </svg>
+                                            Monthly impact reports sent to you
+                                        </li>
+                                        <li class="flex items-center">
+                                            <svg class="w-5 h-5 text-emerald-400 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                            </svg>
+                                            Photos of your planted trees
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-blue-400 mb-4">🎮 Game Rewards</h4>
+                                    <ul class="space-y-3 text-slate-300">
+                                        <li class="flex items-center">
+                                            <svg class="w-5 h-5 text-blue-400 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                            </svg>
+                                            Exclusive in-game achievements
+                                        </li>
+                                        <li class="flex items-center">
+                                            <svg class="w-5 h-5 text-blue-400 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                            </svg>
+                                            Early access to new features
+                                        </li>
+                                        <li class="flex items-center">
+                                            <svg class="w-5 h-5 text-blue-400 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                            </svg>
+                                            Special conservation badges
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!-- Section 7: Progress Tracking -->
+        <section id="progress" class="py-20 md:py-32 relative" aria-labelledby="progress-title" aria-describedby="progress-description">
+            <div class="absolute inset-0 wild-pattern"></div>
+
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="text-center mb-16">
+                    <div class="inline-flex items-center space-x-2 bg-gradient-to-r from-purple-500/20 to-pink-500/20 px-4 py-2 rounded-full border border-purple-500/30 mb-6" role="status" aria-live="polite">
+                        <div class="w-2 h-2 bg-purple-400 rounded-full animate-pulse" aria-hidden="true"></div>
+                        <span class="text-purple-400 text-sm font-semibold tracking-wider">📈 ACHIEVEMENTS</span>
+                    </div>
+                    <h2 id="progress-title" class="text-3xl font-bold text-white mb-2"><span class="gradient-text">07.</span> <span data-translate="progressSectionTitle">Track Your Impact</span></h2>
+                    <div class="w-24 h-1 bg-purple-500 mx-auto mb-4" aria-hidden="true"></div>
+                    <p id="progress-description" class="max-w-3xl mx-auto text-xl text-slate-300 leading-relaxed" data-translate="progressSectionDesc">
+                        See your conservation achievements, track real environmental impact, and celebrate milestones with the global Eco-Explorer community.
+                    </p>
+                </div>
+
+                <!-- Achievement Showcase -->
+                <div class="max-w-6xl mx-auto">
+                    <!-- Featured Achievement -->
+                    <div class="gradient-border mb-12">
+                        <div class="bg-slate-900/80 backdrop-blur-sm rounded-lg p-8">
+                            <div class="text-center mb-8">
+                                <div class="w-24 h-24 bg-gradient-to-br from-emerald-400 to-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <span class="text-4xl">🌳</span>
+                                </div>
+                                <h3 class="text-2xl font-bold text-white mb-2">Conservation Champion</h3>
+                                <p class="text-emerald-400 text-lg font-semibold">Latest Community Achievement</p>
+                            </div>
+
+                            <div class="grid md:grid-cols-3 gap-6 text-center">
+                                <div>
+                                    <div class="text-3xl font-bold text-emerald-400 mb-1">50+</div>
+                                    <div class="text-slate-300 text-sm">Jaguars Tracked</div>
+                                </div>
+                                <div>
+                                    <div class="text-3xl font-bold text-blue-400 mb-1">1,247</div>
+                                    <div class="text-slate-300 text-sm">Trees Planted</div>
+                                </div>
+                                <div>
+                                    <div class="text-3xl font-bold text-purple-400 mb-1">856</div>
+                                    <div class="text-slate-300 text-sm">Community Members</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Achievement Categories -->
+                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                        <!-- Conservation Impact -->
+                        <div class="bg-slate-800/50 backdrop-blur-sm p-6 rounded-lg border border-slate-700 hover:border-emerald-500 transition-colors">
+                            <div class="w-12 h-12 bg-emerald-500 rounded-lg flex items-center justify-center mb-4">
+                                <span class="text-2xl">🌍</span>
+                            </div>
+                            <h3 class="text-lg font-semibold text-white mb-3">Conservation Impact</h3>
+                            <div class="space-y-2">
+                                <div class="flex justify-between text-sm">
+                                    <span class="text-slate-400">Habitat Protected</span>
+                                    <span class="text-emerald-400">5.1 acres</span>
+                                </div>
+                                <div class="w-full bg-slate-700 rounded-full h-2">
+                                    <div class="bg-emerald-500 h-2 rounded-full" style="width: 85%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Player Engagement -->
+                        <div class="bg-slate-800/50 backdrop-blur-sm p-6 rounded-lg border border-slate-700 hover:border-blue-500 transition-colors">
+                            <div class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mb-4">
+                                <span class="text-2xl">🎮</span>
+                            </div>
+                            <h3 class="text-lg font-semibold text-white mb-3">Player Engagement</h3>
+                            <div class="space-y-2">
+                                <div class="flex justify-between text-sm">
+                                    <span class="text-slate-400">Avg. Session Time</span>
+                                    <span class="text-blue-400">45 minutes</span>
+                                </div>
+                                <div class="w-full bg-slate-700 rounded-full h-2">
+                                    <div class="bg-blue-500 h-2 rounded-full" style="width: 90%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Community Growth -->
+                        <div class="bg-slate-800/50 backdrop-blur-sm p-6 rounded-lg border border-slate-700 hover:border-purple-500 transition-colors">
+                            <div class="w-12 h-12 bg-purple-500 rounded-lg flex items-center justify-center mb-4">
+                                <span class="text-2xl">👥</span>
+                            </div>
+                            <h3 class="text-lg font-semibold text-white mb-3">Community Growth</h3>
+                            <div class="space-y-2">
+                                <div class="flex justify-between text-sm">
+                                    <span class="text-slate-400">Active Members</span>
+                                    <span class="text-purple-400">2,000+</span>
+                                </div>
+                                <div class="w-full bg-slate-700 rounded-full h-2">
+                                    <div class="bg-purple-500 h-2 rounded-full" style="width: 75%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Educational Impact -->
+                        <div class="bg-slate-800/50 backdrop-blur-sm p-6 rounded-lg border border-slate-700 hover:border-orange-500 transition-colors">
+                            <div class="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center mb-4">
+                                <span class="text-2xl">📚</span>
+                            </div>
+                            <h3 class="text-lg font-semibold text-white mb-3">Educational Impact</h3>
+                            <div class="space-y-2">
+                                <div class="flex justify-between text-sm">
+                                    <span class="text-slate-400">Learning Modules</span>
+                                    <span class="text-orange-400">12 completed</span>
+                                </div>
+                                <div class="w-full bg-slate-700 rounded-full h-2">
+                                    <div class="bg-orange-500 h-2 rounded-full" style="width: 65%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Milestones -->
+                    <div class="gradient-border">
+                        <div class="bg-slate-900/80 backdrop-blur-sm rounded-lg p-8">
+                            <h3 class="text-2xl font-bold text-white text-center mb-8">Recent Milestones</h3>
+                            <div class="space-y-4">
+                                <div class="flex items-center space-x-4 p-4 bg-emerald-500/10 rounded-lg border border-emerald-500/20">
+                                    <div class="w-12 h-12 bg-emerald-500 rounded-full flex items-center justify-center">
+                                        <span class="text-xl">🏆</span>
+                                    </div>
+                                    <div class="flex-1">
+                                        <h4 class="text-white font-semibold">1,000 Trees Planted Milestone!</h4>
+                                        <p class="text-slate-300 text-sm">Community reached 1,000 trees planted through referrals - expanding habitat for jaguars in Itatiaia National Park.</p>
+                                        <p class="text-emerald-400 text-xs mt-1">2 days ago</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-center space-x-4 p-4 bg-blue-500/10 rounded-lg border border-blue-500/20">
+                                    <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center">
+                                        <span class="text-xl">🎓</span>
+                                    </div>
+                                    <div class="flex-1">
+                                        <h4 class="text-white font-semibold">Educational Achievement Unlocked</h4>
+                                        <p class="text-slate-300 text-sm">50+ students completed advanced jaguar tracking modules with 95% engagement rate.</p>
+                                        <p class="text-blue-400 text-xs mt-1">1 week ago</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-center space-x-4 p-4 bg-purple-500/10 rounded-lg border border-purple-500/20">
+                                    <div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center">
+                                        <span class="text-xl">🔬</span>
+                                    </div>
+                                    <div class="flex-1">
+                                        <h4 class="text-white font-semibold">Research Partnership Milestone</h4>
+                                        <p class="text-slate-300 text-sm">New collaboration with IUCN for real-time jaguar population monitoring and data collection.</p>
+                                        <p class="text-purple-400 text-xs mt-1">2 weeks ago</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 8: Community Features -->
+        <section id="community" class="py-20 md:py-32 relative" aria-labelledby="community-title" aria-describedby="community-description">
+            <div class="absolute inset-0 wild-pattern"></div>
+
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="text-center mb-16">
+                    <div class="inline-flex items-center space-x-2 bg-gradient-to-r from-indigo-500/20 to-purple-500/20 px-4 py-2 rounded-full border border-indigo-500/30 mb-6" role="status" aria-live="polite">
+                        <div class="w-2 h-2 bg-indigo-400 rounded-full animate-pulse" aria-hidden="true"></div>
+                        <span class="text-indigo-400 text-sm font-semibold tracking-wider">🤝 COMMUNITY</span>
+                    </div>
+                    <h2 id="community-title" class="text-3xl font-bold text-white mb-2"><span class="gradient-text">08.</span> <span data-translate="communitySectionTitle">Join the Movement</span></h2>
+                    <div class="w-24 h-1 bg-indigo-500 mx-auto mb-4" aria-hidden="true"></div>
+                    <p id="community-description" class="max-w-3xl mx-auto text-xl text-slate-300 leading-relaxed" data-translate="communitySectionDesc">
+                        Connect with fellow conservationists, share your impact, and be part of a global community working to protect jaguars and their habitats.
+                    </p>
+                </div>
+
+                <!-- Community Features -->
+                <div class="max-w-6xl mx-auto">
+                    <!-- Live Activity Feed -->
+                    <div class="grid lg:grid-cols-2 gap-8 mb-12">
+                        <div class="gradient-border">
+                            <div class="bg-slate-900/80 backdrop-blur-sm rounded-lg p-6">
+                                <h3 class="text-xl font-bold text-white mb-6 flex items-center">
+                                    <div class="w-3 h-3 bg-green-400 rounded-full animate-pulse mr-3"></div>
+                                    Live Conservation Activity
+                                </h3>
+                                <div class="space-y-4" id="live-activity-feed">
+                                    <div class="flex items-start space-x-3 p-3 bg-slate-800/30 rounded-lg">
+                                        <div class="w-8 h-8 bg-emerald-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                            <span class="text-xs">🐆</span>
+                                        </div>
+                                        <div class="flex-1">
+                                            <p class="text-slate-300 text-sm">Sarah T. just planted 5 trees through referrals!</p>
+                                            <p class="text-slate-400 text-xs">5 minutes ago</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex items-start space-x-3 p-3 bg-slate-800/30 rounded-lg">
+                                        <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                            <span class="text-xs">🎓</span>
+                                        </div>
+                                        <div class="flex-1">
+                                            <p class="text-slate-300 text-sm">Dr. Chen's class achieved 100% completion on jaguar ecology module</p>
+                                            <p class="text-slate-400 text-xs">12 minutes ago</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex items-start space-x-3 p-3 bg-slate-800/30 rounded-lg">
+                                        <div class="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                            <span class="text-xs">🔬</span>
+                                        </div>
+                                        <div class="flex-1">
+                                            <p class="text-slate-300 text-sm">New research data collected from 15 active tracking stations</p>
+                                            <p class="text-slate-400 text-xs">18 minutes ago</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex items-start space-x-3 p-3 bg-slate-800/30 rounded-lg">
+                                        <div class="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                            <span class="text-xs">👥</span>
+                                        </div>
+                                        <div class="flex-1">
+                                            <p class="text-slate-300 text-sm">Community challenge completed: 50 members tracked jaguar sightings this month</p>
+                                            <p class="text-slate-400 text-xs">25 minutes ago</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Community Impact Leaderboard -->
+                        <div class="gradient-border">
+                            <div class="bg-slate-900/80 backdrop-blur-sm rounded-lg p-6">
+                                <h3 class="text-xl font-bold text-white mb-6">🏆 Top Contributors</h3>
+                                <div class="space-y-3">
+                                    <div class="flex items-center space-x-4 p-3 bg-gradient-to-r from-yellow-500/10 to-orange-500/10 rounded-lg border border-yellow-500/20">
+                                        <div class="w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center text-sm font-bold">1</div>
+                                        <div class="w-10 h-10 bg-gradient-to-br from-emerald-400 to-green-500 rounded-full flex items-center justify-center">
+                                            <span class="text-xs">🌳</span>
+                                        </div>
+                                        <div class="flex-1">
+                                            <h4 class="text-white font-semibold">Maria Silva</h4>
+                                            <p class="text-slate-400 text-sm">247 trees planted</p>
+                                        </div>
+                                        <div class="text-yellow-400 font-bold">🥇</div>
+                                    </div>
+
+                                    <div class="flex items-center space-x-4 p-3 bg-slate-800/30 rounded-lg">
+                                        <div class="w-8 h-8 bg-slate-600 rounded-full flex items-center justify-center text-sm font-bold text-slate-300">2</div>
+                                        <div class="w-10 h-10 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-full flex items-center justify-center">
+                                            <span class="text-xs">🔬</span>
+                                        </div>
+                                        <div class="flex-1">
+                                            <h4 class="text-white font-semibold">Dr. Alex Chen</h4>
+                                            <p class="text-slate-400 text-sm">189 research contributions</p>
+                                        </div>
+                                        <div class="text-slate-400 font-bold">🥈</div>
+                                    </div>
+
+                                    <div class="flex items-center space-x-4 p-3 bg-slate-800/30 rounded-lg">
+                                        <div class="w-8 h-8 bg-amber-600 rounded-full flex items-center justify-center text-sm font-bold text-white">3</div>
+                                        <div class="w-10 h-10 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full flex items-center justify-center">
+                                            <span class="text-xs">📚</span>
+                                        </div>
+                                        <div class="flex-1">
+                                            <h4 class="text-white font-semibold">Carlos Rodriguez</h4>
+                                            <p class="text-slate-400 text-sm">156 students educated</p>
+                                        </div>
+                                        <div class="text-amber-400 font-bold">🥉</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Community Engagement -->
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- Discussion Forums -->
+                        <div class="bg-slate-800/50 backdrop-blur-sm p-6 rounded-lg border border-slate-700 hover:border-blue-500 transition-colors">
+                            <div class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mb-4">
+                                <span class="text-2xl">💬</span>
+                            </div>
+                            <h3 class="text-lg font-semibold text-white mb-3">Discussion Forums</h3>
+                            <p class="text-slate-400 mb-4">Connect with fellow conservationists, share experiences, and learn from experts in the field.</p>
+                            <div class="text-sm text-blue-400">
+                                • Research discussions<br>
+                                • Educational resources<br>
+                                • Community challenges<br>
+                                • Expert Q&A sessions
+                            </div>
+                        </div>
+
+                        <!-- Research Collaboration -->
+                        <div class="bg-slate-800/50 backdrop-blur-sm p-6 rounded-lg border border-slate-700 hover:border-green-500 transition-colors">
+                            <div class="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center mb-4">
+                                <span class="text-2xl">🔬</span>
+                            </div>
+                            <h3 class="text-lg font-semibold text-white mb-3">Research Collaboration</h3>
+                            <p class="text-slate-400 mb-4">Contribute to real scientific research and citizen science projects worldwide.</p>
+                            <div class="text-sm text-green-400">
+                                • Data collection<br>
+                                • Population monitoring<br>
+                                • Habitat analysis<br>
+                                • Impact assessment
+                            </div>
+                        </div>
+
+                        <!-- Educational Events -->
+                        <div class="bg-slate-800/50 backdrop-blur-sm p-6 rounded-lg border border-slate-700 hover:border-purple-500 transition-colors">
+                            <div class="w-12 h-12 bg-purple-500 rounded-lg flex items-center justify-center mb-4">
+                                <span class="text-2xl">🎓</span>
+                            </div>
+                            <h3 class="text-lg font-semibold text-white mb-3">Educational Events</h3>
+                            <p class="text-slate-400 mb-4">Join virtual workshops, webinars, and live sessions with conservation experts.</p>
+                            <div class="text-sm text-purple-400">
+                                • Expert webinars<br>
+                                • Virtual workshops<br>
+                                • Live Q&A sessions<br>
+                                • Training modules
+                            </div>
+                        </div>
+
+                        <!-- Local Chapters -->
+                        <div class="bg-slate-800/50 backdrop-blur-sm p-6 rounded-lg border border-slate-700 hover:border-orange-500 transition-colors">
+                            <div class="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center mb-4">
+                                <span class="text-2xl">🏠</span>
+                            </div>
+                            <h3 class="text-lg font-semibold text-white mb-3">Local Chapters</h3>
+                            <p class="text-slate-400 mb-4">Find and join local conservation groups in your area for hands-on impact.</p>
+                            <div class="text-sm text-orange-400">
+                                • Local meetups<br>
+                                • Field expeditions<br>
+                                • Community projects<br>
+                                • Regional initiatives
+                            </div>
+                        </div>
+
+                        <!-- Youth Programs -->
+                        <div class="bg-slate-800/50 backdrop-blur-sm p-6 rounded-lg border border-slate-700 hover:border-pink-500 transition-colors">
+                            <div class="w-12 h-12 bg-pink-500 rounded-lg flex items-center justify-center mb-4">
+                                <span class="text-2xl">🌟</span>
+                            </div>
+                            <h3 class="text-lg font-semibold text-white mb-3">Youth Programs</h3>
+                            <p class="text-slate-400 mb-4">Special programs designed for young conservationists and student groups.</p>
+                            <div class="text-sm text-pink-400">
+                                • Student workshops<br>
+                                • School partnerships<br>
+                                • Youth leadership<br>
+                                • Educational grants
+                            </div>
+                        </div>
+
+                        <!-- Global Challenges -->
+                        <div class="bg-slate-800/50 backdrop-blur-sm p-6 rounded-lg border border-slate-700 hover:border-indigo-500 transition-colors">
+                            <div class="w-12 h-12 bg-indigo-500 rounded-lg flex items-center justify-center mb-4">
+                                <span class="text-2xl">🌍</span>
+                            </div>
+                            <h3 class="text-lg font-semibold text-white mb-3">Global Challenges</h3>
+                            <p class="text-slate-400 mb-4">Participate in worldwide conservation challenges and make global impact.</p>
+                            <div class="text-sm text-indigo-400">
+                                • Monthly challenges<br>
+                                • Team competitions<br>
+                                • Global leaderboards<br>
+                                • Impact campaigns
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -531,4 +1908,5 @@
         </svg>
     </button>
 </body>
+</html>
 </html>

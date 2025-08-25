@@ -125,14 +125,31 @@ class I18nManager {
      */
     translatePageWithTransition() {
         const elements = document.querySelectorAll('[data-translate]');
-        
+        const languageBtn = document.getElementById('language-btn');
+
+        // Show loading state in language switcher
+        if (languageBtn) {
+            const currentLangSpan = languageBtn.querySelector('#current-lang');
+            if (currentLangSpan) {
+                const originalText = currentLangSpan.textContent;
+                currentLangSpan.textContent = '...';
+                currentLangSpan.style.opacity = '0.7';
+
+                // Restore original text after transition
+                setTimeout(() => {
+                    currentLangSpan.textContent = this.currentLanguage.toUpperCase();
+                    currentLangSpan.style.opacity = '1';
+                }, 400);
+            }
+        }
+
         // Add transition class for smooth effect
         elements.forEach(el => el.classList.add('language-transition'));
-        
+
         // Translate after a brief delay
         setTimeout(() => {
             this.translatePage();
-            
+
             // Remove transition class
             setTimeout(() => {
                 elements.forEach(el => el.classList.remove('language-transition'));
