@@ -90,8 +90,9 @@ class CriticalLoader {
 
         // Initialize chatbot after critical load
         setTimeout(() => {
+            console.log('🐆 Initializing chatbot...');
             this.initializeChatbot();
-        }, 200);
+        }, 500); // Increased delay to ensure DOM is ready
     }
 
     // Utility function to load CSS dynamically
@@ -142,16 +143,36 @@ class CriticalLoader {
         const errorState = document.getElementById('chatbot-error');
         const fallbackState = document.getElementById('chatbot-fallback');
 
-        if (!gradioApp || !loadingState) return;
+        if (!gradioApp || !loadingState) {
+            console.log('🐆 Chatbot: Missing required elements');
+            return;
+        }
+
+        console.log('🐆 Chatbot: Starting initialization...');
 
         // Show loading initially
         loadingState.style.display = 'flex';
         if (errorState) errorState.classList.add('hidden');
         if (fallbackState) fallbackState.classList.add('hidden');
 
-        // Simple timeout for local development detection
+        // Set up load event listener for gradio app
+        gradioApp.addEventListener('load', () => {
+            console.log('🐆 Chatbot: Successfully loaded!');
+            loadingState.style.display = 'none';
+            gradioApp.style.opacity = '1';
+        });
+
+        // Set up error event listener
+        gradioApp.addEventListener('error', (e) => {
+            console.log('🐆 Chatbot: Load error:', e);
+            loadingState.style.display = 'none';
+            if (errorState) errorState.classList.remove('hidden');
+        });
+
+        // Fallback timeout for local development detection
         setTimeout(() => {
             if (loadingState.style.display !== 'none') {
+                console.log('🐆 Chatbot: Timeout reached, showing fallback');
                 loadingState.style.display = 'none';
                 // Check if we're in local development
                 const isLocal = window.location.protocol === 'http:' && window.location.hostname === 'localhost';
@@ -164,7 +185,7 @@ class CriticalLoader {
                 }
                 gradioApp.style.opacity = '1';
             }
-        }, 10000); // 10 second timeout
+        }, 15000); // 15 second timeout
     }
 
     // Load individual sections
