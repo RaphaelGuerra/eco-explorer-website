@@ -88,10 +88,10 @@ class CriticalLoader {
             this.loadScript('assets/js/main.js');
         }, 100);
 
-        // Load additional sections after hero is visible
+        // Initialize chatbot after critical load
         setTimeout(() => {
-            this.loadAdditionalSections();
-        }, 500);
+            this.initializeChatbot();
+        }, 200);
     }
 
     // Utility function to load CSS dynamically
@@ -132,6 +132,39 @@ class CriticalLoader {
                 this.loadSection(sectionId);
             }, index * 200); // Stagger loading
         });
+    }
+
+    // Simple chatbot initialization
+    initializeChatbot() {
+        const chatbotContainer = document.getElementById('chatbot-container');
+        const gradioApp = document.getElementById('gradio-app');
+        const loadingState = document.getElementById('chatbot-loading');
+        const errorState = document.getElementById('chatbot-error');
+        const fallbackState = document.getElementById('chatbot-fallback');
+
+        if (!gradioApp || !loadingState) return;
+
+        // Show loading initially
+        loadingState.style.display = 'flex';
+        if (errorState) errorState.classList.add('hidden');
+        if (fallbackState) fallbackState.classList.add('hidden');
+
+        // Simple timeout for local development detection
+        setTimeout(() => {
+            if (loadingState.style.display !== 'none') {
+                loadingState.style.display = 'none';
+                // Check if we're in local development
+                const isLocal = window.location.protocol === 'http:' && window.location.hostname === 'localhost';
+                if (isLocal) {
+                    // Show fallback for local development
+                    if (fallbackState) fallbackState.classList.remove('hidden');
+                } else {
+                    // Show error for production
+                    if (errorState) errorState.classList.remove('hidden');
+                }
+                gradioApp.style.opacity = '1';
+            }
+        }, 10000); // 10 second timeout
     }
 
     // Load individual sections
