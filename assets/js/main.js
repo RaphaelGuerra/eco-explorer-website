@@ -174,12 +174,21 @@ class MainApp {
      * Initialize contact form functionality
      */
     initializeContactForm() {
+        // Handle both contact form and newsletter form
         const contactForm = document.querySelector('#contact form');
-        
+        const newsletterForm = document.querySelector('#newsletter form');
+
         if (contactForm) {
             contactForm.addEventListener('submit', (e) => {
                 e.preventDefault();
                 this.handleContactForm(contactForm);
+            });
+        }
+
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                this.handleNewsletterForm(newsletterForm);
             });
         }
     }
@@ -209,6 +218,40 @@ class MainApp {
         } catch (error) {
             console.error('Form submission error:', error);
             this.showNotification('Failed to send message. Please try again.', 'error');
+        } finally {
+            // Reset button state
+            if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalText;
+            }
+        }
+    }
+
+    /**
+     * Handle newsletter form submission
+     */
+    async handleNewsletterForm(form) {
+        const formData = new FormData(form);
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalText = submitBtn?.textContent;
+
+        try {
+            // Show loading state
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.textContent = '🌿 Subscribing...';
+            }
+
+            // Simulate newsletter subscription
+            await new Promise(resolve => setTimeout(resolve, 1500));
+
+            // Show success message
+            this.showNotification('Successfully subscribed to our newsletter! 🌿', 'success');
+            form.reset();
+
+        } catch (error) {
+            console.error('Newsletter subscription error:', error);
+            this.showNotification('Failed to subscribe. Please try again.', 'error');
         } finally {
             // Reset button state
             if (submitBtn) {
