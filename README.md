@@ -67,7 +67,7 @@ The website requires a proper HTTP server because:
 - Learnings: content‑first landing, simple i18n, and static deployments
 
 ## License
-Personal portfolio project — not for commercial use.
+All rights reserved. Personal portfolio project — not for production use.
 
 ## 🚨 Troubleshooting
 
