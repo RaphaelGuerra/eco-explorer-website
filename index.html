@@ -85,6 +85,7 @@
     
     <!-- Google Fonts: Inter (optimized) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap&text=ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789%20" rel="stylesheet">
     
@@ -117,7 +118,8 @@
     <script>
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', function() {
-          navigator.serviceWorker.register('/sw.js')
+          // Use relative path to limit scope to the site subpath
+          navigator.serviceWorker.register('./sw.js')
             .then(function(registration) {
               console.log('SW registered: ', registration);
             })
@@ -171,7 +173,7 @@
                     </div>
                 </div>
             </nav>
-            <button id="menu-btn" class="md:hidden focus:outline-none focus:ring-2 focus:ring-blue-400 rounded p-2" aria-label="Toggle mobile menu" aria-expanded="false">
+            <button id="menu-btn" class="md:hidden focus:outline-none focus:ring-2 focus:ring-blue-400 rounded p-2" aria-label="Toggle mobile menu" aria-controls="mobile-menu" aria-expanded="false">
                 <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
                 </svg>
@@ -186,6 +188,14 @@
             <a href="#vision" class="block py-3 px-6 text-slate-300 hover:bg-slate-800 active:bg-slate-700 touch-manipulation" data-translate="vision">Vision</a>
             <a href="#newsletter" class="block py-3 px-6 text-slate-300 hover:bg-slate-800 active:bg-slate-700 touch-manipulation" data-translate="newsletter">Community</a>
             <a href="#contact" class="block py-3 px-6 text-slate-300 hover:bg-slate-800 active:bg-slate-700 touch-manipulation" data-translate="contact">Contact</a>
+            <div class="border-t border-slate-700 my-2"></div>
+            <!-- Mobile Language Selector (placeholder, handled by JS) -->
+            <div class="flex justify-center space-x-4 py-2 text-slate-400 mobile-lang-selector">
+                <a href="#" data-lang="en" class="hover:text-white transition-colors">EN</a>
+                <a href="#" data-lang="pt" class="hover:text-white transition-colors">PT</a>
+                <a href="#" data-lang="es" class="hover:text-white transition-colors">ES</a>
+                <a href="#" data-lang="fr" class="hover:text-white transition-colors">FR</a>
+            </div>
         </nav>
     </header>
 

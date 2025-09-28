@@ -33,7 +33,9 @@ class MainApp {
 
         if (menuBtn && mobileMenu) {
             menuBtn.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
+                const isHidden = mobileMenu.classList.toggle('hidden');
+                // Keep ARIA state in sync for accessibility
+                menuBtn.setAttribute('aria-expanded', String(!isHidden));
             });
 
             // Close menu when clicking on a link
@@ -48,6 +50,7 @@ class MainApp {
             document.addEventListener('click', (e) => {
                 if (!menuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
                     mobileMenu.classList.add('hidden');
+                    menuBtn.setAttribute('aria-expanded', 'false');
                 }
             });
         }

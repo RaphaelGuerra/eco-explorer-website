@@ -24,6 +24,8 @@ class LanguageSwitcher {
 
         this.createLanguageSwitcher();
         this.bindEvents();
+        this.bindGlobalLanguageLinks();
+        this.ensureMobileSelector();
         this.isInitialized = true;
     }
 
@@ -31,29 +33,24 @@ class LanguageSwitcher {
      * Create the language switcher HTML
      */
     createLanguageSwitcher() {
-        // Find existing language selector elements to replace
-        const existingSelectors = document.querySelectorAll('#language-btn, #language-dropdown');
-        
-        if (existingSelectors.length > 0) {
-            // Replace existing language switcher
-            const languageBtn = document.getElementById('language-btn');
-            const languageDropdown = document.getElementById('language-dropdown');
-            
-            if (languageBtn && languageDropdown) {
-                const parent = languageBtn.parentElement;
-                const newSwitcher = this.createSwitcherHTML();
-                
-                // Replace the old switcher with the new one
-                parent.replaceChild(newSwitcher, languageBtn);
-                languageDropdown.remove();
-            }
-        } else {
-            // Add to header if no existing switcher found
-            const header = document.querySelector('header nav');
-            if (header) {
-                const newSwitcher = this.createSwitcherHTML();
-                header.appendChild(newSwitcher);
-            }
+        // Strategy: if an existing button/dropdown is present in desktop header, replace it.
+        // Additionally, leave any `.mobile-lang-selector` anchors in place and handle clicks globally.
+        const desktopBtn = document.getElementById('language-btn');
+        const desktopDropdown = document.getElementById('language-dropdown');
+
+        if (desktopBtn && desktopDropdown) {
+            const parent = desktopBtn.parentElement;
+            const newSwitcher = this.createSwitcherHTML();
+            parent.replaceChild(newSwitcher, desktopBtn);
+            desktopDropdown.remove();
+            return;
+        }
+
+        // Fallback: add to desktop header nav
+        const header = document.querySelector('header nav[aria-label="Main navigation"]');
+        if (header) {
+            const newSwitcher = this.createSwitcherHTML();
+            header.appendChild(newSwitcher);
         }
     }
 
@@ -86,7 +83,8 @@ class LanguageSwitcher {
             const option = document.createElement('button');
             option.className = 'language-option';
             option.setAttribute('data-lang', lang);
-            option.innerHTML = languageNames[lang];
+            // Use textContent to avoid HTML injection risk
+            option.textContent = languageNames[lang];
             dropdown.appendChild(option);
         });
 
@@ -187,6 +185,65 @@ class LanguageSwitcher {
             } else {
                 option.classList.remove('active');
             }
+        });
+    }
+
+    /**
+     * Bind global language link handlers (for mobile simple links)
+     */
+    bindGlobalLanguageLinks() {
+        document.addEventListener('click', (e) => {
+            // Let the dedicated dropdown handler manage its own clicks
+            if (e.target.closest('.language-dropdown')) return;
+            const target = e.target.closest('[data-lang]');
+            if (!target) return;
+            const lang = target.getAttribute('data-lang');
+            if (!lang) return;
+            e.preventDefault();
+            this.changeLanguage(lang);
+
+            // If inside mobile menu, close it for better UX
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuBtn = document.getElementById('menu-btn');
+            if (mobileMenu && mobileMenu.contains(target)) {
+                mobileMenu.classList.add('hidden');
+                menuBtn?.setAttribute('aria-expanded', 'false');
+            }
+        });
+    }
+
+    /**
+     * Ensure a mobile language selector exists in the mobile menu
+     */
+    ensureMobileSelector() {
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (!mobileMenu) return;
+        let mobileSelector = mobileMenu.querySelector('.mobile-lang-selector');
+        if (!mobileSelector) {
+            // Create a simple inline selector block
+            const divider = document.createElement('div');
+            divider.className = 'border-t border-slate-700 my-2';
+
+            mobileSelector = document.createElement('div');
+            mobileSelector.className = 'flex justify-center space-x-4 py-2 text-slate-400 mobile-lang-selector';
+            const langs = ['en','pt','es','fr'];
+            langs.forEach(l => {
+                const a = document.createElement('a');
+                a.href = '#';
+                a.setAttribute('data-lang', l);
+                a.textContent = l.toUpperCase();
+                a.className = 'hover:text-white transition-colors';
+                mobileSelector.appendChild(a);
+            });
+
+            mobileMenu.appendChild(divider);
+            mobileMenu.appendChild(mobileSelector);
+        }
+
+        // Update active state according to current language
+        const currentLang = window.i18n?.getCurrentLanguage?.() || 'en';
+        mobileMenu.querySelectorAll('.mobile-lang-selector [data-lang]').forEach(el => {
+            el.classList.toggle('active', el.getAttribute('data-lang') === currentLang);
         });
     }
 }
