@@ -1,5 +1,30 @@
 # Eco Explorer — Project Website
 
+Last updated: 2025-10-22
+
+## Table of Contents
+
+<!-- TOC start -->
+- [What It Does](#what-it-does)
+- [Run Locally](#run-locally)
+  - [Local Development Server](#local-development-server)
+- [🔧 Technical Requirements](#technical-requirements)
+- [Chatbot (Optional)](#chatbot-optional)
+- [🎨 Design Features](#design-features)
+- [Sections](#sections)
+- [Focus](#focus)
+- [Tech Stack](#tech-stack)
+- [Status & Learnings](#status-learnings)
+- [License](#license)
+- [🚨 Troubleshooting](#troubleshooting)
+  - [Website Not Loading?](#website-not-loading)
+  - [Forms Not Working?](#forms-not-working)
+  - [Language Not Switching?](#language-not-switching)
+  - [Service Worker Issues?](#service-worker-issues)
+  - [Port Already in Use?](#port-already-in-use)
+- [Deploy](#deploy)
+<!-- TOC end -->
+
 Portfolio site for the Eco Explorer game concept: a lightweight, multi‑language landing with highlights, media, and an optional chatbot section.
 
 ## What It Does
