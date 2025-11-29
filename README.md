@@ -14,7 +14,7 @@ Last updated: 2025-11-29
 - [Sections](#sections)
 - [Focus](#focus)
 - [Tech Stack](#tech-stack)
-- [Status & Learnings](#status-learnings)
+- [Status & Learnings](#status--learnings)
 - [License](#license)
 - [🚨 Troubleshooting](#troubleshooting)
   - [Website Not Loading?](#website-not-loading)
