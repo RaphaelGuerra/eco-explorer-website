@@ -10,15 +10,15 @@ Last updated: 2025-11-29
 - [What It Does](#what-it-does)
 - [Run Locally](#run-locally)
   - [Local Development Server](#local-development-server)
-- [🔧 Technical Requirements](#technical-requirements)
+- [🔧 Technical Requirements](#-technical-requirements)
 - [Chatbot (Optional)](#chatbot-optional)
-- [🎨 Design Features](#design-features)
+- [🎨 Design Features](#-design-features)
 - [Sections](#sections)
 - [Focus](#focus)
 - [Tech Stack](#tech-stack)
 - [Status & Learnings](#status--learnings)
 - [License](#license)
-- [🚨 Troubleshooting](#troubleshooting)
+- [🚨 Troubleshooting](#-troubleshooting)
   - [Website Not Loading?](#website-not-loading)
   - [Forms Not Working?](#forms-not-working)
   - [Language Not Switching?](#language-not-switching)
@@ -27,9 +27,12 @@ Last updated: 2025-11-29
 - [Deploy](#deploy)
 <!-- TOC end -->
 
-Portfolio site for the Eco Explorer game concept: a lightweight, multi‑language landing with highlights, media, and an optional chatbot section.
+Portfolio site for the Eco Explorer game concept: a lightweight,
+multi‑language landing with highlights, media, and an optional chatbot
+section.
 
 ## What It Does
+
 - Presents the game pitch, feature highlights, and conservation angle
 - Offers multi‑language content (EN, PT, ES, FR)
 - Embeds optional chatbot (Hugging Face Space) for Q&A
@@ -39,6 +42,7 @@ Portfolio site for the Eco Explorer game concept: a lightweight, multi‑languag
 ## Run Locally
 
 ### Local Development Server
+
 ```bash
 # Navigate to the website directory
 cd eco-explorer-website
@@ -61,6 +65,7 @@ The website requires a proper HTTP server because:
 4. **Security** - Modern browsers block features when opening files directly
 
 ## Chatbot (Optional)
+
 - Embeds the EcoExplorerBot (Hugging Face Spaces)
 - Used for quick Q&A about the project and conservation theme
 
@@ -74,55 +79,67 @@ The website requires a proper HTTP server because:
 - **Accessibility** - ARIA labels, keyboard navigation, focus management
 
 ## Sections
+
 - Hero, pillars, and feature highlights
 - Media embed (YouTube) and screenshots
 - Chatbot (optional)
 - Newsletter and contact
 
 ## Focus
+
 - Educational conservation theme (Itatiaia NP, jaguar)
 - Simple, accessible presentation over heavy frameworks
 
 ## Tech Stack
+
 - HTML + CSS + JavaScript
 - Tailwind CSS
 - Simple i18n (JSON locales)
 - Optional service worker
 
 ## Status & Learnings
+
 - Functional concept site for the game
 - Learnings: content‑first landing, simple i18n, and static deployments
 
 ## License
+
 All rights reserved. Personal portfolio project — not for production use.
 
 ## 🚨 Troubleshooting
 
 ### Website Not Loading?
+
 - Make sure you're using a proper HTTP server (not just opening the HTML file)
 - Check that all files are in the correct directories
 - Try refreshing the page
 
 ### Forms Not Working?
+
 - Newsletter and Contact forms work locally with JavaScript handlers
 - They show success messages without needing a backend
-- For production, connect to your preferred form service (Netlify Forms, Formspree, etc.)
+- For production, connect to your preferred form service (Netlify Forms,
+  Formspree, etc.)
 
 ### Language Not Switching?
+
 - Check that all locale JSON files are present
 - Ensure the language switcher is functioning
 - Try refreshing the page after language change
 
 ### Service Worker Issues?
+
 - Service worker requires HTTPS in production
 - For local development, localhost is fine
 - Check browser DevTools → Application → Service Workers
 
 ### Port Already in Use?
+
 ```bash
 # Try a different port
 python3 -m http.server 8001
 ```
 
 ## Deploy
+
 - Any static host (GitHub Pages, Netlify, Vercel)
