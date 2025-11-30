@@ -1,7 +1,6 @@
 # Eco Explorer — Project Website
 
-[![Lint](https://github.com/RaphaelGuerra/eco-explorer-website/actions/workflows/lint.yml/badge.svg)](https://github.com/RaphaelGuerra/eco-explorer-website/actions/workflows/lint.yml)
-[![Security](https://github.com/RaphaelGuerra/eco-explorer-website/actions/workflows/security.yml/badge.svg)](https://github.com/RaphaelGuerra/eco-explorer-website/actions/workflows/security.yml)
+Last updated: 2025-11-30
 
 ## Table of Contents
 
@@ -9,15 +8,15 @@
 - [What It Does](#what-it-does)
 - [Run Locally](#run-locally)
   - [Local Development Server](#local-development-server)
-- [🔧 Technical Requirements](#-technical-requirements)
+- [🔧 Technical Requirements](#technical-requirements)
 - [Chatbot (Optional)](#chatbot-optional)
-- [🎨 Design Features](#-design-features)
+- [🎨 Design Features](#design-features)
 - [Sections](#sections)
 - [Focus](#focus)
 - [Tech Stack](#tech-stack)
 - [Status & Learnings](#status--learnings)
 - [License](#license)
-- [🚨 Troubleshooting](#-troubleshooting)
+- [🚨 Troubleshooting](#troubleshooting)
   - [Website Not Loading?](#website-not-loading)
   - [Forms Not Working?](#forms-not-working)
   - [Language Not Switching?](#language-not-switching)
@@ -25,6 +24,10 @@
   - [Port Already in Use?](#port-already-in-use)
 - [Deploy](#deploy)
 <!-- TOC end -->
+
+[![Lint](https://github.com/RaphaelGuerra/eco-explorer-website/actions/workflows/lint.yml/badge.svg)](https://github.com/RaphaelGuerra/eco-explorer-website/actions/workflows/lint.yml)
+[![Security](https://github.com/RaphaelGuerra/eco-explorer-website/actions/workflows/security.yml/badge.svg)](https://github.com/RaphaelGuerra/eco-explorer-website/actions/workflows/security.yml)
+
 
 Portfolio site for the Eco Explorer game concept: a lightweight,
 multi‑language landing with highlights, media, and an optional chatbot
