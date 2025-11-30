@@ -8,15 +8,15 @@ Last updated: 2025-11-30
 - [What It Does](#what-it-does)
 - [Run Locally](#run-locally)
   - [Local Development Server](#local-development-server)
-- [🔧 Technical Requirements](#technical-requirements)
+- [Technical Requirements](#technical-requirements)
 - [Chatbot (Optional)](#chatbot-optional)
-- [🎨 Design Features](#design-features)
+- [Design Features](#design-features)
 - [Sections](#sections)
 - [Focus](#focus)
 - [Tech Stack](#tech-stack)
 - [Status & Learnings](#status--learnings)
 - [License](#license)
-- [🚨 Troubleshooting](#troubleshooting)
+- [Troubleshooting](#troubleshooting)
   - [Website Not Loading?](#website-not-loading)
   - [Forms Not Working?](#forms-not-working)
   - [Language Not Switching?](#language-not-switching)
@@ -27,7 +27,6 @@ Last updated: 2025-11-30
 
 [![Lint](https://github.com/RaphaelGuerra/eco-explorer-website/actions/workflows/lint.yml/badge.svg)](https://github.com/RaphaelGuerra/eco-explorer-website/actions/workflows/lint.yml)
 [![Security](https://github.com/RaphaelGuerra/eco-explorer-website/actions/workflows/security.yml/badge.svg)](https://github.com/RaphaelGuerra/eco-explorer-website/actions/workflows/security.yml)
-
 
 Portfolio site for the Eco Explorer game concept: a lightweight,
 multi‑language landing with highlights, media, and an optional chatbot
@@ -57,9 +56,9 @@ python3 -m http.server 8000
 
 Or use VS Code’s Live Server extension on `index.html`.
 
-## 🔧 Technical Requirements
+## Technical Requirements
 
-The website requires a proper HTTP server because:
+🔧 The website requires a proper HTTP server because:
 
 1. **Service Worker** - Requires HTTPS or localhost for offline functionality
 2. **CORS Policy** - External resources need proper headers
@@ -71,7 +70,9 @@ The website requires a proper HTTP server because:
 - Embeds the EcoExplorerBot (Hugging Face Spaces)
 - Used for quick Q&A about the project and conservation theme
 
-## 🎨 Design Features
+## Design Features
+
+🎨 Key design touches:
 
 - **Jaguar Spots Pattern** - Authentic onça pintada inspired background
 - **Wild Glow Effects** - Animated blue glow elements
@@ -108,7 +109,9 @@ The website requires a proper HTTP server because:
 
 All rights reserved. Personal portfolio project — not for production use.
 
-## 🚨 Troubleshooting
+## Troubleshooting
+
+🚨 Common issues and fixes.
 
 ### Website Not Loading?
 
