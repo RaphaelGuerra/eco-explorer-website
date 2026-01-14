@@ -9,8 +9,9 @@ const CRITICAL_RESOURCES = [
   '/assets/js/main.js',
   '/assets/js/i18n.js',
   '/assets/js/language-switcher.js',
-  'https://cdn.tailwindcss.com',
-  'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap&text=ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789%20'
+  '/assets/images/eco-explorer-thumbnail.png',
+  '/assets/images/itatiaia-jaguar.jpg',
+  '/assets/images/itatiaia-forest.jpg'
 ];
 
 // Install event - cache critical resources
