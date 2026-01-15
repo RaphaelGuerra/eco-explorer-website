@@ -8,6 +8,7 @@ Last updated: 2026-01-15
 - [What It Does](#what-it-does)
 - [Run Locally](#run-locally)
   - [Local Development Server](#local-development-server)
+  - [Build Assets (Tailwind + Analytics)](#build-assets-tailwind--analytics)
 - [Technical Requirements](#technical-requirements)
 - [Chatbot (Optional)](#chatbot-optional)
 - [Design Features](#design-features)
