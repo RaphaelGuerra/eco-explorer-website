@@ -56,6 +56,22 @@ python3 -m http.server 8000
 
 Or use VS Code’s Live Server extension on `index.html`.
 
+### Build Assets (Tailwind + Analytics)
+
+```bash
+# Install tooling
+npm install
+
+# Build Tailwind CSS and inject analytics (disabled by default)
+npm run build
+
+# Enable analytics injection
+ENABLE_ANALYTICS=1 npm run build
+
+# Watch Tailwind CSS during development
+npm run dev:css
+```
+
 ## Technical Requirements
 
 🔧 The website requires a proper HTTP server because:

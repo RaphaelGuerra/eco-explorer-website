@@ -5,6 +5,7 @@ const STATIC_CACHE = 'eco-explorer-static-v1';
 // Resources to cache immediately
 const CRITICAL_RESOURCES = [
   '/',
+  '/assets/css/tailwind.css',
   '/assets/css/main.css',
   '/assets/js/main.js',
   '/assets/js/i18n.js',

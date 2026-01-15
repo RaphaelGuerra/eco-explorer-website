@@ -1,0 +1,13 @@
+{
+  "name": "eco-explorer-website",
+  "private": true,
+  "scripts": {
+    "build:css": "tailwindcss -c tailwind.config.js -i assets/css/tailwind.input.css -o assets/css/tailwind.css --minify",
+    "build:analytics": "node scripts/inject-analytics.mjs",
+    "build": "npm run build:css && npm run build:analytics",
+    "dev:css": "tailwindcss -c tailwind.config.js -i assets/css/tailwind.input.css -o assets/css/tailwind.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}

@@ -64,25 +64,6 @@
     }
     </script>
     
-    <!-- Tailwind CSS (optimized) -->
-    <script>
-      // Optimize Tailwind loading
-      window.tailwind = {
-        config: {
-          darkMode: 'class',
-          content: [],
-          theme: {
-            extend: {
-              fontFamily: {
-                sans: ['Inter', 'sans-serif'],
-              }
-            }
-          }
-        }
-      }
-    </script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    
     <!-- Google Fonts: Inter (optimized) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <meta name="referrer" content="strict-origin-when-cross-origin">
@@ -98,21 +79,15 @@
     <!-- Gradio Web Component (pinned to a known working version) -->
     <script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/5.34.2/gradio.js"></script>
     
+    <!-- Tailwind CSS (precompiled) -->
+    <link rel="stylesheet" href="assets/css/tailwind.css">
+
     <!-- Custom Styles -->
     <link rel="stylesheet" href="assets/css/main.css">
     
-    <!-- Google Analytics (Minimal Setup) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'GA_MEASUREMENT_ID', {
-        'anonymize_ip': true,
-        'allow_google_signals': false,
-        'allow_ad_features': false
-      });
-    </script>
+    <!-- Analytics (set ENABLE_ANALYTICS=1 during build) -->
+    <!-- ANALYTICS_START -->
+    <!-- ANALYTICS_END -->
 
     <!-- Service Worker for Offline Support -->
     <script>
