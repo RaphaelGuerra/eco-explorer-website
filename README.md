@@ -1,6 +1,6 @@
 # Eco Explorer — Project Website
 
-Last updated: 2026-01-29
+Last updated: 2026-02-17
 
 ## Table of Contents
 
