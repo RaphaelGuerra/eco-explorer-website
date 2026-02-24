@@ -15,6 +15,7 @@ Last updated: 2026-02-24
 - [Sections](#sections)
 - [Focus](#focus)
 - [Tech Stack](#tech-stack)
+- [Stewardship](#stewardship)
 - [Status & Learnings](#status--learnings)
 - [License](#license)
 - [Troubleshooting](#troubleshooting)
@@ -28,6 +29,7 @@ Last updated: 2026-02-24
 
 [![Lint](https://github.com/RaphaelGuerra/eco-explorer-website/actions/workflows/lint.yml/badge.svg)](https://github.com/RaphaelGuerra/eco-explorer-website/actions/workflows/lint.yml)
 [![Security](https://github.com/RaphaelGuerra/eco-explorer-website/actions/workflows/security.yml/badge.svg)](https://github.com/RaphaelGuerra/eco-explorer-website/actions/workflows/security.yml)
+[![Quality](https://github.com/RaphaelGuerra/eco-explorer-website/actions/workflows/quality.yml/badge.svg)](https://github.com/RaphaelGuerra/eco-explorer-website/actions/workflows/quality.yml)
 
 Portfolio site for the Eco Explorer game concept: a lightweight,
 multi‑language landing with highlights, media, and an optional chatbot
@@ -71,6 +73,9 @@ ENABLE_ANALYTICS=1 npm run build
 
 # Watch Tailwind CSS during development
 npm run dev:css
+
+# Run full local quality checks (build + lint + validation)
+npm run ci
 ```
 
 `npm run build:analytics` uses `scripts/inject-analytics.mjs`, which rewrites the
@@ -123,6 +128,11 @@ HTML block between `<!-- ANALYTICS_START -->` and `<!-- ANALYTICS_END -->` in
 - Tailwind CSS
 - Simple i18n (JSON locales)
 - Optional service worker
+
+## Stewardship
+
+- Owner-level architecture and modernization assessment:
+  [`docs/STEWARDSHIP.md`](docs/STEWARDSHIP.md)
 
 ## Status & Learnings
 

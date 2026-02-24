@@ -1,81 +1,83 @@
-// Service Worker for Eco-Explorer - Offline Support & Performance
-const CACHE_NAME = 'eco-explorer-v1';
-const STATIC_CACHE = 'eco-explorer-static-v1';
+// Service Worker for Eco-Explorer - Offline support for app shell + locales.
+const CACHE_VERSION = 'v2';
+const STATIC_CACHE = `eco-explorer-static-${CACHE_VERSION}`;
+const RUNTIME_CACHE = `eco-explorer-runtime-${CACHE_VERSION}`;
+const CACHE_PREFIX = 'eco-explorer-';
 
-// Resources to cache immediately
-const CRITICAL_RESOURCES = [
-  '/',
-  '/assets/css/tailwind.css',
-  '/assets/css/main.css',
-  '/assets/js/main.js',
-  '/assets/js/i18n.js',
-  '/assets/js/language-switcher.js',
-  '/assets/images/eco-explorer-thumbnail.png',
-  '/assets/images/itatiaia-jaguar.jpg',
-  '/assets/images/itatiaia-forest.jpg'
+// Relative paths keep this working on subpath hosts (e.g. GitHub Pages project sites).
+const APP_SHELL = [
+  './',
+  './index.html',
+  './assets/css/tailwind.css',
+  './assets/css/main.css',
+  './assets/js/main.js',
+  './assets/js/i18n.js',
+  './assets/js/language-switcher.js',
+  './assets/images/eco-explorer-thumbnail.png',
+  './assets/images/itatiaia-jaguar.jpg',
+  './assets/images/itatiaia-forest.jpg',
+  './locales/en.json',
+  './locales/pt.json',
+  './locales/es.json',
+  './locales/fr.json'
 ];
 
-// Install event - cache critical resources
 self.addEventListener('install', event => {
   event.waitUntil(
-    caches.open(STATIC_CACHE)
-      .then(cache => {
-        return cache.addAll(CRITICAL_RESOURCES);
-      })
+    caches
+      .open(STATIC_CACHE)
+      .then(cache => cache.addAll(APP_SHELL))
       .then(() => self.skipWaiting())
   );
 });
 
-// Activate event - clean up old caches
 self.addEventListener('activate', event => {
   event.waitUntil(
-    caches.keys().then(cacheNames => {
-      return Promise.all(
-        cacheNames.map(cacheName => {
-          if (cacheName !== STATIC_CACHE && cacheName !== CACHE_NAME) {
-            return caches.delete(cacheName);
-          }
-        })
-      );
-    }).then(() => self.clients.claim())
+    caches
+      .keys()
+      .then(cacheNames =>
+        Promise.all(
+          cacheNames.map(cacheName => {
+            const isOwnedCache = cacheName.startsWith(CACHE_PREFIX);
+            const isCurrent = cacheName === STATIC_CACHE || cacheName === RUNTIME_CACHE;
+            return isOwnedCache && !isCurrent ? caches.delete(cacheName) : Promise.resolve();
+          })
+        )
+      )
+      .then(() => self.clients.claim())
   );
 });
 
-// Fetch event - serve from cache when offline
 self.addEventListener('fetch', event => {
-  // Only cache GET requests
   if (event.request.method !== 'GET') return;
 
-  // Skip Chrome extension requests
-  if (event.request.url.startsWith('chrome-extension://')) return;
+  const requestUrl = new URL(event.request.url);
+  if (requestUrl.origin !== self.location.origin) return;
 
-  event.respondWith(
-    caches.match(event.request)
-      .then(response => {
-        // Return cached version if available
-        if (response) {
-          return response;
-        }
-
-        // Otherwise fetch from network
-        return fetch(event.request)
-          .then(networkResponse => {
-            // Cache successful responses
-            if (networkResponse.status === 200) {
-              const responseClone = networkResponse.clone();
-              caches.open(CACHE_NAME)
-                .then(cache => {
-                  cache.put(event.request, responseClone);
-                });
-            }
-            return networkResponse;
-          })
-          .catch(() => {
-            // Return offline fallback for HTML requests
-            if (event.request.destination === 'document') {
-              return caches.match('/');
-            }
-          });
+  // Navigation: prefer fresh HTML, fall back to cached shell when offline.
+  if (event.request.mode === 'navigate') {
+    event.respondWith(
+      fetch(event.request).catch(async () => {
+        const cachedDoc = await caches.match('./index.html');
+        return cachedDoc || caches.match('./');
       })
+    );
+    return;
+  }
+
+  // Static assets/locales: cache-first, then network.
+  event.respondWith(
+    caches.match(event.request).then(async cachedResponse => {
+      if (cachedResponse) {
+        return cachedResponse;
+      }
+
+      const networkResponse = await fetch(event.request);
+      if (networkResponse && networkResponse.status === 200 && networkResponse.type === 'basic') {
+        const responseClone = networkResponse.clone();
+        caches.open(RUNTIME_CACHE).then(cache => cache.put(event.request, responseClone));
+      }
+      return networkResponse;
+    })
   );
 });

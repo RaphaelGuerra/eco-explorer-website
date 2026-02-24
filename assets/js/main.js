@@ -183,24 +183,47 @@ class MainApp {
 
         if (contactForm) {
             contactForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                this.handleContactForm(contactForm);
+                this.handleContactForm(contactForm, e);
             });
         }
 
         if (newsletterForm) {
             newsletterForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                this.handleNewsletterForm(newsletterForm);
+                this.handleNewsletterForm(newsletterForm, e);
             });
         }
     }
 
     /**
+     * Decide whether to simulate submit locally/unsupported hosts.
+     * Can be overridden per form with data-simulate-submit="true|false".
+     */
+    shouldUseSimulatedSubmit(form) {
+        const override = form.getAttribute('data-simulate-submit');
+        if (override === 'true') return true;
+        if (override === 'false') return false;
+
+        const hostname = window.location.hostname;
+        const isLocalhost = hostname === 'localhost' || hostname === '127.0.0.1' || hostname === '[::1]';
+        const isGitHubPages = hostname.endsWith('github.io');
+        const isNetlifyHost = hostname.endsWith('netlify.app');
+        const isNetlifyForm = form.hasAttribute('data-netlify');
+
+        if (isLocalhost || isGitHubPages) return true;
+        if (isNetlifyForm && isNetlifyHost) return false;
+
+        return true;
+    }
+
+    /**
      * Handle contact form submission
      */
-    async handleContactForm(form) {
-        const formData = new FormData(form);
+    async handleContactForm(form, event) {
+        if (!this.shouldUseSimulatedSubmit(form)) {
+            return;
+        }
+
+        event.preventDefault();
         const submitBtn = form.querySelector('button[type="submit"]');
         const originalText = submitBtn?.textContent;
 
@@ -233,8 +256,12 @@ class MainApp {
     /**
      * Handle newsletter form submission
      */
-    async handleNewsletterForm(form) {
-        const formData = new FormData(form);
+    async handleNewsletterForm(form, event) {
+        if (!this.shouldUseSimulatedSubmit(form)) {
+            return;
+        }
+
+        event.preventDefault();
         const submitBtn = form.querySelector('button[type="submit"]');
         const originalText = submitBtn?.textContent;
 

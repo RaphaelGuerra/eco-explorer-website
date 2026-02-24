@@ -5,9 +5,13 @@
     "build:css": "tailwindcss -c tailwind.config.js -i assets/css/tailwind.input.css -o assets/css/tailwind.css --minify",
     "build:analytics": "node scripts/inject-analytics.mjs",
     "build": "npm run build:css && npm run build:analytics",
-    "dev:css": "tailwindcss -c tailwind.config.js -i assets/css/tailwind.input.css -o assets/css/tailwind.css --watch"
+    "dev:css": "tailwindcss -c tailwind.config.js -i assets/css/tailwind.input.css -o assets/css/tailwind.css --watch",
+    "lint:js": "eslint assets/js/**/*.js sw.js scripts/**/*.mjs",
+    "validate:site": "node scripts/validate-site.mjs",
+    "ci": "npm run build && npm run lint:js && npm run validate:site"
   },
   "devDependencies": {
+    "eslint": "^9.0.0",
     "tailwindcss": "^3.4.17"
   }
 }
