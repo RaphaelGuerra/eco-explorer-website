@@ -1,6 +1,6 @@
 # Eco Explorer — Project Website
 
-Last updated: 2026-02-21
+Last updated: 2026-02-24
 
 ## Table of Contents
 
@@ -72,6 +72,12 @@ ENABLE_ANALYTICS=1 npm run build
 # Watch Tailwind CSS during development
 npm run dev:css
 ```
+
+`npm run build:analytics` uses `scripts/inject-analytics.mjs`, which rewrites the
+HTML block between `<!-- ANALYTICS_START -->` and `<!-- ANALYTICS_END -->` in
+`index.html`:
+- default (`ENABLE_ANALYTICS` unset): removes analytics snippet
+- `ENABLE_ANALYTICS=1` or `true`: injects the Google Analytics snippet
 
 ## Technical Requirements
 
