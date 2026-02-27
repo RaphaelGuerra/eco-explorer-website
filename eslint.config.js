@@ -1,6 +1,5 @@
 const commonRules = {
   'no-unused-vars': 'warn',
-  'no-console': 'warn',
   'prefer-const': 'error',
   'no-var': 'error',
 };
@@ -31,7 +30,10 @@ module.exports = [
         console: 'readonly',
       },
     },
-    rules: commonRules,
+    rules: {
+      ...commonRules,
+      'no-console': ['warn', { allow: ['warn', 'error'] }],
+    },
   },
   {
     files: ['sw.js'],
@@ -47,7 +49,10 @@ module.exports = [
         console: 'readonly',
       },
     },
-    rules: commonRules,
+    rules: {
+      ...commonRules,
+      'no-console': ['warn', { allow: ['warn', 'error'] }],
+    },
   },
   {
     files: ['scripts/**/*.mjs'],
@@ -59,6 +64,9 @@ module.exports = [
         console: 'readonly',
       },
     },
-    rules: commonRules,
+    rules: {
+      ...commonRules,
+      'no-console': 'off',
+    },
   },
 ];
