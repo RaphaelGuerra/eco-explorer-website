@@ -226,7 +226,7 @@ class LanguageSwitcher {
 
             mobileSelector = document.createElement('div');
             mobileSelector.className = 'flex justify-center space-x-4 py-2 text-slate-400 mobile-lang-selector';
-            const langs = ['en','pt','es','fr'];
+            const langs = ['en','fr','es','pt'];
             langs.forEach(l => {
                 const a = document.createElement('a');
                 a.href = '#';
