@@ -21,10 +21,14 @@ class I18nManager {
      * Initialize the i18n system
      */
     async initialize() {
-        // Get saved language preference or detect browser language
-        const savedLang = localStorage.getItem('preferredLanguage');
+        // Language precedence: URL param -> shared storage key -> legacy storage key -> browser language
+        const urlLang = new URLSearchParams(window.location.search).get('lang');
+        const savedLang = localStorage.getItem('preferred-language');
+        const legacySavedLang = localStorage.getItem('preferredLanguage');
         const browserLang = this.detectBrowserLanguage();
-        const initialLang = savedLang || browserLang;
+        const initialLang = (urlLang && this.supportedLanguages.includes(urlLang))
+            ? urlLang
+            : (savedLang || legacySavedLang || browserLang);
 
         // Load initial language
         await this.setLanguage(initialLang);
@@ -93,7 +97,8 @@ class I18nManager {
         // Update language switcher
         this.updateLanguageSwitcher();
         
-        // Save preference
+        // Save preference (shared key + legacy key for backward compatibility)
+        localStorage.setItem('preferred-language', lang);
         localStorage.setItem('preferredLanguage', lang);
         
         // Update URL
@@ -101,7 +106,7 @@ class I18nManager {
         
         // Dispatch custom event for other components
         requestAnimationFrame(() => {
-            document.dispatchEvent(new CustomEvent('languageChanged', { detail: { language: lang } }));
+            document.dispatchEvent(new CustomEvent('languageChanged', { detail: { lang, language: lang } }));
         });
     }
 
