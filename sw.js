@@ -1,5 +1,5 @@
 // Service Worker for Eco-Explorer - Offline support for app shell + locales.
-const CACHE_VERSION = 'v2';
+const CACHE_VERSION = 'v3';
 const STATIC_CACHE = `eco-explorer-static-${CACHE_VERSION}`;
 const RUNTIME_CACHE = `eco-explorer-runtime-${CACHE_VERSION}`;
 const CACHE_PREFIX = 'eco-explorer-';
